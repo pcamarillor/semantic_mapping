@@ -1,0 +1,1228 @@
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Operations_research> .
+<http://dbpedia.org/resource/Vitaly_Shafranov>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plasma_(physics)> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gold_Medal_of_the_Royal_Astronomical_Society> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wallace_Clement_Sabine_Medal> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Theoretical_physics> .
+<http://dbpedia.org/resource/Patrick_Steptoe>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Obstetrics> .
+<http://dbpedia.org/resource/Georg_von_B\u00E9k\u00E9sy>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Samuel_Francis_Boys>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/David_Wheeler_(computer_scientist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Computer_Pioneer_Award> .
+<http://dbpedia.org/resource/Nikolaas_Tinbergen>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Rumford_Prize> .
+<http://dbpedia.org/resource/M._B._Donald>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Richard_Kuhn>	<http://dbpedia.org/ontology/birthName>	"Richard Johann Kuhn"@en .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gold_Medal_of_the_Royal_Astronomical_Society> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Sylvanus_Thayer_Award> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Medal_of_Freedom_(1945)> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kalinga_Prize> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Guggenheim_Fellowship> .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gold_Medal_of_the_Royal_Astronomical_Society> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit> .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/EMBO_Membership> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/birthName>	"John Bannister Goodenough"@en .
+<http://dbpedia.org/resource/Yash_Pal>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Hermann_Oberth>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Lawrence_Morley>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Joseph_Murray>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biology> .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/European_Geosciences_Union> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Institute_of_Chemists_Gold_Medal> .
+<http://dbpedia.org/resource/Timothy_D._Baker>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/International_health> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IRI_Medal> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/George_Finch_(chemist)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Hans_Heilbronn>	<http://dbpedia.org/ontology/birthName>	"Hans Arnold Heilbronn"@en .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/birthName>	"John Boyd Orr"@en .
+<http://dbpedia.org/resource/Richard_Gregory>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Ralph_Raphael>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organic_chemistry> .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/birthName>	"Robert Howard Grubbs"@en .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Logic> .
+<http://dbpedia.org/resource/Ziauddin_Ahmad>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gold_medal> .
+<http://dbpedia.org/resource/Jean_Dieudonn\u00E9>	<http://dbpedia.org/ontology/birthName>	"Jean Alexandre Eug\u00E8ne Dieudonn\u00E9"@en .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellowship_of_the_Royal_Society_of_Edinburgh> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dickson_Prize> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Operations_research> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Eddington_Medal> .
+<http://dbpedia.org/resource/Ziauddin_Ahmad>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Reform_movement> .
+<http://dbpedia.org/resource/P._N._Rowe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Academy_of_Engineering> .
+<http://dbpedia.org/resource/Frederick_G._Donnan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oersted_Medal> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/birthName>	"Michael Francis Atiyah"@en .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Bernard_Kettlewell>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolfson_College,_Oxford> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Werner_Leinfellner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/European_Academy_of_Sciences_and_Arts> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Louisa_Gross_Horwitz_Prize> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Robert_Andrew_Hingson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Institute_Awards> .
+<http://dbpedia.org/resource/John_Gaddum>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Pharmacology> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Helen_B._Warner_Prize_for_Astronomy> .
+<http://dbpedia.org/resource/C._E._Wynn-Williams>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physicist> .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/John_von_Neumann_Theory_Prize> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lal_Bahadur_Shastri_National_Award> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lenin_Peace_Prize> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Patrick_Steptoe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Institute_of_Chemists_Gold_Medal> .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Davy_Medal> .
+<http://dbpedia.org/resource/Frederick_Jelinek>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_James_L._Flanagan_Speech_and_Audio_Processing_Award> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Developmental_psychology> .
+<http://dbpedia.org/resource/Konrad_Lorenz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kalinga_Prize> .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/E.G.D._Cohen>	<http://dbpedia.org/ontology/birthName>	"Ezechiel Godert David Cohen"@en .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Priestley_Medal> .
+<http://dbpedia.org/resource/Ted_Chamberlain>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plant_pathology> .
+<http://dbpedia.org/resource/Ir\u00E8ne_Joliot-Curie>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Anne_Treisman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Knight_Bachelor> .
+<http://dbpedia.org/resource/Jean_Dieudonn\u00E9>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Leroy_P._Steele_Prize> .
+<http://dbpedia.org/resource/Vitaly_Shafranov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/USSR_State_Prize> .
+<http://dbpedia.org/resource/Yulia_Sister>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/History_of_science> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/University_of_Oxford> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Centenary_Prize> .
+<http://dbpedia.org/resource/John_Backus>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematical_and_theoretical_biology> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Tetrahedron_Prize> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/World_Meteorological_Organization> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Mullard_Award> .
+<http://dbpedia.org/resource/Vitaly_Shafranov>	<http://dbpedia.org/ontology/birthName>	"Vitaly Dmitrievich Shafranov"@en .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Bruce_Medal> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ecological_psychology> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/birthName>	"Freeman John Dyson"@en .
+<http://dbpedia.org/resource/Timothy_D._Baker>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Konrad_Lorenz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/birthName>	"Walter Heinrich Munk"@en .
+<http://dbpedia.org/resource/Konrad_Lorenz>	<http://dbpedia.org/ontology/birthName>	"Konrad Zacharias Lorenz"@en .
+<http://dbpedia.org/resource/Joseph_Murray>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/P._A._Buxton>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Birut\u00E9_Galdikas>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Primatology> .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biogeology> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lieben_Prize> .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Board_of_Professional_Psychology> .
+<http://dbpedia.org/resource/Richard_Gregory>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Neuropsychology> .
+<http://dbpedia.org/resource/Albert_Kluyver>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Microbiology> .
+<http://dbpedia.org/resource/Fernando_J._Corbat\u00F3>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Computer_History_Museum> .
+<http://dbpedia.org/resource/Frederick_Jelinek>	<http://dbpedia.org/ontology/birthName>	"Bed\u0159ich Jel\u00EDnek"@en .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Joseph_Priestley_Award> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Test_(assessment)> .
+<http://dbpedia.org/resource/Frank_Oppenheimer>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Science_education> .
+<http://dbpedia.org/resource/Alexander_Prokhorov>	<http://dbpedia.org/ontology/birthName>	"Alexander Michael Prochoroff"@en .
+<http://dbpedia.org/resource/Mildred_Stratton_Wilson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Guggenheim_Fellowship> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dennis_Gabor_Medal_and_Prize> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://dbpedia.org/ontology/birthName>	"Patrick Maynard Stuart Blackett"@en .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Academy_of_Achievement> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fordham_University> .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Richard_E._Bellman_Control_Heritage_Award> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Paul_Karrer_Gold_Medal> .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biophysics> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Legion_of_Honour> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Nikolay_Basov>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Industrial_engineering> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Clark_Blanchard_Millikan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Medal_for_Merit> .
+<http://dbpedia.org/resource/Mildred_Stratton_Wilson>	<http://dbpedia.org/ontology/birthName>	"Mildred Stratton"@en .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Lorna_Arnold>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Ted_Chamberlain>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hector_Medal> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/birthName>	"Margaret Galland Kivelson"@en .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Anxiety_disorder> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit> .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Queen_Elizabeth_II_Silver_Jubilee_Medal> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Medal_for_Environmental_and_Safety_Technologies> .
+<http://dbpedia.org/resource/Bernard_Kettlewell>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Darwin_Medal> .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/birthName>	"Carlos Silvestre Frenk"@en .
+<http://dbpedia.org/resource/Bernard_Kettlewell>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/The_Genetics_Society> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/NAS_Award_in_Chemical_Sciences> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Guggenheim_Fellowship> .
+<http://dbpedia.org/resource/Bernard_Kettlewell>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ursula_Franklin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Metallurgy> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Institute_of_Physics_Awards> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Guggenheim_Fellowship> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/birthName>	"Karl Gustav Jung"@en .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Matteucci_Medal> .
+<http://dbpedia.org/resource/David_Lack>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/James_F._Crow>	<http://dbpedia.org/ontology/birthName>	"James Franklin Crow"@en .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/P._A._Buxton>	<http://dbpedia.org/ontology/birthName>	"Patrick Alfred Buxton"@en .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Vernon_Ingram>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/William_Allan_Award> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/birthName>	""@en .
+<http://dbpedia.org/resource/Leonard_Owen>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Knight_Bachelor> .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Association_for_the_Advancement_of_Science> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Peace_Prize> .
+<http://dbpedia.org/resource/David_Wheeler_(computer_scientist)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Tolman_Award> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Holley_Medal> .
+<http://dbpedia.org/resource/George_Simpson_(meteorologist)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/birthName>	"Theodosius Grygorovych Dobzhansky"@en .
+<http://dbpedia.org/resource/Konrad_Lorenz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Hans_Heilbronn>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://dbpedia.org/ontology/birthName>	"Alexander Theodore Shulgin"@en .
+<http://dbpedia.org/resource/Klim_Churyumov>	<http://dbpedia.org/ontology/birthName>	"Klim Ivanovich Churyumov"@en .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/birthName>	"Matthew Stanley Meselson"@en .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ethnography> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Crafoord_Prize> .
+<http://dbpedia.org/resource/Fritz_Strassmann>	<http://dbpedia.org/ontology/birthName>	"Friedrich Wilhelm Strassmann"@en .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/birthName>	""@en .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/University_of_Allahabad> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kalinga_Prize> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biophysics> .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Society_of_London_Michael_Faraday_Prize> .
+<http://dbpedia.org/resource/Birut\u00E9_Galdikas>	<http://dbpedia.org/ontology/birthName>	"Birut\u00E9 Marija Filomena Galdikas"@en .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/birthName>	"William Lawrence Bragg"@en .
+<http://dbpedia.org/resource/John_Westcott>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Crystallography> .
+<http://dbpedia.org/resource/Sergey_Kravkov_(psychologist)>	<http://dbpedia.org/ontology/birthName>	"Sergey Vasilyevich Kravkov"@en .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dennis_Gabor_Medal_and_Prize> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Knight_Bachelor> .
+<http://dbpedia.org/resource/Joseph_Lade_Pawsey>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Institute_of_Electrical_and_Electronics_Engineers> .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Alexey_Ivakhnenko>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Machine_learning> .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Peter_Debye_Award> .
+<http://dbpedia.org/resource/Frank_Oppenheimer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oersted_Medal> .
+<http://dbpedia.org/resource/Alexey_Ivakhnenko>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Centenary_Prize> .
+<http://dbpedia.org/resource/Miriam_Rothschild>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Entomology> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Molecular_biology> .
+<http://dbpedia.org/resource/John_Backus>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Konrad_Lorenz>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ted_Chamberlain>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/birthName>	"Kurt Friedrich G\u00F6del"@en .
+<http://dbpedia.org/resource/John_Backus>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ziauddin_Ahmad>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Member_of_parliament> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Lasker_Award_for_Basic_Medical_Research> .
+<http://dbpedia.org/resource/Frederick_Gugenheim_Gregory>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Matteucci_Medal> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Indian_Chemical_Society> .
+<http://dbpedia.org/resource/Nikolaas_Tinbergen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Zoology> .
+<http://dbpedia.org/resource/David_Wheeler_(computer_scientist)>	<http://dbpedia.org/ontology/birthName>	"David John Wheeler"@en .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_W.R.G._Baker_Award> .
+<http://dbpedia.org/resource/Nikolay_Basov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lomonosov_Gold_Medal> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Berwick_Prize> .
+<http://dbpedia.org/resource/Charles_Bachman>	<http://dbpedia.org/ontology/birthName>	"Charles William Bachman III"@en .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Lasker_Award_for_Basic_Medical_Research> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/birthName>	"Alan Mathison Turing"@en .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Pharmacology> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematical_logic> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Otto_Hahn_Prize> .
+<http://dbpedia.org/resource/Henri_Cartan>	<http://dbpedia.org/ontology/birthName>	"Henri Paul Cartan"@en .
+<http://dbpedia.org/resource/Mildred_Stratton_Wilson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Copepod> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Clark_University> .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Andrew_Gemant_Award> .
+<http://dbpedia.org/resource/Georg_von_B\u00E9k\u00E9sy>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biophysics> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/EMBO_Membership> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Gender_studies> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oliver_E._Buckley_Condensed_Matter_Prize> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Corday\u2013Morgan_Prize> .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Priestley_Medal> .
+<http://dbpedia.org/resource/Albert_Kluyver>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Physics> .
+<http://dbpedia.org/resource/John_Kendrew>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Einstein_Award> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Clinical_psychology> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Alexander_Agassiz_Medal> .
+<http://dbpedia.org/resource/Mabel_Keaton_Staupers>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Andrew_Benson>	<http://dbpedia.org/ontology/birthName>	"Andrew Alm Benson"@en .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Nikolay_Basov>	<http://dbpedia.org/ontology/birthName>	"Nikolay Gennadiyevich Basov"@en .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physiology> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/birthName>	"George Bernard Dantzig"@en .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Georg_von_B\u00E9k\u00E9sy>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Perkin_Medal> .
+<http://dbpedia.org/resource/Patrick_Steptoe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Medal_for_Merit> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Lasker_Award_for_Basic_Medical_Research> .
+<http://dbpedia.org/resource/Leonard_Owen>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Frederick_Gugenheim_Gregory>	<http://dbpedia.org/ontology/birthName>	"Fritz Gugenheim"@en .
+<http://dbpedia.org/resource/Nikolay_Basov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kalinga_Prize> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/William_Procter_Prize_for_Scientific_Achievement> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astrophysics> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/George_Volkoff>	<http://dbpedia.org/ontology/birthName>	"George Michael Volkoff"@en .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Theodore_H._Geballe>	<http://dbpedia.org/ontology/birthName>	"Theodore Henry Geballe"@en .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/William_Procter_Prize_for_Scientific_Achievement> .
+<http://dbpedia.org/resource/Christian_B._Anfinsen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Frank_Oppenheimer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Guggenheim_Fellowship> .
+<http://dbpedia.org/resource/W._Brian_Harland>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lyell_Medal> .
+<http://dbpedia.org/resource/Georg_von_B\u00E9k\u00E9sy>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/ASA_Gold_Medal> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Outline_of_space_science> .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://dbpedia.org/ontology/birthName>	"Gy\u00F6rgy Ferenc Bornemissza"@en .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dannie_Heineman_Prize_for_Mathematical_Physics> .
+<http://dbpedia.org/resource/C._E._Wynn-Williams>	<http://dbpedia.org/ontology/birthName>	"Charles Eryl Wynn-Williams"@en .
+<http://dbpedia.org/resource/M._B._Donald>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Historical_Society> .
+<http://dbpedia.org/resource/James_F._Crow>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Pharmacology> .
+<http://dbpedia.org/resource/David_Lack>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ursula_Franklin>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/C._E._Wynn-Williams>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dennis_Gabor_Medal_and_Prize> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Mabel_Keaton_Staupers>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Nursing> .
+<http://dbpedia.org/resource/Richard_N._Frye>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Iranian_studies> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Technology_and_Innovation> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Physics> .
+<http://dbpedia.org/resource/Ir\u00E8ne_Joliot-Curie>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Cognitive_behavioral_therapy> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fields_Medal> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Balzan_Prize> .
+<http://dbpedia.org/resource/Sergey_Kravkov_(psychologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Honoured_Scientist_of_the_RSFSR> .
+<http://dbpedia.org/resource/John_Backus>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Charles_Stark_Draper_Prize> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organic_chemistry> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://dbpedia.org/ontology/birthName>	"Jean Fr\u00E9d\u00E9ric Joliot"@en .
+<http://dbpedia.org/resource/Eugene_Dynkin>	<http://dbpedia.org/ontology/birthName>	"Eugene Borisovich Dynkin"@en .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astrophysics> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Canada_Gairdner_International_Award> .
+<http://dbpedia.org/resource/Ted_Chamberlain>	<http://dbpedia.org/ontology/birthName>	"Edward Edinborough Chamberlain"@en .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Oceanography> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/USSR_State_Prize> .
+<http://dbpedia.org/resource/Georg_von_B\u00E9k\u00E9sy>	<http://dbpedia.org/ontology/birthName>	"Gy\u00F6rgy B\u00E9k\u00E9sy"@en .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Benjamin_Franklin_Medal_(American_Philosophical_Society)> .
+<http://dbpedia.org/resource/David_Lack>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Godman-Salvin_Medal> .
+<http://dbpedia.org/resource/John_Kendrew>	<http://dbpedia.org/ontology/birthName>	"John Cowdery Kendrew"@en .
+<http://dbpedia.org/resource/Avram_Hershko>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kyoto_Prize> .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Bancroft_Award> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/President\u0027s_Award_for_Distinguished_Federal_Civilian_Service> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Richard_Kuhn>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Max_von_Laue>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Max_Planck_Medal> .
+<http://dbpedia.org/resource/Ir\u00E8ne_Joliot-Curie>	<http://dbpedia.org/ontology/birthName>	"Ir\u00E8ne Curie"@en .
+<http://dbpedia.org/resource/Mabel_Keaton_Staupers>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Spingarn_Medal> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astronomy> .
+<http://dbpedia.org/resource/George_Volkoff>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Canada> .
+<http://dbpedia.org/resource/Timothy_D._Baker>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Public_Health_Association> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/International_Society_for_Developmental_Psychobiology> .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://dbpedia.org/ontology/birthName>	"W\u0142odzimierz Roman Aftanaziw"@en .
+<http://dbpedia.org/resource/Edward_A._Guggenheim>	<http://dbpedia.org/ontology/birthName>	"Edward Armand Guggenheim"@en .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organic_chemistry> .
+<http://dbpedia.org/resource/Hugh_Iltis>	<http://dbpedia.org/ontology/birthName>	"Hugo Hellmut Iltis"@en .
+<http://dbpedia.org/resource/Andrew_Benson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Ernest_Orlando_Lawrence_Award> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Auditory_masking> .
+<http://dbpedia.org/resource/H._Clyde_Wilson_Jr.>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Anthropological_Association> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Lasker_Award_for_Basic_Medical_Research> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://dbpedia.org/ontology/birthName>	"Julian Cecil Stanley"@en .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Willi_Hennig>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Kendrew>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Crystallography> .
+<http://dbpedia.org/resource/Frederick_Jelinek>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Information_theory> .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physical_oceanography> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ir\u00E8ne_Joliot-Curie>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/APA_Distinguished_Scientific_Award_for_the_Applications_of_Psychology> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oersted_Medal> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/R._W._Wood_Prize> .
+<http://dbpedia.org/resource/Richard_Kuhn>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Circuits_and_Systems_Society> .
+<http://dbpedia.org/resource/Joseph_Murray>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organ_transplantation> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Donald_William_Kerst>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Padma_Bhushan> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Samuel_Francis_Boys>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biophysics> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Einstein_Peace_Prize> .
+<http://dbpedia.org/resource/Yulia_Sister>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Exhibition_of_Achievements_of_National_Economy> .
+<http://dbpedia.org/resource/Frederick_G._Donnan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Physics> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Seth_Neddermeyer>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Edward_A._Guggenheim>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemical_thermodynamics> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/birthName>	"John Warcup Cornforth Jr."@en .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Gustav_Robert_Kirchhoff_Award> .
+<http://dbpedia.org/resource/Ursula_Franklin>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Pearson_Medal_of_Peace> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/birthName>	"Edwin Herbert Land"@en .
+<http://dbpedia.org/resource/Richard_N._Frye>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Farabi_International_Award> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Distinguished_Fellow_of_the_British_Computer_Society> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Banaras_Hindu_University> .
+<http://dbpedia.org/resource/Timothy_D._Baker>	<http://dbpedia.org/ontology/birthName>	"Timothy Danforth Baker"@en .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Charles_Doolittle_Walcott_Medal> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Anthropology> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/EMBO_Membership> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Chemical_Society> .
+<http://dbpedia.org/resource/Joseph_Lade_Pawsey>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Electrical_engineering> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Padma_Vibhushan> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Clark_Blanchard_Millikan>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Sergey_Kravkov_(psychologist)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Norman_Garmezy>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Developmental_psychology> .
+<http://dbpedia.org/resource/Nikolaas_Tinbergen>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Polonia_Restituta> .
+<http://dbpedia.org/resource/George_Simpson_(meteorologist)>	<http://dbpedia.org/ontology/birthName>	"George Clarke Simpson"@en .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computational_electromagnetics> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Simpson_(meteorologist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Meteorology> .
+<http://dbpedia.org/resource/Frederick_Gugenheim_Gregory>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Ralph_Raphael>	<http://dbpedia.org/ontology/birthName>	"Ralph Alexander Raphael"@en .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychiatry> .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/History_of_Poland> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Marconi_Prize> .
+<http://dbpedia.org/resource/H._Clyde_Wilson_Jr.>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Sigma_Xi> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Birut\u00E9_Galdikas>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Anthropology> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Alexander_Prokhorov>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Stuart_Ballantine_Medal> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Color_vision> .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fred_Hoyle_Medal_and_Prize> .
+<http://dbpedia.org/resource/Theodore_H._Geballe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oliver_E._Buckley_Condensed_Matter_Prize> .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://dbpedia.org/ontology/birthName>	"Jay Seth Rosenblatt"@en .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Bj\u00F6rk\u00E9nska_priset> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Hermann_Oberth>	<http://dbpedia.org/ontology/birthName>	"Hermann Julius Oberth"@en .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Manchester_Literary_and_Philosophical_Society> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Sound_localization> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Newcomb_Cleveland_Prize> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/James_McKeen_Cattell_Fellow_Award> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Society> .
+<http://dbpedia.org/resource/Max_von_Laue>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Physiological_Society_Annual_Review_Prize_Lecture> .
+<http://dbpedia.org/resource/Gregory_Breit>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Daniel_S._Lehrman> .
+<http://dbpedia.org/resource/David_Wheeler_(computer_scientist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit_of_the_Republic_of_Poland> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychoacoustics> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/William_Bate_Hardy_Prize> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/birthName>	"Eleanor Margaret Peachey"@en .
+<http://dbpedia.org/resource/David_Wheeler_(computer_scientist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Fritz_Strassmann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemist> .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://dbpedia.org/ontology/birthName>	"Leo Leroy Beranek"@en .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Pulitzer_Prize_for_General_Nonfiction> .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Vannevar_Bush_Award> .
+<http://dbpedia.org/resource/Lawrence_Morley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Geophysics> .
+<http://dbpedia.org/resource/Hermann_Oberth>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astronautics> .
+<http://dbpedia.org/resource/Bernard_Kettlewell>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Zoology> .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychiatry> .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/birthName>	"Kalpathi Ramakrishna Ramanathan"@en .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Sakurai_Prize> .
+<http://dbpedia.org/resource/Christian_B._Anfinsen>	<http://dbpedia.org/ontology/birthName>	"Christian Boehmer Anfinsen Jr."@en .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physiology> .
+<http://dbpedia.org/resource/Fritz_Strassmann>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Volkoff>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plasma_(physics)> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/birthName>	"Leon Max Lederman"@en .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Max_Born_Medal_and_Prize> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/John_Backus>	<http://dbpedia.org/ontology/birthName>	"John Warner Backus"@en .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Australia> .
+<http://dbpedia.org/resource/Werner_Leinfellner>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Philosophy> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Molecular_biology> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/birthName>	"Andrey Nikolaevich Kolmogorov"@en .
+<http://dbpedia.org/resource/Henri_Cartan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Mabel_Keaton_Staupers>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Nurses_Association> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Meteorology> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/AMA_Scientific_Achievement_Award> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Jean_Dieudonn\u00E9>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Elliott_Cresson_Medal> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Indian_National_Science_Academy> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gruber_Prize_in_Cosmology> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Richard_Gregory>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Society_of_London_Michael_Faraday_Prize> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Symons_Gold_Medal> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Genetics_Society_of_America> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/H._Clyde_Wilson_Jr.>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Anthropology> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Association_for_Psychological_Science> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/George_Porter>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Edward_A._Guggenheim>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Architecture_of_Poland> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Women\u0027s_studies> .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physiology> .
+<http://dbpedia.org/resource/Ursula_Franklin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physicist> .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Control_theory> .
+<http://dbpedia.org/resource/Willi_Hennig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Entomology> .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wilbur_Cross_Medal> .
+<http://dbpedia.org/resource/Gregory_Breit>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Tom_W._Bonner_Prize_in_Nuclear_Physics> .
+<http://dbpedia.org/resource/Alexey_Ivakhnenko>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Bryce_DeWitt>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Theoretical_physics> .
+<http://dbpedia.org/resource/I._J._Good>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/ASA_Gold_Medal> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physiology> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Radioactive_decay> .
+<http://dbpedia.org/resource/Gregory_Breit>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ethology> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Welch_Award_in_Chemistry> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Padma_Vibhushan> .
+<http://dbpedia.org/resource/Hermann_Oberth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Robert_Esnault-Pelterie> .
+<http://dbpedia.org/resource/P._N._Rowe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Institution_of_Chemical_Engineers> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Presidential_Medal_of_Freedom> .
+<http://dbpedia.org/resource/Nikolaas_Tinbergen>	<http://dbpedia.org/ontology/birthName>	"Nikolaas Tinbergen"@en .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Experimental_psychology> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Galaxy_rotation_curve> .
+<http://dbpedia.org/resource/Bernard_Kettlewell>	<http://dbpedia.org/ontology/birthName>	"Henry Bernard Davis Kettlewell"@en .
+<http://dbpedia.org/resource/C._Clark_Cockerham>	<http://dbpedia.org/ontology/birthName>	"Columbus Clark Cockerham"@en .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Planetary_science> .
+<http://dbpedia.org/resource/M._B._Donald>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Roy_Cameron>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://dbpedia.org/ontology/birthName>	"Gavin Rylands de Beer"@en .
+<http://dbpedia.org/resource/Klim_Churyumov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit_(Ukraine)> .
+<http://dbpedia.org/resource/Patrick_Steptoe>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Comstock_Prize_in_Physics> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oersted_Medal> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Nicholas_Metropolis>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematician> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Klopsteg_Memorial_Award> .
+<http://dbpedia.org/resource/P._N._Rowe>	<http://dbpedia.org/ontology/birthName>	"Peter No\u00EBl Rowe"@en .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/B\u00F4cher_Memorial_Prize> .
+<http://dbpedia.org/resource/Richard_Kuhn>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wilhelm_Exner_Medal> .
+<http://dbpedia.org/resource/Joseph_Murray>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Reconstructive_surgery> .
+<http://dbpedia.org/resource/Richard_N._Frye>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Bryce_DeWitt>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dirac_Medal> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Einstein_World_Award_of_Science> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Harold_Pender_Award> .
+<http://dbpedia.org/resource/Joseph_Lade_Pawsey>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/birthName>	"Rosalyn Sussman"@en .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Antenna_(radio)> .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/birthName>	"Robert Sanderson Mulliken"@en .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gerard_P._Kuiper_Prize> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wilhelm_Exner_Medal> .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/James_Clerk_Maxwell_Prize_for_Plasma_Physics> .
+<http://dbpedia.org/resource/Fritz_Strassmann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physicist> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Davy_Medal> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Corday\u2013Morgan_Prize> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Bruce_Medal> .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Seth_Neddermeyer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/George_Simpson_(meteorologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Padma_Bhushan> .
+<http://dbpedia.org/resource/Miriam_Rothschild>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/H._H._Bloomer_Award> .
+<http://dbpedia.org/resource/P._A._Buxton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Mildred_Stratton_Wilson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Joseph_Lade_Pawsey>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Radio_astronomy> .
+<http://dbpedia.org/resource/Frank_Oppenheimer>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Particle_physics> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ralph_Raphael>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biology> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Feminism> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Elliott_Cresson_Medal> .
+<http://dbpedia.org/resource/Theodore_H._Geballe>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Condensed_matter_physics> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychometrics> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Harvard_University> .
+<http://dbpedia.org/resource/Alexey_Ivakhnenko>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Artificial_intelligence> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lobachevsky_Prize> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/W._Brian_Harland>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Geology> .
+<http://dbpedia.org/resource/Max_von_Laue>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Frederick_Jelinek>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/E.G.D._Cohen>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Norman_Garmezy>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/John_Gaddum>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/German_National_Academy_of_Sciences_Leopoldina> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/Fernando_J._Corbat\u00F3>	<http://dbpedia.org/ontology/birthName>	"Fernando Jos\u00E9 Corbat\u00F3"@en .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/birthName>	"Hans Albrecht Bethe"@en .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Radioactive_decay> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Einstein_World_Award_of_Science> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Vannevar_Bush_Award> .
+<http://dbpedia.org/resource/Donald_William_Kerst>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Charles_Bachman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Turing_Award> .
+<http://dbpedia.org/resource/David_Lack>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Darwin_Medal> .
+<http://dbpedia.org/resource/Klim_Churyumov>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/APA_Award_for_Distinguished_Scientific_Contributions_to_Psychology> .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/R._T._Bell_Medal> .
+<http://dbpedia.org/resource/Gregory_Breit>	<http://dbpedia.org/ontology/birthName>	"Gregory Alfredovich Breit-Schneider"@en .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Analytic_philosophy> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Hans_Heilbronn>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/birthName>	"Richard Phillips Feynman"@en .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Donald_William_Kerst>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Comstock_Prize_in_Physics> .
+<http://dbpedia.org/resource/J._Hans_D._Jensen>	<http://dbpedia.org/ontology/birthName>	"Johannes Hans Daniel Jensen"@en .
+<http://dbpedia.org/resource/Avram_Hershko>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Alexey_Ivakhnenko>	<http://dbpedia.org/ontology/birthName>	"Oleksiy Hryhorovych Ivakhnenko"@en .
+<http://dbpedia.org/resource/W._Brian_Harland>	<http://dbpedia.org/ontology/birthName>	"Walter Brian Harland"@en .
+<http://dbpedia.org/resource/James_F._Crow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Thomas_Hunt_Morgan_Medal> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Japan_Prize> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Philosophy> .
+<http://dbpedia.org/resource/Ursula_Franklin>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Governor_General\u0027s_Awards> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Freedom_of_the_City> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Seth_Neddermeyer>	<http://dbpedia.org/ontology/birthName>	"Seth Henry Neddermeyer"@en .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Neuroscience> .
+<http://dbpedia.org/resource/Max_von_Laue>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Matteucci_Medal> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Knight_Bachelor> .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lasker_Award> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Matteucci_Medal> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/birthName>	"Henry Hallett Dale"@en .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Rumford_Medal> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Rumford_Medal> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Economics> .
+<http://dbpedia.org/resource/Richard_Gregory>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Academic_acceleration> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/New_York_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Vitaly_Shafranov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lenin_Prize> .
+<http://dbpedia.org/resource/Frederick_G._Donnan>	<http://dbpedia.org/ontology/birthName>	"Frederick George Donnan"@en .
+<http://dbpedia.org/resource/Avram_Hershko>	<http://dbpedia.org/ontology/birthName>	"Hersk\u00F3 Ferenc"@en .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://dbpedia.org/ontology/birthName>	"Maurice Hugh Frederick Wilkins"@en .
+<http://dbpedia.org/resource/Alexey_Ivakhnenko>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/USSR_State_Prize> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/MacArthur_Fellows_Program> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kyoto_Prize> .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Physiological_Society_Annual_Review_Prize_Lecture> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Miriam_Rothschild>	<http://dbpedia.org/ontology/birthName>	"Miriam Louisa Rothschild"@en .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Roy_Cameron>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Fritz_Strassmann>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dirac_Medal> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Society_of_Medicine> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/birthName>	"Peter Ware Higgs"@en .
+<http://dbpedia.org/resource/Eugene_Dynkin>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Vernon_Ingram>	<http://dbpedia.org/ontology/birthName>	"Werner Adolf Martin Immerwahr"@en .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/birthName>	"Arne Wilhelm Kaurin Tiselius"@en .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Canada_Gairdner_International_Award> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/William_Bowie_Medal> .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://dbpedia.org/ontology/birthName>	"Ulf Svante von Euler-Chelpin"@en .
+<http://dbpedia.org/resource/Birut\u00E9_Galdikas>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Tyler_Prize_for_Environmental_Achievement> .
+<http://dbpedia.org/resource/Frederick_Jelinek>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Natural_language_processing> .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lemelson\u2013MIT_Prize> .
+<http://dbpedia.org/resource/Anne_Treisman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Golden_Brain_Award> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Quasar> .
+<http://dbpedia.org/resource/John_Gaddum>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Davy_Medal> .
+<http://dbpedia.org/resource/Vitaly_Shafranov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hannes_Alfv\u00E9n_Prize> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_St_Michael_and_St_George> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Einstein_Award> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lenin_Prize> .
+<http://dbpedia.org/resource/Nicholas_Metropolis>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physicist> .
+<http://dbpedia.org/resource/George_Finch_(chemist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Robert_Andrew_Hingson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Anesthesiology> .
+<http://dbpedia.org/resource/John_Westcott>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Control_system> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Prize> .
+<http://dbpedia.org/resource/Leonard_Owen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Civil_engineering> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Drug_Enforcement_Administration> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Centennial_Medal> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Darwin_Medal> .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/birthName>	"Elise Meitner"@en .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organic_chemistry> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Earth_science> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Frank_Oppenheimer>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Gregory_Breit>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Frederick_Gugenheim_Gregory>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plant_physiology> .
+<http://dbpedia.org/resource/Joseph_Lade_Pawsey>	<http://dbpedia.org/ontology/birthName>	"Joseph Lade Pawsey"@en .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/birthName>	"Herbert Brovarnik"@en .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Evolutionary_biology> .
+<http://dbpedia.org/resource/H._Clyde_Wilson_Jr.>	<http://dbpedia.org/ontology/birthName>	"Houston Clyde Wilson"@en .
+<http://dbpedia.org/resource/Ian_Heilbron>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/John_Cornforth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Frederick_Jelinek>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Association_for_Computational_Linguistics> .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/birthName>	"Werner Karl Heisenberg"@en .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/James_Spence_Medal> .
+<http://dbpedia.org/resource/Alexander_Prokhorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lomonosov_Gold_Medal> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychophysics> .
+<http://dbpedia.org/resource/Vitaly_Shafranov>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Avram_Hershko>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Richard_N._Frye>	<http://dbpedia.org/ontology/birthName>	"Richard Nelson Frye"@en .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Electromagnetics_Award> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Legion_of_Merit> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oersted_Medal> .
+<http://dbpedia.org/resource/Hugh_Iltis>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Botany> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Physics> .
+<http://dbpedia.org/resource/John_Kendrew>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Kalinga_Prize> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/birthName>	"Eleanor Jack"@en .
+<http://dbpedia.org/resource/J._Hans_D._Jensen>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Charles_Bachman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/List_of_fellows_of_the_Association_for_Computing_Machinery> .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Acoustics> .
+<http://dbpedia.org/resource/Frederick_Gugenheim_Gregory>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/birthName>	"Arthur Holly Compton"@en .
+<http://dbpedia.org/resource/Ulf_von_Euler>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Pharmacology> .
+<http://dbpedia.org/resource/Willi_Hennig>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Linnean_Medal> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Hans_Heilbronn>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/I._J._Good>	<http://dbpedia.org/ontology/birthName>	"Isadore Jacob Gudak"@en .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://dbpedia.org/ontology/birthName>	"Carl Friedrich Freiherr von Weizs\u00E4cker"@en .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IET_Faraday_Medal> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Frank_Oppenheimer>	<http://dbpedia.org/ontology/birthName>	"Frank Friedman Oppenheimer"@en .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Indian_Academy_of_Sciences> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Economics> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Physics> .
+<http://dbpedia.org/resource/P._N._Rowe>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Lawrence_Morley>	<http://dbpedia.org/ontology/birthName>	"Lawrence Whitaker Morley"@en .
+<http://dbpedia.org/resource/Nikolay_Basov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lorentz_Medal> .
+<http://dbpedia.org/resource/I._J._Good>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Smith\u0027s_Prize> .
+<http://dbpedia.org/resource/David_Lack>	<http://dbpedia.org/ontology/birthName>	"David Lambert Lack"@en .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Stellar_nucleosynthesis> .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lasker_Award> .
+<http://dbpedia.org/resource/P._A._Buxton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_St_Michael_and_St_George> .
+<http://dbpedia.org/resource/Mabel_Keaton_Staupers>	<http://dbpedia.org/ontology/birthName>	"Mabel Elouise Doyle"@en .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Henry_Draper_Medal> .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/MIT_Technology_Review> .
+<http://dbpedia.org/resource/C._Clark_Cockerham>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Knight_Bachelor> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/birthName>	"Yash Pal"@en .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ian_Heilbron>	<http://dbpedia.org/ontology/birthName>	"Isidor Morris Heilbron"@en .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/birthName>	"Max Ferdinand Perutz"@en .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Willi_Hennig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Taxonomy_(biology)> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Leonard_Owen>	<http://dbpedia.org/ontology/birthName>	"William Leonard Owen"@en .
+<http://dbpedia.org/resource/Yulia_Sister>	<http://dbpedia.org/ontology/birthName>	"\u042E\u043B\u0438\u044F \u0414\u0430\u0432\u0438\u0434\u043E\u0432\u043D\u0430 \u0421\u0438\u0441\u0442\u0435\u0440"@en .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Medicine> .
+<http://dbpedia.org/resource/C._E._Wynn-Williams>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Robert_Andrew_Hingson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/President\u0027s_Volunteer_Service_Award> .
+<http://dbpedia.org/resource/Birut\u00E9_Galdikas>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Anatomy> .
+<http://dbpedia.org/resource/E.G.D._Cohen>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Boltzmann_Medal> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Russian_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Klim_Churyumov>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astronomy> .
+<http://dbpedia.org/resource/Henri_Cartan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Mathematics> .
+<http://dbpedia.org/resource/Nikolaas_Tinbergen>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Richard_N._Frye>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Khwarizmi_International_Award> .
+<http://dbpedia.org/resource/Max_von_Laue>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Navy_Distinguished_Civilian_Service_Award> .
+<http://dbpedia.org/resource/Ir\u00E8ne_Joliot-Curie>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lorentz_Medal> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Canada_Gairdner_International_Award> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/ACS_Award_in_Pure_Chemistry> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Maurice_Ewing_Medal> .
+<http://dbpedia.org/resource/Kathleen_Lonsdale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Ursula_Franklin>	<http://dbpedia.org/ontology/birthName>	"Ursula Maria Martius"@en .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://dbpedia.org/ontology/birthName>	"Carl-Gustaf Arvid Rossby"@en .
+<http://dbpedia.org/resource/Werner_Leinfellner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Austrian_Decoration_for_Science_and_Art> .
+<http://dbpedia.org/resource/Andrew_Benson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Theoretical_physics> .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Theoretical_physics> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Cosmology> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_Bath> .
+<http://dbpedia.org/resource/Vernon_Ingram>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biology> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astronomy> .
+<http://dbpedia.org/resource/Ian_Heilbron>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Roy_Cameron>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lomonosov_Gold_Medal> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/birthName>	"George Porter"@en .
+<http://dbpedia.org/resource/Albert_Kluyver>	<http://dbpedia.org/ontology/birthName>	"Albert Jan Kluyer"@en .
+<http://dbpedia.org/resource/Kathleen_Lonsdale>	<http://dbpedia.org/ontology/birthName>	"Kathleen Yardley"@en .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Harold_Pender_Award> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Albert_Kluyver>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/Yulia_Sister>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Analytical_chemistry> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Padma_Bhushan> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Turing_Award> .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://dbpedia.org/ontology/birthName>	"Ernest Richard Ward Neale"@en .
+<http://dbpedia.org/resource/Charles_Bachman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Technology_and_Innovation> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/birthName>	"Carl Edward Sagan"@en .
+<http://dbpedia.org/resource/Nicholas_Metropolis>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Zoology> .
+<http://dbpedia.org/resource/Hugh_Iltis>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Wildlife_Federation> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Henri_Poincar\u00E9_Prize> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Atmospheric_chemistry> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/NASA_Distinguished_Public_Service_Medal> .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/List_of_Penrose_Medal_winners> .
+<http://dbpedia.org/resource/Hugh_Iltis>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Asa_Gray> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/A._A._Griffith_Medal_and_Prize> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Institute_of_Electrical_and_Electronics_Engineers> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Ted_Chamberlain>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plant_virus> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Quantum_chemistry> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wolf_Prize_in_Mathematics> .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/NAS_Award_in_Chemical_Sciences> .
+<http://dbpedia.org/resource/Clark_Blanchard_Millikan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Charles_Stark_Draper_Prize> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Geophysics> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Linus_Pauling_Award> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Patrick_Steptoe>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Gynaecology> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Templeton_Prize> .
+<http://dbpedia.org/resource/Maria_Goeppert_Mayer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Miriam_Rothschild>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Leonard_Owen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Nuclear_engineering> .
+<http://dbpedia.org/resource/Margaret_Burbidge>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/birthName>	"Ernest Orlando Lawrence"@en .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Applied_mathematics> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/birthName>	"Francis Harry Compton Crick"@en .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physical_cosmology> .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biophysics> .
+<http://dbpedia.org/resource/Ziauddin_Ahmad>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Philosophy_of_mind> .
+<http://dbpedia.org/resource/M._B._Donald>	<http://dbpedia.org/ontology/birthName>	"Maxwell Bruce Donald"@en .
+<http://dbpedia.org/resource/Jay_S._Rosenblatt>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Kurt_G\u00F6del>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Heineken_Prizes> .
+<http://dbpedia.org/resource/David_H._Barlow>	<http://dbpedia.org/ontology/birthName>	"David Harrison Barlow"@en .
+<http://dbpedia.org/resource/Seth_Neddermeyer>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/J._Hans_D._Jensen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Medal_(Royal_Society_of_Arts)> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Molecular_biology> .
+<http://dbpedia.org/resource/Christian_B._Anfinsen>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Werner_Leinfellner>	<http://dbpedia.org/ontology/birthName>	"Werner Leinfellner"@en .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Goethe_Prize> .
+<http://dbpedia.org/resource/George_Finch_(chemist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemical_physics> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Merit> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IET_Mountbatten_Medal> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Princess_of_Asturias_Awards> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Abel_Prize> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IET_Faraday_Medal> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Hughes_Medal> .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Max_Planck_Medal> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Naval_mine> .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Medal_of_Honor> .
+<http://dbpedia.org/resource/Solly_Zuckerman,_Baron_Zuckerman>	<http://dbpedia.org/ontology/birthName>	"Solomon Zuckerman"@en .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Klumpke-Roberts_Award> .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Geology> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Henry_Draper_Medal> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Leon_M._Lederman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Barnard_Medal_for_Meritorious_Service_to_Science> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Irving_Langmuir_Award> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/birthName>	"Andrew Fielding Huxley"@en .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/C._Clark_Cockerham>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/North_Carolina_Award> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Perkin_Medal> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Max_Planck_Medal> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Kathleen_Lonsdale>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Lorna_Arnold>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Ian_Heilbron>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organic_chemistry> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Pomeranchuk_Prize> .
+<http://dbpedia.org/resource/P._N._Rowe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Worshipful_Company_of_Engineers> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Sir_Hans_Krebs_Medal> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Medical_physics> .
+<http://dbpedia.org/resource/Frederick_G._Donnan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Faraday_Lectureship_Prize> .
+<http://dbpedia.org/resource/Maurice_Wilkins>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Norman_Garmezy>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Sir_Hans_Krebs_Medal> .
+<http://dbpedia.org/resource/James_F._Crow>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Genetics> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Peace_Prize> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/birthName>	"Leon Ong Chua"@en .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/E.G.D._Cohen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Statistical_mechanics> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Dennis_Gabor_Medal_and_Prize> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Finch_(chemist)>	<http://dbpedia.org/ontology/birthName>	"George Ingle Finch"@en .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Volvo_Environment_Prize> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Natural_product> .
+<http://dbpedia.org/resource/Mildred_Stratton_Wilson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Zoology> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Harvey_Prize> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/birthName>	"Jacques Lucien Monod"@en .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Roy_Cameron>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Pathology> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Society_Bakerian_Medal> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/birthName>	"Neumann J\u00E1nos Lajos"@en .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Matteucci_Medal> .
+<http://dbpedia.org/resource/Alexander_Prokhorov>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Frederick_G._Donnan>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Priestley_Medal> .
+<http://dbpedia.org/resource/P._A._Buxton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Linnean_Medal> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Harold_Pender_Award> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Indian_National_Science_Academy> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physicist> .
+<http://dbpedia.org/resource/Clark_Blanchard_Millikan>	<http://dbpedia.org/ontology/birthName>	"Clarke Blanchard Millikan"@en .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Electrical_engineering> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/University_of_Geneva> .
+<http://dbpedia.org/resource/Anne_Treisman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Philosophy_of_mind> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Electronic_engineering> .
+<http://dbpedia.org/resource/Willi_Hennig>	<http://dbpedia.org/ontology/birthName>	"Emil Hans Willi Hennig"@en .
+<http://dbpedia.org/resource/Samuel_Francis_Boys>	<http://dbpedia.org/ontology/birthName>	"Samuel Francis Boys"@en .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Australia> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Cameron_Prize_for_Therapeutics_of_the_University_of_Edinburgh> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/De_Morgan_Medal> .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Max_Planck_Medal> .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Birut\u00E9_Galdikas>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ethology> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Embryology> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/birthName>	"Edwin Powell Hubble"@en .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/birthName>	"Mario Ramberg Capecchi"@en .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Oersted_Medal> .
+<http://dbpedia.org/resource/John_Westcott>	<http://dbpedia.org/ontology/birthName>	"John Hugh Westcott"@en .
+<http://dbpedia.org/resource/Peter_Higgs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astrobiology> .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Lawrence_Morley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_Canada> .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Matthew_Meselson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/Carl_Friedrich_von_Weizs\u00E4cker>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Templeton_Prize> .
+<http://dbpedia.org/resource/John_Kendrew>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Anne_Treisman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Grawemeyer_Award> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Comparative_psychology> .
+<http://dbpedia.org/resource/Edward_A._Guggenheim>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Lomonosov_Gold_Medal> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Harvey_Prize> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Ian_Heilbron>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Distinguished_Service_Order> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/John_von_Neumann_Theory_Prize> .
+<http://dbpedia.org/resource/W._Brian_Harland>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Francis_Crick>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/ASA_Silver_Medal> .
+<http://dbpedia.org/resource/P._N._Rowe>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemical_engineering> .
+<http://dbpedia.org/resource/George_Uhlenbeck>	<http://dbpedia.org/ontology/birthName>	"George Eugene Uhlenbeck"@en .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Max_Planck_Medal> .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Roebling_Medal> .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Hugh_Iltis>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Mario_Capecchi>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Massry_Prize> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Barnard_Medal_for_Meritorious_Service_to_Science> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Edwin_H._Land>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Frederick_G._Donnan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Davy_Medal> .
+<http://dbpedia.org/resource/Patrick_Steptoe>	<http://dbpedia.org/ontology/birthName>	"Patrick Christopher Steptoe"@en .
+<http://dbpedia.org/resource/Gregory_Breit>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Henri_Cartan>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/W._Brian_Harland>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Gold_Medal_(RGS)> .
+<http://dbpedia.org/resource/Nicholas_Metropolis>	<http://dbpedia.org/ontology/birthName>	"Nicholas Constantine Metropolis"@en .
+<http://dbpedia.org/resource/Richard_Kuhn>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Goethe_Prize> .
+<http://dbpedia.org/resource/Sergey_Kravkov_(psychologist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Lorna_Arnold>	<http://dbpedia.org/ontology/birthName>	"Lorna Margaret Rainbow"@en .
+<http://dbpedia.org/resource/Bryce_DeWitt>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Einstein_Award> .
+<http://dbpedia.org/resource/Ralph_Raphael>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Natural_product> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/birthName>	"Barry Clark Barish"@en .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/C._Clark_Cockerham>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/University_of_Calcutta> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Willard_Gibbs_Award> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Prince_Albert_I_Medal> .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/birthName>	"Lionel Sharples Penrose"@en .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/birthName>	"Hugh Esmor Huxley"@en .
+<http://dbpedia.org/resource/Fernando_J._Corbat\u00F3>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Turing_Award> .
+<http://dbpedia.org/resource/Andrey_Kolmogorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/David_Wheeler_(computer_scientist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Davy_Medal> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Arthur_L._Day_Medal> .
+<http://dbpedia.org/resource/Barry_Barish>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/Werner_Leinfellner>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Philosophy_of_science> .
+<http://dbpedia.org/resource/George_Porter>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Arthur_Compton>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Medal_for_Merit> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wollaston_Medal> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/birthName>	"Preston Ercelle Cloud, Jr"@en .
+<http://dbpedia.org/resource/Roman_Aftanazy>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Art_history> .
+<http://dbpedia.org/resource/Eugene_Dynkin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Mathematics> .
+<http://dbpedia.org/resource/Robert_Andrew_Hingson>	<http://dbpedia.org/ontology/birthName>	"Robert Andrew Hingson"@en .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Hermann_Oberth>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wilhelm_Exner_Medal> .
+<http://dbpedia.org/resource/Maria_Goeppert_Mayer>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Member_of_the_National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/J._Hans_D._Jensen>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Willard_Libby>	<http://dbpedia.org/ontology/birthName>	"Willard Frank Libby"@en .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Medal_for_Merit> .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ecology> .
+<http://dbpedia.org/resource/Nikolay_Basov>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/K._R._Ramanathan>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Meteorology> .
+<http://dbpedia.org/resource/Julian_Stanley>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Gifted_education> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Japan_Prize> .
+<http://dbpedia.org/resource/Richard_Kuhn>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Konrad_Lorenz>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ethology> .
+<http://dbpedia.org/resource/Edwin_Hubble>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Franklin_Medal> .
+<http://dbpedia.org/resource/Fernando_J._Corbat\u00F3>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_scientist> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Organic_chemistry> .
+<http://dbpedia.org/resource/Carl-Gustaf_Rossby>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Carl-Gustaf_Rossby_Research_Medal> .
+<http://dbpedia.org/resource/John_Westcott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/George_Dantzig>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Statistics> .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/birthName>	"Theodore Harold Maiman"@en .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Rodney_Robert_Porter>	<http://dbpedia.org/ontology/birthName>	"Rodney Robert Porter"@en .
+<http://dbpedia.org/resource/Charles_Bachman>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Donald_William_Kerst>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plasma_(physics)> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Elliott_Cresson_Medal> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IET_Faraday_Medal> .
+<http://dbpedia.org/resource/Alan_R._Battersby>	<http://dbpedia.org/ontology/birthName>	"Alan Rushton Battersby"@en .
+<http://dbpedia.org/resource/E._R._Ward_Neale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Ambrose_Medal> .
+<http://dbpedia.org/resource/George_Simpson_(meteorologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Institute_of_Physics_Edward_Appleton_Medal_and_Prize> .
+<http://dbpedia.org/resource/John_Gaddum>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Max_von_Laue>	<http://dbpedia.org/ontology/birthName>	"Max Theodor Felix Laue"@en .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Freeman_Dyson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Richard_Feynman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Ernest_Orlando_Lawrence_Award> .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Agricultural_science> .
+<http://dbpedia.org/resource/Max_Perutz>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Molecular_biology> .
+<http://dbpedia.org/resource/Vernon_Ingram>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/birthName>	"Roger Fuller Harrington"@en .
+<http://dbpedia.org/resource/Ziauddin_Ahmad>	<http://dbpedia.org/ontology/birthName>	"Ziauddin Ahmed Zuberi"@en .
+<http://dbpedia.org/resource/Herbert_C._Brown>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Electrical_engineering> .
+<http://dbpedia.org/resource/Norman_Garmezy>	<http://dbpedia.org/ontology/birthName>	"Norman Garmezy"@en .
+<http://dbpedia.org/resource/George_Volkoff>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_British_Empire> .
+<http://dbpedia.org/resource/Roger_F._Harrington>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/IEEE_Antennas_&_Propagation_Society> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Order_of_the_Companions_of_Honour> .
+<http://dbpedia.org/resource/Lionel_Penrose>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Pediatrics> .
+<http://dbpedia.org/resource/Hugh_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/Alexander_Prokhorov>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physics> .
+<http://dbpedia.org/resource/Andrew_Huxley>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Baly_Medal> .
+<http://dbpedia.org/resource/Andrew_Benson>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biochemistry> .
+<http://dbpedia.org/resource/I._J._Good>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/List_of_cryptographers> .
+<http://dbpedia.org/resource/Maria_Goeppert_Mayer>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Kathleen_Lonsdale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Davy_Medal> .
+<http://dbpedia.org/resource/George_Bornemissza>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Entomology> .
+<http://dbpedia.org/resource/P._A._Buxton>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Entomology> .
+<http://dbpedia.org/resource/Yulia_Sister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/M._B._Donald>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Institution_of_Chemical_Engineers> .
+<http://dbpedia.org/resource/Lorna_Arnold>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/History_of_science> .
+<http://dbpedia.org/resource/Kristen_Ghodsee>	<http://dbpedia.org/ontology/birthName>	"Kristen Rogheh Ghodsee"@en .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Electrical_engineering> .
+<http://dbpedia.org/resource/Norman_Garmezy>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Academy_of_Sciences> .
+<http://dbpedia.org/resource/John_von_Neumann>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Statistics> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Biology> .
+<http://dbpedia.org/resource/Norman_Garmezy>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Academy_of_Medicine> .
+<http://dbpedia.org/resource/Ernest_Lawrence>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Enrico_Fermi_Award> .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://dbpedia.org/ontology/birthName>	"Erez Lieberman"@en .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://dbpedia.org/ontology/birthName>	"John Turton Randall"@en .
+<http://dbpedia.org/resource/Michael_Atiyah>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Charles_Bachman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Computer_science> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Hermann_Oberth>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Anne_Treisman>	<http://dbpedia.org/ontology/birthName>	"Anne Marie Taylor"@en .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Wilhelm_Exner_Medal> .
+<http://dbpedia.org/resource/Albert_Kluyver>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/John_Price_Wetherill_Medal> .
+<http://dbpedia.org/resource/Maria_Goeppert_Mayer>	<http://dbpedia.org/ontology/birthName>	"Maria G\u00F6ppert"@en .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Joseph_Murray>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Plastic_surgery> .
+<http://dbpedia.org/resource/John_Randall_(physicist)>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/Jean_Dieudonn\u00E9>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Joseph_Murray>	<http://dbpedia.org/ontology/birthName>	"Joseph Edward Murray"@en .
+<http://dbpedia.org/resource/Kathleen_Lonsdale>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Crystallography> .
+<http://dbpedia.org/resource/John_Backus>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Turing_Award> .
+<http://dbpedia.org/resource/Werner_Leinfellner>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ralph_Raphael>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/List_of_Royal_Society_of_Chemistry_medals_and_awards> .
+<http://dbpedia.org/resource/Bryce_DeWitt>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Pomeranchuk_Prize> .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Albert_Medal_(Royal_Society_of_Arts)> .
+<http://dbpedia.org/resource/Theodore_H._Geballe>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Royal_Medal> .
+<http://dbpedia.org/resource/H._Clyde_Wilson_Jr.>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Molecular_biology> .
+<http://dbpedia.org/resource/Eleanor_J._Gibson>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Leon_O._Chua>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/List_of_Guggenheim_Fellowships_awarded_in_2010> .
+<http://dbpedia.org/resource/Joseph_Rotblat>	<http://dbpedia.org/ontology/birthName>	"J\u00F3zef Rotblat"@en .
+<http://dbpedia.org/resource/Carl_Jung>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/ETH_Zurich> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Manchester_Literary_and_Philosophical_Society> .
+<http://dbpedia.org/resource/Erez_Lieberman_Aiden>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Molecular_biology> .
+<http://dbpedia.org/resource/Lise_Meitner>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Nuclear_physics> .
+<http://dbpedia.org/resource/John_Gaddum>	<http://dbpedia.org/ontology/birthName>	"John Henry Gaddum"@en .
+<http://dbpedia.org/resource/Carl_Sagan>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Carl_Sagan_Award_for_Public_Appreciation_of_Science> .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Peace_Prize> .
+<http://dbpedia.org/resource/Jacques_Monod>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Legion_of_Honour> .
+<http://dbpedia.org/resource/Alexander_Shulgin>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Psychology> .
+<http://dbpedia.org/resource/Donald_William_Kerst>	<http://dbpedia.org/ontology/birthName>	"Donald William Kerst"@en .
+<http://dbpedia.org/resource/Fernando_J._Corbat\u00F3>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Theodosius_Dobzhansky>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Daniel_Giraud_Elliot_Medal> .
+<http://dbpedia.org/resource/Yash_Pal>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Astrophysics> .
+<http://dbpedia.org/resource/Preston_Cloud>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Paleontological_Society_Medal> .
+<http://dbpedia.org/resource/John_Kendrew>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/EMBO_Membership> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Nicholas_Metropolis>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Computer_Pioneer_Award> .
+<http://dbpedia.org/resource/Roy_Cameron>	<http://dbpedia.org/ontology/birthName>	"Gordon Roy Cameron"@en .
+<http://dbpedia.org/resource/Miriam_Rothschild>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Botany> .
+<http://dbpedia.org/resource/Gavin_de_Beer>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Linnean_Medal> .
+<http://dbpedia.org/resource/Albert_Kluyver>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Lloyd_A._Jeffress>	<http://dbpedia.org/ontology/birthName>	"Lloyd Alexander Jeffress"@en .
+<http://dbpedia.org/resource/Margaret_G._Kivelson>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/American_Geophysical_Union> .
+<http://dbpedia.org/resource/David_Lack>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ornithology> .
+<http://dbpedia.org/resource/James_Lovelock>	<http://dbpedia.org/ontology/birthName>	"James Ephraim Lovelock"@en .
+<http://dbpedia.org/resource/Eugene_Dynkin>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Leroy_P._Steele_Prize> .
+<http://dbpedia.org/resource/Walter_Munk>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Vetlesen_Prize> .
+<http://dbpedia.org/resource/Theodore_H._Geballe>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Materials_science> .
+<http://dbpedia.org/resource/Bryce_DeWitt>	<http://dbpedia.org/ontology/birthName>	"Carl Bryce Seligman"@en .
+<http://dbpedia.org/resource/Richard_E._Bellman>	<http://dbpedia.org/ontology/birthName>	"Richard Ernest Bellman"@en .
+<http://dbpedia.org/resource/Fr\u00E9d\u00E9ric_Joliot-Curie>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Physics> .
+<http://dbpedia.org/resource/John_Boyd_Orr>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Medicine> .
+<http://dbpedia.org/resource/Christian_B._Anfinsen>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Chemistry> .
+<http://dbpedia.org/resource/Nevill_Francis_Mott>	<http://dbpedia.org/ontology/birthName>	"Nevill Francis Mott"@en .
+<http://dbpedia.org/resource/Hans_Bethe>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Nuclear_physics> .
+<http://dbpedia.org/resource/T._R._Seshadri>	<http://dbpedia.org/ontology/birthName>	"Thiruvenkata Rajendra Seshadri"@en .
+<http://dbpedia.org/resource/Linus_Pauling>	<http://dbpedia.org/ontology/birthName>	"Linus Carl Pauling"@en .
+<http://dbpedia.org/resource/Werner_Heisenberg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Barnard_Medal_for_Meritorious_Service_to_Science> .
+<http://dbpedia.org/resource/Richard_Gregory>	<http://dbpedia.org/ontology/birthName>	"Richard Langton Gregory"@en .
+<http://dbpedia.org/resource/Henry_Hallett_Dale>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Nobel_Prize_in_Physiology_or_Medicine> .
+<http://dbpedia.org/resource/Lawrence_Bragg>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Roebling_Medal> .
+<http://dbpedia.org/resource/Carlos_Frenk>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Maurice_Wilkes>	<http://dbpedia.org/ontology/birthName>	"John Maurice Vincent Wilkes"@en .
+<http://dbpedia.org/resource/Robert_S._Mulliken>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Fellow_of_the_Royal_Society> .
+<http://dbpedia.org/resource/Leo_Beranek>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Bryce_DeWitt>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Einstein_Prize_(APS)> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Cryptanalysis> .
+<http://dbpedia.org/resource/George_Volkoff>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Nikolaas_Tinbergen>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Ethology> .
+<http://dbpedia.org/resource/Patrick_Blackett>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .
+<http://dbpedia.org/resource/Rosalyn_Sussman_Yalow>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/Alan_Turing>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Smith\u0027s_Prize> .
+<http://dbpedia.org/resource/John_Eccles_(neurophysiologist)>	<http://dbpedia.org/ontology/birthName>	"John Carew Eccles"@en .
+<http://dbpedia.org/resource/Robert_H._Grubbs>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/ontology/Scientist> .
+<http://dbpedia.org/resource/Ralph_Raphael>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Meldola_Medal_and_Prize> .
+<http://dbpedia.org/resource/Anne_Treisman>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/National_Medal_of_Science> .
+<http://dbpedia.org/resource/C._E._Wynn-Williams>	<http://dbpedia.org/ontology/birthName>	""@en .
+<http://dbpedia.org/resource/Samuel_Francis_Boys>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Theoretical_chemistry> .
+<http://dbpedia.org/resource/Godfrey_Hounsfield>	<http://dbpedia.org/ontology/birthName>	"Godfrey Newbold Hounsfield"@en .
+<http://dbpedia.org/resource/Theodore_Maiman>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Electrical_engineering> .
+<http://dbpedia.org/resource/Arne_Tiselius>	<http://dbpedia.org/ontology/academicDiscipline>	<http://dbpedia.org/resource/Chemistry> .
+<http://dbpedia.org/resource/John_B._Goodenough>	<http://dbpedia.org/ontology/award>	<http://dbpedia.org/resource/Copley_Medal> .

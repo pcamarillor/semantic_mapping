@@ -1,0 +1,6 @@
+http://dbpedia.org/resource/Cersei_Lannister
+http://dbpedia.org/resource/Jaime_Lannister
+http://dbpedia.org/resource/Petyr_Baelish
+http://dbpedia.org/resource/Tywin_Lannister
+http://dbpedia.org/resource/Joffrey_Baratheon
+http://dbpedia.org/resource/Brienne_of_Tarth

@@ -1,0 +1,6 @@
+<http://dbpedia.org/resource/Cersei_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Jaime_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Petyr_Baelish>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Brienne_of_Tarth>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
