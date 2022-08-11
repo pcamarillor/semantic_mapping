@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Lando_Calrissian", "label": "Lando_Calrissian", "shape": "dot", "size": 10}, {"id": "John_Sheppard_(Stargate)", "label": "John_Sheppard_(Stargate)", "shape": "dot", "size": 10}, {"id": "Wedge_Antilles", "label": "Wedge_Antilles", "shape": "dot", "size": 10}, {"id": "Han_Solo", "label": "Han_Solo", "shape": "dot", "size": 10}, {"id": "Boba_Fett", "label": "Boba_Fett", "shape": "dot", "size": 10}, {"id": "Asajj_Ventress", "label": "Asajj_Ventress", "shape": "dot", "size": 10}, {"id": "Jango_Fett", "label": "Jango_Fett", "shape": "dot", "size": 10}, {"id": "Luke_Skywalker", "label": "Luke_Skywalker", "shape": "dot", "size": 10}, {"id": "RoboCop_(character)", "label": "RoboCop_(character)", "shape": "dot", "size": 10}, {"id": "Princess_Leia", "label": "Princess_Leia", "shape": "dot", "size": 10}, {"id": "General_Grievous", "label": "General_Grievous", "shape": "dot", "size": 10}, {"id": "Darth_Vader", "label": "Darth_Vader", "shape": "dot", "size": 10}, {"id": "Chewbacca", "label": "Chewbacca", "shape": "dot", "size": 10}, {"id": "Jacen_Solo", "label": "Jacen_Solo", "shape": "dot", "size": 10}, {"id": "Kreia", "label": "Kreia", "shape": "dot", "size": 10}, {"id": "Palpatine", "label": "Palpatine", "shape": "dot", "size": 10}, {"id": "Dan_Dare", "label": "Dan_Dare", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "Lando_Calrissian", "label": 1, "to": "John_Sheppard_(Stargate)", "weight": 1}, {"from": "Lando_Calrissian", "label": 1, "to": "Wedge_Antilles", "weight": 1}, {"from": "Lando_Calrissian", "label": 1, "to": "Han_Solo", "weight": 1}, {"from": "Boba_Fett", "label": 1, "to": "Asajj_Ventress", "weight": 1}, {"from": "Boba_Fett", "label": 1, "to": "Jango_Fett", "weight": 1}, {"from": "Luke_Skywalker", "label": 1, "to": "RoboCop_(character)", "weight": 1}, {"from": "Luke_Skywalker", "label": 1, "to": "Princess_Leia", "weight": 1}, {"from": "Luke_Skywalker", "label": 1, "to": "General_Grievous", "weight": 1}, {"from": "Luke_Skywalker", "label": 1, "to": "Darth_Vader", "weight": 1}, {"from": "Chewbacca", "label": 1, "to": "Jacen_Solo", "weight": 1}, {"from": "Chewbacca", "label": 1, "to": "Kreia", "weight": 1}, {"from": "Chewbacca", "label": 1, "to": "Palpatine", "weight": 1}, {"from": "Dan_Dare", "label": 1, "to": "Dan_Dare", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

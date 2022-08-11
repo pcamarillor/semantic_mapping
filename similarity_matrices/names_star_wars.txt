@@ -1,0 +1,17 @@
+http://dbpedia.org/resource/John_Sheppard_(Stargate)
+http://dbpedia.org/resource/Boba_Fett
+http://dbpedia.org/resource/Wedge_Antilles
+http://dbpedia.org/resource/Asajj_Ventress
+http://dbpedia.org/resource/RoboCop_(character)
+http://dbpedia.org/resource/Princess_Leia
+http://dbpedia.org/resource/Jacen_Solo
+http://dbpedia.org/resource/Kreia
+http://dbpedia.org/resource/Dan_Dare
+http://dbpedia.org/resource/General_Grievous
+http://dbpedia.org/resource/Chewbacca
+http://dbpedia.org/resource/Jango_Fett
+http://dbpedia.org/resource/Han_Solo
+http://dbpedia.org/resource/Darth_Vader
+http://dbpedia.org/resource/Palpatine
+http://dbpedia.org/resource/Lando_Calrissian
+http://dbpedia.org/resource/Luke_Skywalker
