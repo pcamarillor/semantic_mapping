@@ -9,7 +9,8 @@ import semantic_similarity
 class SemanticSimilarityTest(unittest.TestCase):
     def test_build_similarity(self):
         os.chdir("../")
-        semantic_similarity.build_similarity_matrix("star_wars")
+        test_instance = semantic_similarity.MultiExample()
+        test_instance.build_similarity_matrix("star_wars")
 
 
 if __name__ == '__main__':
