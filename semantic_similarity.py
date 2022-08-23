@@ -1,10 +1,8 @@
 from multiprocessing import Pool
-from multiprocessing import Array
-from multiprocessing import shared_memory
+import SharedArray as sa
 
 import numpy as np
 import json
-import time
 
 from sematch.semantic.similarity import EntitySimilarity
 from rdflib import Graph
@@ -35,19 +33,25 @@ def find_exemplar(centers, items):
 
 class MultiExample:
 
-    def __init__(self):
-        self.b = None
+    def __int__(self):
+        self.origin_array = None
+        self.SHM_NAME = "shm://similarities"
+        self.num_rdf_instances = 0
 
     def compute_sim(self, concept_a, concept_b, i, j):
         sim = EntitySimilarity()
         sim = sim.similarity(concept_a, concept_b)
-        self.b[i][j] = sim
-        print(self.b[i][j])
-
+        target = sa.attach("shm://similarities")
+        target[self.num_rdf_instances * i + j] = sim
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
         return items[-1]
+
+    def compute_matrix_indices(self, index):
+        j = index % self.num_rdf_instances
+        i = int(index / self.num_rdf_instances)
+        return i, j
 
     def build_similarity_matrix(self, dataset_name):
         g = Graph()
@@ -62,8 +66,8 @@ class MultiExample:
         for person in g.subjects(RDF.type, None):
             rdf_instances.append(person)
 
-        num_rdf_instances = len(rdf_instances)
-        print("Number of fictional chars:{0}".format(num_rdf_instances))
+        self.num_rdf_instances = len(rdf_instances)
+        print("Number of fictional chars:{0}".format(self.num_rdf_instances))
 
         # Write list of subject names
         out_names_filename = "similarity_matrices/names_{0}.txt".format(dataset_name)
@@ -71,46 +75,44 @@ class MultiExample:
             fp.write('\n'.join(rdf_instances))
 
         # Initialize the matrix with 0
-        sim_matrix = np.zeros((num_rdf_instances, num_rdf_instances))
-        #sim_matrix = np.matrix([[0 for i in range(num_rdf_instances)], [0 for i in range(num_rdf_instances)]])
-        shm = shared_memory.SharedMemory(create=True, size=sim_matrix.nbytes)
-        self.b = np.ndarray(sim_matrix.shape, dtype=sim_matrix.dtype, buffer=shm.buf)
+        sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
+
+        # Initialize shared array that will contain similarity results
+        self.origin_array = sa.create("shm://similarities", self.num_rdf_instances ** 2)
 
         print("Computing similarity matrix")
-        print(num_rdf_instances)
+        print(self.num_rdf_instances)
         # Compute the similarity matrix for the RDF molecules
         with Pool(processes=10) as pool:
             multi_res = []
-            for i in tqdm(range(0, num_rdf_instances)):
-                for j in tqdm(range(i, num_rdf_instances)):
-                    if i == j:
-                        sim_matrix.itemset((i, j), 1)
-                    else:
+            for i in range(0, self.num_rdf_instances):
+                for j in range(i, self.num_rdf_instances):
+                    if i != j:
                         multi_res.append(pool.apply_async(self.compute_sim, (rdf_instances[i], rdf_instances[j], i, j)))
 
             # make a single worker sleep for 10 secs
             [res.get(timeout=60) for res in multi_res]
-            #print(self.b)
-
-        #            sim_matrix.itemset((i, j), res.get())
-        #            sim_matrix.itemset((j, i), sim_matrix.item((i, j)))
+            for i in range(0, self.num_rdf_instances):
+                for j in range(i, self.num_rdf_instances):
+                    if i == j:
+                        sim_matrix.itemset((i, j), 1.0)
+                    elif i != j and sim_matrix.item((i, j)) == 0:
+                        sim_matrix.itemset((i, j), self.origin_array[self.num_rdf_instances * i + j])
+                        sim_matrix.itemset((j, i), sim_matrix.item((i, j)))
 
         matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
-        np.savetxt(matrix_output, self.b)
+        np.savetxt(matrix_output, sim_matrix)
         print("Adjacency matrix computed successfully!")
-        print("Min similarity found:{0}".format(self.b.min()))
-        print("Max similarity found:{0}".format(self.b.max()))
-        del self.b
-        shm.close()
-        shm.unlink()
+        print("Min similarity found:{0}".format(sim_matrix.min()))
+        print("Max similarity found:{0}".format(sim_matrix.max()))
+        sa.delete("similarities")
 
+    def load_names(self, dataset_name):
+        lst_names = []
+        with open("similarity_matrices/names_{0}.txt".format(dataset_name), 'r') as fd:
+            lst_names = fd.read().split('\n')
 
-def load_names(dataset_name):
-    lst_names = []
-    with open("similarity_matrices/names_{0}.txt".format(dataset_name), 'r') as fd:
-        lst_names = fd.read().split('\n')
+        for i in range(0, len(lst_names)):
+            lst_names[i] = self.get_name(lst_names[i])
 
-    for i in range(0, len(lst_names)):
-        lst_names[i] = get_name(lst_names[i])
-
-    return lst_names
+        return lst_names
