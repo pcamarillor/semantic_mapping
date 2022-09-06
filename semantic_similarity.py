@@ -5,6 +5,7 @@ import numpy as np
 import json
 
 from sematch.semantic.similarity import EntitySimilarity
+from sematch.semantic.sparql import EntityFeatures
 from rdflib import Graph
 from rdflib.namespace import RDF
 from tqdm import tqdm
@@ -21,28 +22,37 @@ class Exemplar:
 
 
 def find_exemplar(centers, items):
-    '''
+    """
     Returns the exemplar's index based on the centers and items. Exemplar should be
     an index in items
-    '''
+    """
     for item in items:
         if item in centers:
             return item
     return -1
 
 
-class MultiExample:
+class SemanticMap:
 
-    def __int__(self):
+    def __init__(self):
         self.origin_array = None
-        self.SHM_NAME = "shm://similarities"
+        self.origin_concepts = None
+        self._SHM_SIMILARITIES = "similarities"
+        self._SHM_CONCEPTS = "concepts"
         self.num_rdf_instances = 0
 
-    def compute_sim(self, concept_a, concept_b, i, j):
-        sim = EntitySimilarity()
-        sim = sim.similarity(concept_a, concept_b)
-        target = sa.attach("shm://similarities")
-        target[self.num_rdf_instances * i + j] = sim
+    def compute_sim(self, entity_a, entity_b, i, j):
+        entity_similarity = EntitySimilarity()
+        entity_features = EntityFeatures()
+        concepts_entity_a = [c for c in entity_features.type(entity_a)]
+        concepts_entity_b = [c for c in entity_features.type(entity_b)]
+
+        entity_similarity = entity_similarity.similarity(entity_a, entity_b)
+        shared_similarities = sa.attach("shm://{0}".format(self._SHM_SIMILARITIES))
+        shared_similarities[self.num_rdf_instances * i + j] = entity_similarity
+
+        shared_concepts = sa.attach("shm://{0}".format(self._SHM_CONCEPTS))
+        shared_concepts[i] = concepts_entity_a[0]
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
@@ -78,7 +88,8 @@ class MultiExample:
         sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
 
         # Initialize shared array that will contain similarity results
-        self.origin_array = sa.create("shm://similarities", self.num_rdf_instances ** 2)
+        self.origin_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES), self.num_rdf_instances ** 2)
+        self.origin_concepts = sa.create("shm://{0}".format(self._SHM_CONCEPTS), self.num_rdf_instances)
 
         print("Computing similarity matrix")
         print(self.num_rdf_instances)
@@ -90,7 +101,7 @@ class MultiExample:
                     if i != j:
                         multi_res.append(pool.apply_async(self.compute_sim, (rdf_instances[i], rdf_instances[j], i, j)))
 
-            # make a single worker sleep for 10 secs
+            # make a single worker sleep for 60 secs
             [res.get(timeout=60) for res in multi_res]
             for i in range(0, self.num_rdf_instances):
                 for j in range(i, self.num_rdf_instances):
@@ -105,7 +116,7 @@ class MultiExample:
         print("Adjacency matrix computed successfully!")
         print("Min similarity found:{0}".format(sim_matrix.min()))
         print("Max similarity found:{0}".format(sim_matrix.max()))
-        sa.delete("similarities")
+        sa.delete(self._SHM_SIMILARITIES)
 
     def load_names(self, dataset_name):
         lst_names = []
