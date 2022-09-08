@@ -4,6 +4,7 @@ import SharedArray as sa
 import numpy as np
 import json
 import logging
+import operator
 
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
@@ -47,6 +48,7 @@ class SemanticMap:
         self.num_rdf_instances = 0
         self._rdf_instances = []
         self._centroids = []
+        self._alpha = None
 
     def compute_entity_similarity(self, entity_a, entity_b, i, j):
         entity_similarity = EntitySimilarity()
@@ -139,16 +141,36 @@ class SemanticMap:
 
     def infer_central_term(self):
         entity_features_tool = EntityFeatures()
-        concept = ConceptSimilarity(Taxonomy(DBpediaDataTransform()), 'models/dbpedia_type_ic.txt')
+        concept_tool = ConceptSimilarity(Taxonomy(DBpediaDataTransform()), 'models/dbpedia_type_ic.txt')
         concepts = {}
+        shared_concepts_among_centroids = set()
 
-        def add_concept_ic(centroid, centroid_type):
-            concepts[self.get_name(centroid)] = concept.concept_ic(centroid_type)
+        def add_centroid_concepts(centroid, centroid_type):
+            concepts[self.get_name(centroid)].add(centroid_type)
 
+        def add_ic(target_dict, c):
+            target_dict[c] = concept_tool.concept_ic(c)
+
+        # Obtain the list of types (RDF.RDF_TYPE) for each centroid
         for centroid in self._centroids:
-            [add_concept_ic(centroid, centroid_type) for centroid_type in entity_features_tool.type(centroid)]
+            if centroid not in concepts.keys():
+                concepts[self.get_name(centroid)] = set()
+            [add_centroid_concepts(centroid, centroid_type) for centroid_type in entity_features_tool.type(centroid)]
 
-        logging.info("Number of unique concepts:{0}".format(len(concepts)))
+        # Get the intersection of centroid types
+        for centroid, centroid_types in concepts.items():
+            if len(shared_concepts_among_centroids) == 0:
+                shared_concepts_among_centroids = centroid_types
+            else:
+                # Get the intersection for all shared types among centroids
+                shared_concepts_among_centroids = shared_concepts_among_centroids & centroid_types
+
+        # Once obtained the intersection, proceed to obtain the IC for each shared type and get the max
+        shared_concepts_dict = dict()
+        [add_ic(shared_concepts_dict, c) for c in shared_concepts_among_centroids]
+
+        self._alpha = max(shared_concepts_dict.items(), key=operator.itemgetter(1))[0]
+        logging.info("Central term of the semantic map:{0}".format(self._alpha))
 
     def load_names(self, dataset_name):
         lst_names = []
