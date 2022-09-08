@@ -16,6 +16,8 @@ class SemanticSimilarityTest(unittest.TestCase):
         os.chdir("../")
         test_instance = semantic_similarity.SemanticMap()
         test_instance.build_similarity_matrix("Got_Characters")
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
 
 
 if __name__ == '__main__':
