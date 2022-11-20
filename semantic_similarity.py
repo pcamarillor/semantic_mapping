@@ -15,6 +15,7 @@ from rdflib.namespace import RDF
 from sklearn.cluster import AffinityPropagation
 from sklearn import metrics
 from sklearn.metrics import davies_bouldin_score
+from pyvis.network import Network
 from tqdm import tqdm
 
 
@@ -49,10 +50,15 @@ class SemanticMap:
         self._rdf_instances = []
         self._centroids = []
         self._alpha = None
+        self._semantic_map = {}
+        self._centroids_map = {}
+        self._graphic_semantic_map = Network()
+        self._entity_similarity = None
 
     def compute_entity_similarity(self, entity_a, entity_b, i, j):
-        entity_similarity = EntitySimilarity()
-        entity_similarity = entity_similarity.similarity(entity_a, entity_b)
+        if not self._entity_similarity:
+            self._entity_similarity = EntitySimilarity()
+        entity_similarity = self._entity_similarity.similarity(entity_a, entity_b)
         shared_similarities = sa.attach("shm://{0}".format(self._SHM_SIMILARITIES))
         shared_similarities[self.num_rdf_instances * i + j] = entity_similarity
 
@@ -66,6 +72,7 @@ class SemanticMap:
         return i, j
 
     def build_similarity_matrix(self, dataset_name):
+        # Load RDF Graph
         g = Graph()
         g.parse("datasets/{0}.nt".format(dataset_name))
 
@@ -89,8 +96,13 @@ class SemanticMap:
         self._sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
 
         # Initialize shared array that will contain similarity results
-        self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-                                                 self.num_rdf_instances ** 2)
+        try:
+            self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
+                                                     self.num_rdf_instances ** 2)
+        except FileExistsError:
+            sa.delete(self._SHM_SIMILARITIES)
+            self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
+                                                     self.num_rdf_instances ** 2)
 
         logging.info("Computing similarity matrix")
         logging.info(self.num_rdf_instances)
@@ -128,16 +140,29 @@ class SemanticMap:
     def compute_centroids(self):
         # Compute clusters using Affinity Propagation algorithm
         logging.info("Compute affinity propagation clustering...")
+        centroid_label = 0
         clustering = AffinityPropagation(random_state=10, max_iter=800).fit(self._sim_matrix)
-        for centroid in clustering.cluster_centers_indices_:
-            self._centroids.append(self._rdf_instances[centroid])
+        for centroid_index in clustering.cluster_centers_indices_:
+            self._centroids.append(self._rdf_instances[centroid_index])
+            self._centroids_map[centroid_label] = centroid_index
+            centroid_label += 1
 
-        # Compute Intrinsic Measures to evaluate the cluster quality for Affinity Propagation
-        logging.info("Silhouette index: %0.3f" % metrics.silhouette_score(self._sim_matrix, clustering.labels_,
-                                                                          metric="sqeuclidean"))
-        logging.info("Davies Bouldin score: %0.3f" % davies_bouldin_score(self._sim_matrix, clustering.labels_))
-        logging.info(
-            "Calinski Harabasz score: %0.3f" % metrics.calinski_harabasz_score(self._sim_matrix, clustering.labels_))
+        for indx in range(0, len(clustering.labels_)):
+            label = clustering.labels_[indx]
+            if label not in self._semantic_map.keys():
+                self._semantic_map[label] = []
+            self._semantic_map[label].append(indx)
+
+        try:
+            # Compute Intrinsic Measures to evaluate the cluster quality for Affinity Propagation
+            logging.info("Silhouette index: %0.3f" % metrics.silhouette_score(self._sim_matrix, clustering.labels_,
+                                                                              metric="sqeuclidean"))
+            logging.info("Davies Bouldin score: %0.3f" % davies_bouldin_score(self._sim_matrix, clustering.labels_))
+            logging.info(
+                "Calinski Harabasz score: %0.3f" % metrics.calinski_harabasz_score(self._sim_matrix,
+                                                                                   clustering.labels_))
+        except ValueError:
+            logging.error("Unexcepted error")
 
     def infer_central_term(self):
         entity_features_tool = EntityFeatures()
@@ -146,7 +171,8 @@ class SemanticMap:
         shared_concepts_among_centroids = set()
 
         def add_centroid_concepts(centroid, centroid_type):
-            concepts[self.get_name(centroid)].add(centroid_type)
+            if "wikidata" not in centroid_type and "entity" not in centroid_type:
+                concepts[self.get_name(centroid)].add(centroid_type)
 
         def add_ic(target_dict, c):
             target_dict[c] = concept_tool.concept_ic(c)
@@ -155,7 +181,8 @@ class SemanticMap:
         for centroid in self._centroids:
             if centroid not in concepts.keys():
                 concepts[self.get_name(centroid)] = set()
-            [add_centroid_concepts(centroid, centroid_type) for centroid_type in entity_features_tool.type(centroid)]
+            _ = [add_centroid_concepts(centroid, centroid_type) for centroid_type in
+                 entity_features_tool.type(centroid)]
 
         # Get the intersection of centroid types
         for centroid, centroid_types in concepts.items():
@@ -167,10 +194,38 @@ class SemanticMap:
 
         # Once obtained the intersection, proceed to obtain the IC for each shared type and get the max
         shared_concepts_dict = dict()
-        [add_ic(shared_concepts_dict, c) for c in shared_concepts_among_centroids]
+        _ = [add_ic(shared_concepts_dict, c) for c in shared_concepts_among_centroids]
 
         self._alpha = max(shared_concepts_dict.items(), key=operator.itemgetter(1))[0]
         logging.info("Central term of the semantic map:{0}".format(self._alpha))
+
+    def assemble_semantic_map(self):
+        # First, add main term:
+        alpha_indx = self.num_rdf_instances
+        # Alpha concept in gray
+        self._graphic_semantic_map.add_node(alpha_indx, label=self.get_name(self._alpha), size=20, color='#808080')
+
+        # Second, add all centroids
+        for k, v in self._centroids_map.items():
+            idx = int(v)
+            # Centroids in blue
+            self._graphic_semantic_map.add_node(idx, label=self.get_name(self._rdf_instances[idx]), size=15,
+                                                color='#4da6ff')
+            self._graphic_semantic_map.add_edge(alpha_indx, idx)
+
+        # Finally, connect add the rest of entity instances and connect them with its centroid
+        for centroid, instance_lst in self._semantic_map.items():
+            centroid_index = int(self._centroids_map[centroid])
+            for instance in instance_lst:
+                if instance != centroid_index:  # Avoid adding the centroid itself
+                    # Non-centroids in white
+                    self._graphic_semantic_map.add_node(instance, label=self.get_name(self._rdf_instances[instance]),
+                                                        size=15, color='#ffffff')
+                    self._graphic_semantic_map.add_edge(centroid_index, instance)
+
+        # self._graphic_semantic_map.show_buttons(filter_=["nodes"])
+        self._graphic_semantic_map.toggle_physics(True)
+        self._graphic_semantic_map.show("got.html")
 
     def load_names(self, dataset_name):
         lst_names = []

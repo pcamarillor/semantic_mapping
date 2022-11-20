@@ -1,30 +1,78 @@
-<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
-<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Joffrey_Baratheon> .
-<http://dbpedia.org/resource/Cersei_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
-<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tywin_Lannister> .
-<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tommen_Baratheon> .
-<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/property/name>	<http://dbpedia.org/resource/Tywin_Lannister> .
-<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tyrion_Lannister> .
-<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jaime_Lannister> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tommen_Baratheon> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tyrion_Lannister> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Myrcella_Baratheon> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Robert_Baratheon> .
-<http://dbpedia.org/resource/Jaime_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
-<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tyrion_Lannister> .
-<http://dbpedia.org/resource/Tywin_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Stannis_Baratheon> .
-<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
-<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/property/name>	<http://dbpedia.org/resource/Cersei_Lannister> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/property/name>	<http://dbpedia.org/resource/Joffrey_Baratheon> .
 <http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tywin_Lannister> .
-<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/property/name>	<http://dbpedia.org/resource/Jaime_Lannister> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Cersei_Lannister> .
-<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Myrcella_Baratheon> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/property/name>	"Arya Stark"@en .
+<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/property/name>	"Tyrion Lannister"@en .
+<http://dbpedia.org/resource/Daenerys_Targaryen>	<http://dbpedia.org/property/name>	"Daenerys Targaryen"@en .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Myrcella_Baratheon> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Cersei_Lannister> .
 <http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Renly_Baratheon> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
-<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tywin_Lannister> .
-<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jaime_Lannister> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/FictionalCharacter109587565> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/FictionalCharacter109587565> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/property/name>	"Tywin Lannister"@en .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tywin_Lannister> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Rickon_Stark> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tommen_Baratheon> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tommen_Baratheon> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/FictionalCharacter109587565> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jon_Snow_(character)> .
+<http://dbpedia.org/resource/Margaery_Tyrell>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Joffrey_Baratheon> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Myrcella_Baratheon> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Ned_Stark> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Daenerys_Targaryen> .
+<http://dbpedia.org/resource/Cersei_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Arya_Stark> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Sansa_Stark> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Stannis_Baratheon> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/property/name>	"Sansa Stark"@en .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/property/name>	"Jon Snow"@en .
+<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tyrion_Lannister> .
+<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jaime_Lannister> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Bran_Stark> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Ned_Stark> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Cersei_Lannister> .
+<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/property/name>	"Cersei Lannister"@en .
+<http://dbpedia.org/resource/Jaime_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Margaery_Tyrell>	<http://dbpedia.org/property/name>	"Margaery Tyrell"@en .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Catelyn_Stark> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Rickon_Stark> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tommen_Baratheon> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Arya_Stark> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/property/name>	"Jaime Lannister"@en .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Bran_Stark> .
 <http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Cersei_Lannister> .
+<http://dbpedia.org/resource/Daenerys_Targaryen>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/FictionalCharacter109587565> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Joffrey_Baratheon> .
+<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tywin_Lannister> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Robb_Stark> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tyrion_Lannister> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jon_Snow_(character)> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Theon_Greyjoy> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Bran_Stark> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tywin_Lannister> .
+<http://dbpedia.org/resource/Cersei_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Theon_Greyjoy> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Jaime_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Tyrion_Lannister> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Robb_Stark> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jaime_Lannister> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Robert_Baratheon> .
+<http://dbpedia.org/resource/Daenerys_Targaryen>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Robb_Stark> .
+<http://dbpedia.org/resource/Jon_Snow_(character)>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Ned_Stark> .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Jaime_Lannister> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/List_of_A_Song_of_Ice_and_Fire_characters> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://dbpedia.org/property/name>	"Joffrey Baratheon"@en .
+<http://dbpedia.org/resource/Tyrion_Lannister>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/FictionalCharacter109587565> .
+<http://dbpedia.org/resource/Margaery_Tyrell>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Olenna_Tyrell> .
+<http://dbpedia.org/resource/Tywin_Lannister>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Myrcella_Baratheon> .
+<http://dbpedia.org/resource/Joffrey_Baratheon>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/LivingThing100004258> .
+<http://dbpedia.org/resource/Margaery_Tyrell>	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>	<http://dbpedia.org/class/yago/FictionalCharacter109587565> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Rickon_Stark> .
+<http://dbpedia.org/resource/Sansa_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Catelyn_Stark> .
+<http://dbpedia.org/resource/Arya_Stark>	<http://dbpedia.org/ontology/relative>	<http://dbpedia.org/resource/Sansa_Stark> .
