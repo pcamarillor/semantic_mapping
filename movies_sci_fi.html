@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#808080", "id": 17, "label": "Movie106613686", "shape": "dot", "size": 20}, {"color": "#4da6ff", "id": 1, "label": "The_King_of_Fighters_(film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 2, "label": "Ender\u0027s_Game_(film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 3, "label": "Riddick_(film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 4, "label": "Death_Race_2000", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 5, "label": "RoboCop_3", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 6, "label": "Star_Wars_(film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 8, "label": "Ultraviolet_(film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 11, "label": "Leviathan_(1989_film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 14, "label": "TMNT_(film)", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 16, "label": "Equilibrium_(film)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 0, "label": "Darkman", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 7, "label": "The_Adventures_of_Buckaroo_Banzai_Across_the_8th_Dimension", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 9, "label": "Children_of_Men", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 12, "label": "Flash_Gordon_(film)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 13, "label": "Armageddon_(1998_film)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 10, "label": "The_Omega_Man", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 15, "label": "Hulk_(film)", "shape": "dot", "size": 15}]);
+        edges = new vis.DataSet([{"from": 17, "to": 1}, {"from": 17, "to": 2}, {"from": 17, "to": 3}, {"from": 17, "to": 4}, {"from": 17, "to": 5}, {"from": 17, "to": 6}, {"from": 17, "to": 8}, {"from": 17, "to": 11}, {"from": 17, "to": 14}, {"from": 17, "to": 16}, {"from": 11, "to": 0}, {"from": 3, "to": 7}, {"from": 3, "to": 9}, {"from": 3, "to": 12}, {"from": 3, "to": 13}, {"from": 6, "to": 10}, {"from": 6, "to": 15}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

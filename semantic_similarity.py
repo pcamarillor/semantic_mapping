@@ -53,11 +53,10 @@ class SemanticMap:
         self._semantic_map = {}
         self._centroids_map = {}
         self._graphic_semantic_map = Network()
-        self._entity_similarity = None
+        self._entity_similarity = EntitySimilarity()
+        self._dataset_name = None
 
     def compute_entity_similarity(self, entity_a, entity_b, i, j):
-        if not self._entity_similarity:
-            self._entity_similarity = EntitySimilarity()
         entity_similarity = self._entity_similarity.similarity(entity_a, entity_b)
         shared_similarities = sa.attach("shm://{0}".format(self._SHM_SIMILARITIES))
         shared_similarities[self.num_rdf_instances * i + j] = entity_similarity
@@ -71,10 +70,11 @@ class SemanticMap:
         i = int(index / self.num_rdf_instances)
         return i, j
 
-    def build_similarity_matrix(self, dataset_name):
+    def build_similarity_matrix(self, dataset_name, read_matrix=False):
         # Load RDF Graph
         g = Graph()
         g.parse("datasets/{0}.nt".format(dataset_name))
+        self._dataset_name = dataset_name
 
         # Print number of triples in document
         logging.info('Number of n-triples {0}'.format(len(g)))
@@ -85,63 +85,70 @@ class SemanticMap:
             self._rdf_instances.append(person)
 
         self.num_rdf_instances = len(self._rdf_instances)
-        logging.info("Number of fictional chars:{0}".format(self.num_rdf_instances))
+        logging.info("Number of named individuals:{0}".format(self.num_rdf_instances))
 
         # Write list of subject names
         out_names_filename = "similarity_matrices/names_{0}.txt".format(dataset_name)
         with open(out_names_filename, 'w') as fp:
             fp.write('\n'.join(self._rdf_instances))
 
-        # Initialize the matrix with 0
-        self._sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
+        if read_matrix:
+            matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
+            self._sim_matrix = np.loadtxt(matrix_output, self._sim_matrix)
+        else:
+            # Initialize the matrix with 0
+            self._sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
 
-        # Initialize shared array that will contain similarity results
-        try:
-            self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-                                                     self.num_rdf_instances ** 2)
-        except FileExistsError:
-            sa.delete(self._SHM_SIMILARITIES)
-            self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-                                                     self.num_rdf_instances ** 2)
-
-        logging.info("Computing similarity matrix")
-        logging.info(self.num_rdf_instances)
-        # Compute the similarity matrix for the RDF molecules
-        with Pool(processes=10) as pool:
-            multi_res = []
-            for i in range(0, self.num_rdf_instances):
-                for j in range(i, self.num_rdf_instances):
-                    if i != j:
-                        multi_res.append(pool.apply_async(self.compute_entity_similarity,
-                                                          (self._rdf_instances[i], self._rdf_instances[j], i, j)))
-
-            # make a single worker sleep for 60 secs
+            # Initialize shared array that will contain similarity results
             try:
-                [res.get(timeout=60) for res in multi_res]
-            except RuntimeError:
-                logging.error("Something unexpected occurred")
+                self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
+                                                         self.num_rdf_instances ** 2)
+            except FileExistsError:
                 sa.delete(self._SHM_SIMILARITIES)
+                self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
+                                                         self.num_rdf_instances ** 2)
 
-            for i in range(0, self.num_rdf_instances):
-                for j in range(i, self.num_rdf_instances):
-                    if i == j:
-                        self._sim_matrix.itemset((i, j), 1.0)
-                    elif i != j and self._sim_matrix.item((i, j)) == 0:
-                        self._sim_matrix.itemset((i, j), self.similarity_shared_array[self.num_rdf_instances * i + j])
-                        self._sim_matrix.itemset((j, i), self._sim_matrix.item((i, j)))
+            logging.info("Computing similarity matrix")
+            logging.info(self.num_rdf_instances)
+            # Compute the similarity matrix for the RDF molecules
+            with Pool(processes=3) as pool:
+                multi_res = []
+                for i in range(0, self.num_rdf_instances):
+                    for j in range(i, self.num_rdf_instances):
+                        if i != j:
+                            multi_res.append(pool.apply_async(self.compute_entity_similarity,
+                                                              (self._rdf_instances[i], self._rdf_instances[j], i, j)))
 
-        matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
-        np.savetxt(matrix_output, self._sim_matrix)
+                # make a single worker sleep for 60 secs
+                try:
+                    [res.get(timeout=60) for res in multi_res]
+                except TimeoutError:
+                    logging.error("Something unexpected occurred")
+                    sa.delete(self._SHM_SIMILARITIES)
+
+                for i in range(0, self.num_rdf_instances):
+                    for j in range(i, self.num_rdf_instances):
+                        if i == j:
+                            self._sim_matrix.itemset((i, j), 1.0)
+                        elif i != j and self._sim_matrix.item((i, j)) == 0:
+                            self._sim_matrix.itemset((i, j), self.similarity_shared_array[self.num_rdf_instances * i + j])
+                            self._sim_matrix.itemset((j, i), self._sim_matrix.item((i, j)))
+
+            matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
+            np.savetxt(matrix_output, self._sim_matrix)
+            sa.delete(self._SHM_SIMILARITIES)
+
         logging.info("Adjacency matrix computed successfully!")
         logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
         logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
-        sa.delete(self._SHM_SIMILARITIES)
+
 
     def compute_centroids(self):
         # Compute clusters using Affinity Propagation algorithm
         logging.info("Compute affinity propagation clustering...")
         centroid_label = 0
-        clustering = AffinityPropagation(random_state=10, max_iter=800).fit(self._sim_matrix)
+        clustering = AffinityPropagation(random_state=50, max_iter=800, preference=1, affinity='precomputed').fit(self._sim_matrix)
+        #clustering = AffinityPropagation(random_state=50, max_iter=800).fit(self._sim_matrix)
         for centroid_index in clustering.cluster_centers_indices_:
             self._centroids.append(self._rdf_instances[centroid_index])
             self._centroids_map[centroid_label] = centroid_index
@@ -155,12 +162,12 @@ class SemanticMap:
 
         try:
             # Compute Intrinsic Measures to evaluate the cluster quality for Affinity Propagation
-            logging.info("Silhouette index: %0.3f" % metrics.silhouette_score(self._sim_matrix, clustering.labels_,
-                                                                              metric="sqeuclidean"))
-            logging.info("Davies Bouldin score: %0.3f" % davies_bouldin_score(self._sim_matrix, clustering.labels_))
-            logging.info(
-                "Calinski Harabasz score: %0.3f" % metrics.calinski_harabasz_score(self._sim_matrix,
-                                                                                   clustering.labels_))
+            silhouette = metrics.silhouette_score(self._sim_matrix, clustering.labels_, metric="sqeuclidean")
+            dwvies = davies_bouldin_score(self._sim_matrix, clustering.labels_)
+            calinski = metrics.calinski_harabasz_score(self._sim_matrix, clustering.labels_)
+            logging.info("Silhouette index: %0.3f" % silhouette)
+            logging.info("Davies Bouldin score: %0.3f" % dwvies)
+            logging.info("Calinski Harabasz score: %0.3f" % calinski)
         except ValueError:
             logging.error("Unexcepted error")
 
@@ -225,7 +232,7 @@ class SemanticMap:
 
         # self._graphic_semantic_map.show_buttons(filter_=["nodes"])
         self._graphic_semantic_map.toggle_physics(True)
-        self._graphic_semantic_map.show("got.html")
+        self._graphic_semantic_map.show("{0}.html".format(self._dataset_name))
 
     def load_names(self, dataset_name):
         lst_names = []
