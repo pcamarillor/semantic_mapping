@@ -50,8 +50,8 @@
         
 
         // parsing and collecting nodes and edges from the python
-        nodes = new vis.DataSet([{"id": "Cersei_Lannister", "label": "Cersei_Lannister", "shape": "dot", "size": 10}, {"id": "Jaime_Lannister", "label": "Jaime_Lannister", "shape": "dot", "size": 10}, {"id": "Joffrey_Baratheon", "label": "Joffrey_Baratheon", "shape": "dot", "size": 10}, {"id": "Tywin_Lannister", "label": "Tywin_Lannister", "shape": "dot", "size": 10}]);
-        edges = new vis.DataSet([{"from": "Cersei_Lannister", "label": 1, "to": "Jaime_Lannister", "weight": 1}, {"from": "Cersei_Lannister", "label": 1, "to": "Joffrey_Baratheon", "weight": 1}, {"from": "Tywin_Lannister", "label": 1, "to": "Tywin_Lannister", "weight": 1}]);
+        nodes = new vis.DataSet([{"color": "#808080", "id": 10, "label": "FictionalCharacter", "shape": "dot", "size": 20}, {"color": "#4da6ff", "id": 3, "label": "Daenerys_Targaryen", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 6, "label": "Cersei_Lannister", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 0, "label": "Jon_Snow_(character)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 1, "label": "Sansa_Stark", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 2, "label": "Arya_Stark", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 4, "label": "Tyrion_Lannister", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 5, "label": "Margaery_Tyrell", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 7, "label": "Jaime_Lannister", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 8, "label": "Tywin_Lannister", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 9, "label": "Joffrey_Baratheon", "shape": "dot", "size": 15}]);
+        edges = new vis.DataSet([{"from": 10, "to": 3}, {"from": 10, "to": 6}, {"from": 3, "to": 0}, {"from": 3, "to": 1}, {"from": 3, "to": 2}, {"from": 3, "to": 4}, {"from": 3, "to": 5}, {"from": 6, "to": 7}, {"from": 6, "to": 8}, {"from": 6, "to": 9}]);
 
         // adding nodes and edges to the graph
         data = {nodes: nodes, edges: edges};
