@@ -1,13 +1,13 @@
 from multiprocessing import Pool
 from multiprocessing import cpu_count
 from multiprocessing import shared_memory
-import SharedArray as sa
+
 
 import numpy as np
 import json
 import logging
 import operator
-import array
+import struct
 
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
@@ -46,6 +46,7 @@ def find_exemplar(centers, items):
 class SemanticMap:
 
     def __init__(self):
+        self._b = None
         self.similarity_np_array = None
         self._sim_matrix = None
         self.similarity_shared_array = None
@@ -62,11 +63,11 @@ class SemanticMap:
 
     def compute_entity_similarity(self, entity_a, entity_b, i, j):
         entity_similarity = self._entity_similarity.similarity(entity_a, entity_b)
-        shared_similarities = shared_memory.SharedMemory(name=self.similarity_shared_array.name)
-        shared_similarities.buf[self.num_rdf_instances * i + j] = entity_similarity
-        shared_similarities.close()
-        # shared_similarities = sa.attach("shm://{0}".format(self._SHM_SIMILARITIES))
-        # shared_similarities[self.num_rdf_instances * i + j] = entity_similarity
+        existing_shm = shared_memory.SharedMemory(name=self.similarity_shared_array.name)
+        shm_array = np.ndarray((self.num_rdf_instances ** 2,), dtype=np.float, buffer=existing_shm.buf)
+        shm_array[self.num_rdf_instances * i + j] = entity_similarity
+        del shm_array
+        existing_shm.close()
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
@@ -107,15 +108,9 @@ class SemanticMap:
             self._sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
             self.similarity_np_array = np.zeros(self.num_rdf_instances ** 2)
             self.similarity_shared_array = shared_memory.SharedMemory(create=True, size=self.similarity_np_array.nbytes)
-
-            # Initialize shared array that will contain similarity results
-            #try:
-            #    self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-            #                                             self.num_rdf_instances ** 2)
-            #except FileExistsError:
-            #    sa.delete(self._SHM_SIMILARITIES)
-            #    self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-            #                                             self.num_rdf_instances ** 2)
+            self._b = np.ndarray(self.similarity_np_array.shape,
+                                 dtype=self.similarity_np_array.dtype,
+                                 buffer=self.similarity_shared_array.buf)
 
             logging.info("Computing similarity matrix")
             logging.info(self.num_rdf_instances)
@@ -133,7 +128,6 @@ class SemanticMap:
                     [res.get(timeout=60) for res in multi_res]
                 except TimeoutError:
                     logging.error("Something unexpected occurred")
-                    # sa.delete(self._SHM_SIMILARITIES)
 
                 for i in range(0, self.num_rdf_instances):
                     for j in range(i, self.num_rdf_instances):
@@ -141,14 +135,15 @@ class SemanticMap:
                             self._sim_matrix.itemset((i, j), 1.0)
                         elif i != j and self._sim_matrix.item((i, j)) == 0:
                             self._sim_matrix.itemset((i, j),
-                                                     self.similarity_shared_array.buf[self.num_rdf_instances * i + j])
+                                                     self._b[self.num_rdf_instances * i + j])
                             self._sim_matrix.itemset((j, i), self._sim_matrix.item((i, j)))
 
             matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
             np.savetxt(matrix_output, self._sim_matrix)
             self.similarity_shared_array.close()
             self.similarity_shared_array.unlink()
-            # sa.delete(self._SHM_SIMILARITIES)
+            del self._b
+            del self.similarity_np_array
 
         logging.info("Adjacency matrix computed successfully!")
         logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
