@@ -1,10 +1,13 @@
 from multiprocessing import Pool
+from multiprocessing import cpu_count
+from multiprocessing import shared_memory
 import SharedArray as sa
 
 import numpy as np
 import json
 import logging
 import operator
+import array
 
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
@@ -43,6 +46,7 @@ def find_exemplar(centers, items):
 class SemanticMap:
 
     def __init__(self):
+        self.similarity_np_array = None
         self._sim_matrix = None
         self.similarity_shared_array = None
         self._SHM_SIMILARITIES = "similarities"
@@ -58,8 +62,11 @@ class SemanticMap:
 
     def compute_entity_similarity(self, entity_a, entity_b, i, j):
         entity_similarity = self._entity_similarity.similarity(entity_a, entity_b)
-        shared_similarities = sa.attach("shm://{0}".format(self._SHM_SIMILARITIES))
-        shared_similarities[self.num_rdf_instances * i + j] = entity_similarity
+        shared_similarities = shared_memory.SharedMemory(name=self.similarity_shared_array.name)
+        shared_similarities.buf[self.num_rdf_instances * i + j] = entity_similarity
+        shared_similarities.close()
+        # shared_similarities = sa.attach("shm://{0}".format(self._SHM_SIMILARITIES))
+        # shared_similarities[self.num_rdf_instances * i + j] = entity_similarity
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
@@ -98,20 +105,22 @@ class SemanticMap:
         else:
             # Initialize the matrix with 0
             self._sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
+            self.similarity_np_array = np.zeros(self.num_rdf_instances ** 2)
+            self.similarity_shared_array = shared_memory.SharedMemory(create=True, size=self.similarity_np_array.nbytes)
 
             # Initialize shared array that will contain similarity results
-            try:
-                self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-                                                         self.num_rdf_instances ** 2)
-            except FileExistsError:
-                sa.delete(self._SHM_SIMILARITIES)
-                self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
-                                                         self.num_rdf_instances ** 2)
+            #try:
+            #    self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
+            #                                             self.num_rdf_instances ** 2)
+            #except FileExistsError:
+            #    sa.delete(self._SHM_SIMILARITIES)
+            #    self.similarity_shared_array = sa.create("shm://{0}".format(self._SHM_SIMILARITIES),
+            #                                             self.num_rdf_instances ** 2)
 
             logging.info("Computing similarity matrix")
             logging.info(self.num_rdf_instances)
             # Compute the similarity matrix for the RDF molecules
-            with Pool(processes=3) as pool:
+            with Pool(cpu_count()) as pool:
                 multi_res = []
                 for i in range(0, self.num_rdf_instances):
                     for j in range(i, self.num_rdf_instances):
@@ -124,31 +133,34 @@ class SemanticMap:
                     [res.get(timeout=60) for res in multi_res]
                 except TimeoutError:
                     logging.error("Something unexpected occurred")
-                    sa.delete(self._SHM_SIMILARITIES)
+                    # sa.delete(self._SHM_SIMILARITIES)
 
                 for i in range(0, self.num_rdf_instances):
                     for j in range(i, self.num_rdf_instances):
                         if i == j:
                             self._sim_matrix.itemset((i, j), 1.0)
                         elif i != j and self._sim_matrix.item((i, j)) == 0:
-                            self._sim_matrix.itemset((i, j), self.similarity_shared_array[self.num_rdf_instances * i + j])
+                            self._sim_matrix.itemset((i, j),
+                                                     self.similarity_shared_array.buf[self.num_rdf_instances * i + j])
                             self._sim_matrix.itemset((j, i), self._sim_matrix.item((i, j)))
 
             matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
             np.savetxt(matrix_output, self._sim_matrix)
-            sa.delete(self._SHM_SIMILARITIES)
+            self.similarity_shared_array.close()
+            self.similarity_shared_array.unlink()
+            # sa.delete(self._SHM_SIMILARITIES)
 
         logging.info("Adjacency matrix computed successfully!")
         logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
         logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
 
-
     def compute_centroids(self):
         # Compute clusters using Affinity Propagation algorithm
         logging.info("Compute affinity propagation clustering...")
         centroid_label = 0
-        clustering = AffinityPropagation(random_state=50, max_iter=800, preference=1, affinity='precomputed').fit(self._sim_matrix)
-        #clustering = AffinityPropagation(random_state=50, max_iter=800).fit(self._sim_matrix)
+        clustering = AffinityPropagation(random_state=50, max_iter=800, preference=1, affinity='precomputed').fit(
+            self._sim_matrix)
+        # clustering = AffinityPropagation(random_state=50, max_iter=800).fit(self._sim_matrix)
         for centroid_index in clustering.cluster_centers_indices_:
             self._centroids.append(self._rdf_instances[centroid_index])
             self._centroids_map[centroid_label] = centroid_index
