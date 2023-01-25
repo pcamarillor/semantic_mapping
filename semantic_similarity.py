@@ -2,12 +2,11 @@ from multiprocessing import Pool
 from multiprocessing import cpu_count
 from multiprocessing import shared_memory
 
-
 import numpy as np
 import json
 import logging
 import operator
-import struct
+import random
 
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
@@ -20,6 +19,8 @@ from sklearn import metrics
 from sklearn.metrics import davies_bouldin_score
 from pyvis.network import Network
 from tqdm import tqdm
+from queue import Queue
+from threading import Thread
 
 
 class Exemplar:
@@ -58,10 +59,11 @@ class SemanticMap:
         self._entity_similarity = EntitySimilarity()
         self._dataset_name = None
 
-    def compute_entity_similarity(self, entity_a, entity_b, index):
-        entity_similarity = self._entity_similarity.similarity(entity_a, entity_b)
-        return entity_similarity
-
+    def compute_entity_similarity(self, queue_indexes, queue_out):
+        while not queue_indexes.empty():
+            (i, j) = queue_indexes.get()
+            x = self._entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
+            queue_out.put((i, j, x))
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
@@ -87,6 +89,7 @@ class SemanticMap:
             self._rdf_instances.append(person)
 
         self.num_rdf_instances = len(self._rdf_instances)
+        n = self.num_rdf_instances
         logging.info("Number of named individuals:{0}".format(self.num_rdf_instances))
 
         # Write list of subject names
@@ -99,23 +102,44 @@ class SemanticMap:
             self._sim_matrix = np.loadtxt(matrix_output, self._sim_matrix)
         else:
             # Initialize the matrix with 0
-            self._sim_matrix = np.zeros((self.num_rdf_instances, self.num_rdf_instances))
+            self._sim_matrix = np.zeros((n, n))
+            for i in range(0, n):
+                self._sim_matrix.itemset((i, i), 1.0)
 
+            # Compute the similarity matrix for the RDF molecules
             logging.info("Computing similarity matrix")
             logging.info(self.num_rdf_instances)
-            # Compute the similarity matrix for the RDF molecules
 
-            for i in tqdm(range(0, self.num_rdf_instances)):
-                for j in tqdm(range(i, self.num_rdf_instances)):
-                    if i == j:
-                        self._sim_matrix.itemset((i, j), 1.0)
-                    elif i != j and self._sim_matrix.item((i, j)) == 0:
-                        x, y = i, j
-                        e = self._entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
-                        self._sim_matrix.itemset((x, y),
-                                                 e)
-                        self._sim_matrix.itemset((y, x),
-                                                 e)
+            # Generate the map of tuples containing the indexes that should be splitted
+            n_threads = 2
+            indexes_lst = []
+            for i in range(0, n):
+                for j in range(i, n):
+                    if i != j:
+                        indexes_lst.append((i, j))
+
+            start = 0
+            end = len(indexes_lst) // n_threads
+            thread_list = []
+            q_outs = []
+            for x in range(0, n_threads):
+                q_in = Queue()
+                q_out = Queue()
+                _ = [q_in.put((xx, y)) for (xx, y) in indexes_lst[start:end]]
+                thread_list.append(Thread(target=self.compute_entity_similarity(q_in, q_out)))
+                q_outs.append(q_out)
+                start = end
+                end += end
+
+            _ = [t.start() for t in thread_list]
+            _ = [t.join() for t in thread_list]
+
+            for q_o in q_outs:
+                print("Queue:")
+                while not q_o.empty():
+                    (i, j, x) = q_o.get()
+                    self._sim_matrix.itemset((i, j), x)
+                    self._sim_matrix.itemset((j, i), x)
 
             matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
             np.savetxt(matrix_output, self._sim_matrix)
