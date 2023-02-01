@@ -149,10 +149,16 @@ class SemanticMap:
             # Exclude already computed similarities from indexes to request
             for i in range(0, n):
                 for j in range(i, n):
-                    query_str = 'i == {0} & j == {1}'.format(i, j)
-                    if i != j and len(existing_indexes.query(query_str)) == 0:
+                    if i != j:
                         indexes_lst.append((i, j))
                         expected_similarities += 1
+            df = existing_indexes.reset_index()
+            for index, row in df.iterrows():
+                i = int(row["i"])
+                j = int(row["j"])
+                if (i, j) in indexes_lst:
+                    indexes_lst.remove((i, j))
+                    logging.info("Removing already computed similarity ({0}, {1})".format(i, j))
 
             if len(indexes_lst) > 0:
                 logging.info("Number of request to do:{}".format(len(indexes_lst)))
