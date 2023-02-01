@@ -1,3 +1,5 @@
+import csv
+import os.path
 import time
 
 import numpy as np
@@ -5,6 +7,7 @@ import json
 import logging
 import operator
 
+import pandas as pd
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
 from sematch.semantic.graph import DBpediaDataTransform, Taxonomy
@@ -19,11 +22,13 @@ from tqdm import tqdm
 from queue import Queue
 from threading import Thread
 from threading import Lock
+
 lock = Lock()
 from threading import Event
 from reprint import output
 
 entity_similarity = EntitySimilarity()
+
 
 class Exemplar:
     def __init__(self, resourceURI, datanum, children):
@@ -61,20 +66,23 @@ class SemanticMap:
         self._graphic_semantic_map = Network()
         self._dataset_name = None
         self._pending = []
+        self._partial_filename = None
+        self._queue_out = Queue()
+        self._similarities_computed = 0
 
-    def compute_entity_similarity(self, lst_indexes, queue_out):
+    def compute_entity_similarity(self, lst_indexes):
         q_in = Queue()
         _ = [q_in.put((xx, y)) for (xx, y) in lst_indexes]
-        logging.info("q_in:{}".format(list(q_in.queue)))
-
+        # logging.info("q_in:{}".format(list(q_in.queue)))
         while not q_in.empty():
             (i, j) = q_in.get()
             try:
                 with lock:
                     x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
                     logging.info("processing ({0}, {1})".format(i, j))
-                    # self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
-                    queue_out.put((i, j, x))
+                    self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
+                    self._queue_out.put((i, j, x))
+                time.sleep(2)
             except RuntimeError as ue:
                 logging.error("Error getting semantic similarity for {0}-{1}, {2}".format(
                     self.get_name(self._rdf_instances[i]),
@@ -90,11 +98,13 @@ class SemanticMap:
         i = int(index / self.num_rdf_instances)
         return i, j
 
-    def build_similarity_matrix(self, dataset_name, read_matrix=False):
+    def build_similarity_matrix(self, dataset_name, read_matrix=False, progress=False):
         # Load RDF Graph
         g = Graph()
         g.parse("datasets/{0}.nt".format(dataset_name))
         self._dataset_name = dataset_name
+        self._partial_filename = "similarity_matrices/partial_{}.csv".format(self._dataset_name)
+        self.create_partial_file_if_not_exists()
 
         # Print number of triples in document
         logging.info('Number of n-triples {0}'.format(len(g)))
@@ -129,62 +139,72 @@ class SemanticMap:
             logging.info("Size of dataset:{}".format(self.num_rdf_instances))
 
             # Generate the map of tuples containing the indexes that should be split
-            n_threads = 10
+            n_threads = 80
+            logging.info("Number of threads: {}".format(n_threads))
             indexes_lst = []
+            if os.path.isfile(self._partial_filename):
+                existing_indexes = pd.read_csv(self._partial_filename)
+            expected_similarities = 0
+
+            # Exclude already computed similarities from indexes to request
             for i in range(0, n):
                 for j in range(i, n):
-                    if i != j:
+                    query_str = 'i == {0} & j == {1}'.format(i, j)
+                    if i != j and len(existing_indexes.query(query_str)) == 0:
                         indexes_lst.append((i, j))
+                        expected_similarities += 1
 
-            start = 0
-            delta = len(indexes_lst) // n_threads
-            end = start + delta
-            thread_list = []
-            m = {}
-            q_outs = []
-            #self._finish_build_matrix = Event()
-            #visualize_thread = Thread(target=self.print_sim_matrix)
-            #visualize_thread.start()
-            for x in range(0, n_threads):
-                q_out = Queue()
-                m[x] = indexes_lst[start:end]
-                t = Thread(target=self.compute_entity_similarity, args=(indexes_lst[start:end], q_out,))
-                thread_list.append(t)
-                t.start()
-                q_outs.append(q_out)
-                start = end
-                if x >= n_threads - 2:
-                    end = len(indexes_lst)
-                else:
-                    end = start + delta
+            if len(indexes_lst) > 0:
+                logging.info("Number of request to do:{}".format(len(indexes_lst)))
+                start = 0
+                delta = len(indexes_lst) // n_threads
+                end = start + delta
+                thread_list = []
+                if progress:
+                    self._finish_build_matrix = Event()
+                    visualize_thread = Thread(target=self.print_sim_matrix)
+                    visualize_thread.start()
 
-            # timeout = 60 * delta  # 60 seconds per call
-            # time.sleep(15)
-            for index, thread in enumerate(thread_list):
-                logging.info("Main    : before joining thread %d.", index)
-                thread.join()
-                logging.info("Main    : thread %d done", index)
+                for x in range(0, n_threads):
+                    t = Thread(target=self.compute_entity_similarity, args=(indexes_lst[start:end],))
+                    thread_list.append(t)
+                    start = end
+                    if x >= n_threads - 2:
+                        end = len(indexes_lst)
+                    else:
+                        end = start + delta
 
-            #self._finish_build_matrix.set()
-            #visualize_thread.join()
+                stop_event = Event()
+                monitor_thread = Thread(target=self.progress_monitor, args=(stop_event,))
+                monitor_thread.start()
+                _ = [t.start() for t in thread_list]
+                _ = [t.join() for t in thread_list]
+                stop_event.set()
+                monitor_thread.join()
 
-            n_similarities_computed = 0
-            for q_o in q_outs:
-                while not q_o.empty():
-                    (i, j, x) = q_o.get()
-                    n_similarities_computed += 1
+                if progress:
+                    self._finish_build_matrix.set()
+                    visualize_thread.join()
+            else:
+                logging.info("All similarities already computed")
+                # Iterate data frame and populate similarity matrix
+                df = existing_indexes.reset_index()
+                for index, row in df.iterrows():
+                    i = int(row["i"])
+                    j = int(row["j"])
+                    x = row["sim"]
                     self._sim_matrix.itemset((i, j), x)
                     self._sim_matrix.itemset((j, i), x)
 
-            matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
-            np.savetxt(matrix_output, self._sim_matrix)
-
-        logging.info("Adjacency matrix computed successfully!")
-        logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
-        logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
-        logging.info("Number of similarities computed:{0}".format(n_similarities_computed))
-        logging.info("Number of expected similarities:{0}".format(len(indexes_lst)))
-        return len(indexes_lst) == n_similarities_computed
+                matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
+                np.savetxt(matrix_output, self._sim_matrix)
+                logging.info("Adjacency matrix computed successfully!")
+                logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
+                logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
+                logging.info("Number of similarities computed:{0}".format(self._similarities_computed))
+                logging.info("Number of expected similarities:{0}".format(len(indexes_lst)))
+                return True
+        return expected_similarities == self._similarities_computed
 
     def compute_centroids(self):
         # Compute clusters using Affinity Propagation algorithm
@@ -290,9 +310,36 @@ class SemanticMap:
 
     def print_sim_matrix(self):
         with output(initial_len=self.num_rdf_instances, interval=0) as output_lines:
+            n = self.num_rdf_instances
             while True:
-                for i in range(0, self.num_rdf_instances):
-                    output_lines[i] = "{}".format(self._sim_matrix_boolean[i])
+                with lock:
+                    for i in range(0, n):
+                        output_lines[i] = "{:.2%}".format((self._sim_matrix_boolean[i].count(0x01) / n))
                 if self._finish_build_matrix.is_set():
                     break
-                time.sleep(1)
+                time.sleep(0.5)
+
+    def create_partial_file_if_not_exists(self):
+        if not os.path.isfile(self._partial_filename):
+            with open(self._partial_filename, 'w+', newline='') as partial_matrix:
+                writer = csv.writer(partial_matrix)
+                writer.writerow(["i", "j", "sim"])
+        else:
+            data = pd.read_csv(self._partial_filename)
+            self._similarities_computed = len(data)
+            logging.info("Partial file already exists and it contains:{}".format(self._similarities_computed))
+
+    def progress_monitor(self, stop_event):
+        while True:
+            with lock:
+                with open(self._partial_filename, 'a', newline='') as tmp_matrix:
+                    writer = csv.writer(tmp_matrix)
+                    while not self._queue_out.empty():
+                        (i, j, x) = self._queue_out.get()
+                        self._similarities_computed += 1
+                        writer.writerow([i, j, x])
+            logging.info("Similarities computed so far:{}".format(self._similarities_computed))
+            if stop_event.is_set():
+                break
+            time.sleep(60 * 10)  # every 10 min
+
