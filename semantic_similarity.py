@@ -77,12 +77,12 @@ class SemanticMap:
         while not q_in.empty():
             (i, j) = q_in.get()
             try:
-                with lock:
-                    x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
-                    logging.info("processing ({0}, {1})".format(i, j))
-                    self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
-                    self._queue_out.put((i, j, x))
-                time.sleep(2)
+                #with lock:
+                x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
+                # logging.info("processing ({0}, {1})".format(i, j))
+                self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
+                self._queue_out.put((i, j, x))
+                #time.sleep(2)
             except RuntimeError as ue:
                 logging.error("Error getting semantic similarity for {0}-{1}, {2}".format(
                     self.get_name(self._rdf_instances[i]),
@@ -153,12 +153,12 @@ class SemanticMap:
                         indexes_lst.append((i, j))
                         expected_similarities += 1
             df = existing_indexes.reset_index()
-            for index, row in df.iterrows():
+            logging.info("Removing already computed similarities")
+            for index, row in tqdm(df.iterrows(), total=df.shape[0]):
                 i = int(row["i"])
                 j = int(row["j"])
                 if (i, j) in indexes_lst:
                     indexes_lst.remove((i, j))
-                    logging.info("Removing already computed similarity ({0}, {1})".format(i, j))
 
             if len(indexes_lst) > 0:
                 logging.info("Number of request to do:{}".format(len(indexes_lst)))
@@ -347,5 +347,5 @@ class SemanticMap:
             logging.info("Similarities computed so far:{}".format(self._similarities_computed))
             if stop_event.is_set():
                 break
-            time.sleep(60 * 10)  # every 10 min
+            time.sleep(120)  # every 2 min
 
