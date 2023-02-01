@@ -1,12 +1,9 @@
-from multiprocessing import Pool
-from multiprocessing import cpu_count
-from multiprocessing import shared_memory
+import time
 
 import numpy as np
 import json
 import logging
 import operator
-import random
 
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
@@ -21,7 +18,12 @@ from pyvis.network import Network
 from tqdm import tqdm
 from queue import Queue
 from threading import Thread
+from threading import Lock
+lock = Lock()
+from threading import Event
+from reprint import output
 
+entity_similarity = EntitySimilarity()
 
 class Exemplar:
     def __init__(self, resourceURI, datanum, children):
@@ -47,8 +49,9 @@ def find_exemplar(centers, items):
 class SemanticMap:
 
     def __init__(self):
-        self.shared_list = None
+        self._finish_build_matrix = None
         self._sim_matrix = None
+        self._sim_matrix_boolean = None
         self.num_rdf_instances = 0
         self._rdf_instances = []
         self._centroids = []
@@ -56,14 +59,27 @@ class SemanticMap:
         self._semantic_map = {}
         self._centroids_map = {}
         self._graphic_semantic_map = Network()
-        self._entity_similarity = EntitySimilarity()
         self._dataset_name = None
+        self._pending = []
 
-    def compute_entity_similarity(self, queue_indexes, queue_out):
-        while not queue_indexes.empty():
-            (i, j) = queue_indexes.get()
-            x = self._entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
-            queue_out.put((i, j, x))
+    def compute_entity_similarity(self, lst_indexes, queue_out):
+        q_in = Queue()
+        _ = [q_in.put((xx, y)) for (xx, y) in lst_indexes]
+        logging.info("q_in:{}".format(list(q_in.queue)))
+
+        while not q_in.empty():
+            (i, j) = q_in.get()
+            try:
+                with lock:
+                    x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
+                    logging.info("processing ({0}, {1})".format(i, j))
+                    # self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
+                    queue_out.put((i, j, x))
+            except RuntimeError as ue:
+                logging.error("Error getting semantic similarity for {0}-{1}, {2}".format(
+                    self.get_name(self._rdf_instances[i]),
+                    self.get_name(self._rdf_instances[i]),
+                    ue))
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
@@ -103,15 +119,17 @@ class SemanticMap:
         else:
             # Initialize the matrix with 0
             self._sim_matrix = np.zeros((n, n))
+            self._sim_matrix_boolean = [[0x00 for j in range(0, n)] for i in range(0, n)]
             for i in range(0, n):
                 self._sim_matrix.itemset((i, i), 1.0)
+                self._sim_matrix_boolean[i][i] = 0x01
 
             # Compute the similarity matrix for the RDF molecules
             logging.info("Computing similarity matrix")
-            logging.info(self.num_rdf_instances)
+            logging.info("Size of dataset:{}".format(self.num_rdf_instances))
 
-            # Generate the map of tuples containing the indexes that should be splitted
-            n_threads = 2
+            # Generate the map of tuples containing the indexes that should be split
+            n_threads = 10
             indexes_lst = []
             for i in range(0, n):
                 for j in range(i, n):
@@ -119,25 +137,42 @@ class SemanticMap:
                         indexes_lst.append((i, j))
 
             start = 0
-            end = len(indexes_lst) // n_threads
+            delta = len(indexes_lst) // n_threads
+            end = start + delta
             thread_list = []
+            m = {}
             q_outs = []
+            #self._finish_build_matrix = Event()
+            #visualize_thread = Thread(target=self.print_sim_matrix)
+            #visualize_thread.start()
             for x in range(0, n_threads):
-                q_in = Queue()
                 q_out = Queue()
-                _ = [q_in.put((xx, y)) for (xx, y) in indexes_lst[start:end]]
-                thread_list.append(Thread(target=self.compute_entity_similarity(q_in, q_out)))
+                m[x] = indexes_lst[start:end]
+                t = Thread(target=self.compute_entity_similarity, args=(indexes_lst[start:end], q_out,))
+                thread_list.append(t)
+                t.start()
                 q_outs.append(q_out)
                 start = end
-                end += end
+                if x >= n_threads - 2:
+                    end = len(indexes_lst)
+                else:
+                    end = start + delta
 
-            _ = [t.start() for t in thread_list]
-            _ = [t.join() for t in thread_list]
+            # timeout = 60 * delta  # 60 seconds per call
+            # time.sleep(15)
+            for index, thread in enumerate(thread_list):
+                logging.info("Main    : before joining thread %d.", index)
+                thread.join()
+                logging.info("Main    : thread %d done", index)
 
+            #self._finish_build_matrix.set()
+            #visualize_thread.join()
+
+            n_similarities_computed = 0
             for q_o in q_outs:
-                print("Queue:")
                 while not q_o.empty():
                     (i, j, x) = q_o.get()
+                    n_similarities_computed += 1
                     self._sim_matrix.itemset((i, j), x)
                     self._sim_matrix.itemset((j, i), x)
 
@@ -147,6 +182,9 @@ class SemanticMap:
         logging.info("Adjacency matrix computed successfully!")
         logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
         logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
+        logging.info("Number of similarities computed:{0}".format(n_similarities_computed))
+        logging.info("Number of expected similarities:{0}".format(len(indexes_lst)))
+        return len(indexes_lst) == n_similarities_computed
 
     def compute_centroids(self):
         # Compute clusters using Affinity Propagation algorithm
@@ -174,8 +212,8 @@ class SemanticMap:
             logging.info("Silhouette index: %0.3f" % silhouette)
             logging.info("Davies Bouldin score: %0.3f" % dwvies)
             logging.info("Calinski Harabasz score: %0.3f" % calinski)
-        except ValueError:
-            logging.error("Unexpected error")
+        except ValueError as ve:
+            logging.error("Unable to compute clustery quality metrics:{}".format(ve))
 
     def infer_central_term(self):
         entity_features_tool = EntityFeatures()
@@ -249,3 +287,12 @@ class SemanticMap:
             lst_names[i] = self.get_name(lst_names[i])
 
         return lst_names
+
+    def print_sim_matrix(self):
+        with output(initial_len=self.num_rdf_instances, interval=0) as output_lines:
+            while True:
+                for i in range(0, self.num_rdf_instances):
+                    output_lines[i] = "{}".format(self._sim_matrix_boolean[i])
+                if self._finish_build_matrix.is_set():
+                    break
+                time.sleep(1)
