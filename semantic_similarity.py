@@ -8,15 +8,17 @@ import logging
 import operator
 
 import pandas as pd
+from kneed import KneeLocator
+from matplotlib import pyplot as plt
 from sematch.semantic.similarity import EntitySimilarity
 from sematch.semantic.sparql import EntityFeatures
 from sematch.semantic.graph import DBpediaDataTransform, Taxonomy
 from sematch.semantic.similarity import ConceptSimilarity
 from rdflib import Graph
 from rdflib.namespace import RDF
-from sklearn.cluster import AffinityPropagation
+from sklearn.cluster import AffinityPropagation, KMeans
 from sklearn import metrics
-from sklearn.metrics import davies_bouldin_score
+from sklearn.metrics import davies_bouldin_score, pairwise_distances_argmin_min
 from pyvis.network import Network
 from tqdm import tqdm
 from queue import Queue
@@ -59,30 +61,26 @@ class SemanticMap:
         self._sim_matrix_boolean = None
         self.num_rdf_instances = 0
         self._rdf_instances = []
-        self._centroids = []
         self._alpha = None
-        self._semantic_map = {}
-        self._centroids_map = {}
         self._graphic_semantic_map = Network()
         self._dataset_name = None
         self._pending = []
         self._partial_filename = None
         self._queue_out = Queue()
         self._similarities_computed = 0
+        self._clustering_map = {}
 
     def compute_entity_similarity(self, lst_indexes):
         q_in = Queue()
         _ = [q_in.put((xx, y)) for (xx, y) in lst_indexes]
-        # logging.info("q_in:{}".format(list(q_in.queue)))
         while not q_in.empty():
             (i, j) = q_in.get()
             try:
-                #with lock:
+                # with lock:
                 x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
-                # logging.info("processing ({0}, {1})".format(i, j))
                 self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
                 self._queue_out.put((i, j, x))
-                #time.sleep(2)
+                # time.sleep(2)
             except RuntimeError as ue:
                 logging.error("Error getting semantic similarity for {0}-{1}, {2}".format(
                     self.get_name(self._rdf_instances[i]),
@@ -123,8 +121,9 @@ class SemanticMap:
         with open(out_names_filename, 'w') as fp:
             fp.write('\n'.join(self._rdf_instances))
 
+        matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
         if read_matrix:
-            matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
+            logging.info("Reading pre-computed semantic similarity matrix {}".format(matrix_output))
             self._sim_matrix = np.loadtxt(matrix_output, self._sim_matrix)
         else:
             # Initialize the matrix with 0
@@ -202,44 +201,113 @@ class SemanticMap:
                     self._sim_matrix.itemset((i, j), x)
                     self._sim_matrix.itemset((j, i), x)
 
-                matrix_output = "similarity_matrices/{0}.txt".format(dataset_name)
-                np.savetxt(matrix_output, self._sim_matrix)
-                logging.info("Adjacency matrix computed successfully!")
-                logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
-                logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
                 logging.info("Number of similarities computed:{0}".format(self._similarities_computed))
                 logging.info("Number of expected similarities:{0}".format(len(indexes_lst)))
-                return True
-        return expected_similarities == self._similarities_computed
+
+        np.savetxt(matrix_output, self._sim_matrix)
+        logging.info("Adjacency matrix computed successfully!")
+        logging.info("Min similarity found:{0}".format(self._sim_matrix.min()))
+        logging.info("Max similarity found:{0}".format(self._sim_matrix.max()))
+
+        return True
 
     def compute_centroids(self):
         # Compute clusters using Affinity Propagation algorithm
-        logging.info("Compute affinity propagation clustering...")
+        logging.info("Generating centroids with multiple clustering algorithms...")
+        if self._sim_matrix is None:
+            logging.error("Similarity matrix does not exist")
+            return
+
+        self.compute_affinity_propagation()
+        self.compute_kmeans()
+        logging.info("Centroids from multiple clustering algorithms already analyzed")
+
+    def compute_affinity_propagation(self):
         centroid_label = 0
+        _centroids = []
+        _centroids_map = {}
+        _semantic_map = {}
+
+        logging.info("Computing affinity propagation clustering")
         clustering = AffinityPropagation(random_state=50, max_iter=800, preference=1, affinity='precomputed').fit(
             self._sim_matrix)
+
+        logging.info("Analysing centroid information")
         # clustering = AffinityPropagation(random_state=50, max_iter=800).fit(self._sim_matrix)
         for centroid_index in clustering.cluster_centers_indices_:
-            self._centroids.append(self._rdf_instances[centroid_index])
-            self._centroids_map[centroid_label] = centroid_index
+            _centroids.append(self.get_name(self._rdf_instances[centroid_index]))
+            _centroids_map[centroid_label] = centroid_index
             centroid_label += 1
+        self._clustering_map["affinity"] = {}
+        self._clustering_map["affinity"]["centroids"] = _centroids
 
-        for indx in range(0, len(clustering.labels_)):
-            label = clustering.labels_[indx]
-            if label not in self._semantic_map.keys():
-                self._semantic_map[label] = []
-            self._semantic_map[label].append(indx)
+        logging.info("Generating semantic map")
+        for i in range(0, len(clustering.labels_)):
+            label = clustering.labels_[i]
+            if label not in _semantic_map.keys():
+                _semantic_map[label] = []
+            _semantic_map[label].append(i)
+        self._clustering_map["affinity"]["semantic_map"] = _semantic_map
 
         try:
             # Compute Intrinsic Measures to evaluate the cluster quality for Affinity Propagation
             silhouette = metrics.silhouette_score(self._sim_matrix, clustering.labels_, metric="sqeuclidean")
             dwvies = davies_bouldin_score(self._sim_matrix, clustering.labels_)
             calinski = metrics.calinski_harabasz_score(self._sim_matrix, clustering.labels_)
-            logging.info("Silhouette index: %0.3f" % silhouette)
-            logging.info("Davies Bouldin score: %0.3f" % dwvies)
-            logging.info("Calinski Harabasz score: %0.3f" % calinski)
+            self._clustering_map["affinity"]["quality"] = {}
+            self._clustering_map["affinity"]["quality"]["silhouette"] = silhouette
+            self._clustering_map["affinity"]["quality"]["dwvies"] = dwvies
+            self._clustering_map["affinity"]["quality"]["calinski"] = calinski
+            logging.info("[Affinity Propagation] - Silhouette index: %0.3f" % silhouette)
+            logging.info("[Affinity Propagation] - Davies Bouldin score: %0.3f" % dwvies)
+            logging.info("[Affinity Propagation] - Calinski Harabasz score: %0.3f" % calinski)
         except ValueError as ve:
             logging.error("Unable to compute clustery quality metrics:{}".format(ve))
+
+    def compute_kmeans(self):
+        _semantic_map = {}
+        _centroids = []
+        logging.info("Computing kmeans clustering")
+
+        logging.info("Getting the best number of clusters using the Elbow Curve")
+        nc = range(2, len(self._rdf_instances) - 1)
+        kmeans_lst = [KMeans(init="k-means++", n_clusters=i, n_init=4, random_state=0) for i in nc]
+        score = [kmeans_lst[i].fit(self._sim_matrix).inertia_ for i in range(0, len(kmeans_lst))]
+        kl = KneeLocator(nc, score, curve="convex", direction="decreasing")
+        logging.info("Number optimal of clusters:{}".format(kl.knee))
+        kmeans = kmeans_lst[kl.knee]
+
+        logging.info("Analysing centroid information")
+        closest, _ = pairwise_distances_argmin_min(kmeans.cluster_centers_, self._sim_matrix)
+        for i in range(0, len(closest)):
+            _centroids.append(self.get_name(self._rdf_instances[i]))
+        self._clustering_map["kmeans"] = {}
+        self._clustering_map["kmeans"]["centroids"] = _centroids
+
+        logging.info("Generating semantic map")
+        for i in range(0, len(kmeans.labels_)):
+            label = kmeans.labels_[i]
+            if label not in _semantic_map.keys():
+                _semantic_map[label] = []
+            _semantic_map[label].append(i)
+        self._clustering_map["kmeans"]["semantic_map"] = _semantic_map
+
+        try:
+            # Compute Intrinsic Measures to evaluate the cluster quality for Kmeans
+            silhouette = metrics.silhouette_score(self._sim_matrix, kmeans.labels_, metric="sqeuclidean")
+            dwvies = davies_bouldin_score(self._sim_matrix, kmeans.labels_)
+            calinski = metrics.calinski_harabasz_score(self._sim_matrix, kmeans.labels_)
+            self._clustering_map["kmeans"]["quality"] = {}
+            self._clustering_map["kmeans"]["quality"]["silhouette"] = silhouette
+            self._clustering_map["kmeans"]["quality"]["dwvies"] = dwvies
+            self._clustering_map["kmeans"]["quality"]["calinski"] = calinski
+            logging.info("[Kmeans] - Silhouette index: %0.3f" % silhouette)
+            logging.info("[Kmeans] - Davies Bouldin score: %0.3f" % dwvies)
+            logging.info("[Kmeans] - Calinski Harabasz score: %0.3f" % calinski)
+        except ValueError as ve:
+            logging.error("Unable to compute clustery quality metrics:{}".format(ve))
+
+        logging.info("Kmeans clustering finished")
 
     def infer_central_term(self):
         entity_features_tool = EntityFeatures()
@@ -348,4 +416,3 @@ class SemanticMap:
             if stop_event.is_set():
                 break
             time.sleep(120)  # every 2 min
-

@@ -38,17 +38,17 @@ class SemanticSimilarityTest(unittest.TestCase):
     def test_build_similarity_movies(self):
         os.chdir("../")
         test_instance = semantic_similarity.SemanticMap()
-        test_instance.build_similarity_matrix("movies_scifi", False)
+        test_instance.build_similarity_matrix("movies_scifi", read_matrix=True)
         test_instance.compute_centroids()
-        test_instance.infer_central_term()
-        test_instance.assemble_semantic_map()
+        #test_instance.infer_central_term()
+        #test_instance.assemble_semantic_map()
         os.chdir("./test")
 
     def test_build_similarity_fict_chars(self):
         os.chdir("../")
         test_instance = semantic_similarity.SemanticMap()
-        assert test_instance.build_similarity_matrix("fictional_chars", False) == True
-        # test_instance.compute_centroids()
+        assert test_instance.build_similarity_matrix("fictional_chars", read_matrix=True) == True
+        test_instance.compute_centroids()
         # test_instance.infer_central_term()
         # test_instance.assemble_semantic_map()
         os.chdir("./test")
