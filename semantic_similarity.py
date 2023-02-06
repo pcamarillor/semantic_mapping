@@ -20,6 +20,7 @@ from sklearn.cluster import AffinityPropagation, KMeans
 from sklearn import metrics
 from sklearn.metrics import davies_bouldin_score, pairwise_distances_argmin_min
 from pyvis.network import Network
+from sklearn_extra.cluster import KMedoids
 from tqdm import tqdm
 from queue import Queue
 from threading import Thread
@@ -76,11 +77,11 @@ class SemanticMap:
         while not q_in.empty():
             (i, j) = q_in.get()
             try:
-                # with lock:
-                x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
-                self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
-                self._queue_out.put((i, j, x))
-                # time.sleep(2)
+                with lock:
+                    x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
+                    self._sim_matrix_boolean[i][j] = self._sim_matrix_boolean[j][i] = 0x01
+                    self._queue_out.put((i, j, x))
+                time.sleep(2)
             except RuntimeError as ue:
                 logging.error("Error getting semantic similarity for {0}-{1}, {2}".format(
                     self.get_name(self._rdf_instances[i]),
@@ -128,10 +129,7 @@ class SemanticMap:
         else:
             # Initialize the matrix with 0
             self._sim_matrix = np.zeros((n, n))
-            self._sim_matrix_boolean = [[0x00 for j in range(0, n)] for i in range(0, n)]
-            for i in range(0, n):
-                self._sim_matrix.itemset((i, i), 1.0)
-                self._sim_matrix_boolean[i][i] = 0x01
+            np.fill_diagonal(self._sim_matrix, 1)
 
             # Compute the similarity matrix for the RDF molecules
             logging.info("Computing similarity matrix")
@@ -218,8 +216,8 @@ class SemanticMap:
             logging.error("Similarity matrix does not exist")
             return
 
-        self.compute_affinity_propagation()
-        self.compute_kmeans()
+        #self.compute_affinity_propagation()
+        self.compute_kmedoids()
         logging.info("Centroids from multiple clustering algorithms already analyzed")
 
     def compute_affinity_propagation(self):
@@ -229,8 +227,11 @@ class SemanticMap:
         _semantic_map = {}
 
         logging.info("Computing affinity propagation clustering")
-        clustering = AffinityPropagation(random_state=50, max_iter=800, preference=1, affinity='precomputed').fit(
-            self._sim_matrix)
+        tmp = np.ones(self.num_rdf_instances**2).reshape(self.num_rdf_instances, self.num_rdf_instances)
+        distance_matrix = np.subtract(tmp, self._sim_matrix)
+        np.fill_diagonal(distance_matrix, 0)
+        clustering = AffinityPropagation(random_state=50, max_iter=800, preference=np.median(distance_matrix), affinity='precomputed').fit(
+            distance_matrix)
 
         logging.info("Analysing centroid information")
         # clustering = AffinityPropagation(random_state=50, max_iter=800).fit(self._sim_matrix)
@@ -251,7 +252,7 @@ class SemanticMap:
 
         try:
             # Compute Intrinsic Measures to evaluate the cluster quality for Affinity Propagation
-            silhouette = metrics.silhouette_score(self._sim_matrix, clustering.labels_, metric="sqeuclidean")
+            silhouette = metrics.silhouette_score(self._sim_matrix, clustering.labels_)
             dwvies = davies_bouldin_score(self._sim_matrix, clustering.labels_)
             calinski = metrics.calinski_harabasz_score(self._sim_matrix, clustering.labels_)
             self._clustering_map["affinity"]["quality"] = {}
@@ -264,46 +265,50 @@ class SemanticMap:
         except ValueError as ve:
             logging.error("Unable to compute clustery quality metrics:{}".format(ve))
 
-    def compute_kmeans(self):
+    def compute_kmedoids(self):
         _semantic_map = {}
         _centroids = []
-        logging.info("Computing kmeans clustering")
+        logging.info("Computing kmedoids clustering")
 
         logging.info("Getting the best number of clusters using the Elbow Curve")
-        nc = range(2, len(self._rdf_instances) - 1)
-        kmeans_lst = [KMeans(init="k-means++", n_clusters=i, n_init=4, random_state=0) for i in nc]
-        score = [kmeans_lst[i].fit(self._sim_matrix).inertia_ for i in range(0, len(kmeans_lst))]
+        tmp = np.ones(self.num_rdf_instances ** 2).reshape(self.num_rdf_instances, self.num_rdf_instances)
+        distance_matrix = np.subtract(tmp, self._sim_matrix)
+        np.fill_diagonal(distance_matrix, 0)
+        nc = range(2, len(self._rdf_instances) // 2)
+        kmedoids_lst_lst = [KMedoids(n_clusters=i, metric='precomputed', random_state=0, method='pam', init='k-medoids++') for i in nc]
+        score = [kmedoids_lst_lst[i].fit(distance_matrix).inertia_ for i in range(0, len(kmedoids_lst_lst))]
         kl = KneeLocator(nc, score, curve="convex", direction="decreasing")
         logging.info("Number optimal of clusters:{}".format(kl.knee))
-        kmeans = kmeans_lst[kl.knee]
+
+        kmedoid = kmedoids_lst_lst[kl.knee]
+        #kmedoid = KMedoids(n_clusters=14, metric='precomputed', random_state=0, method='pam', init='k-medoids++').fit(distance_matrix)
 
         logging.info("Analysing centroid information")
-        closest, _ = pairwise_distances_argmin_min(kmeans.cluster_centers_, self._sim_matrix)
-        for i in range(0, len(closest)):
+        for i in range(0, len(kmedoid.medoid_indices_)):
             _centroids.append(self.get_name(self._rdf_instances[i]))
-        self._clustering_map["kmeans"] = {}
-        self._clustering_map["kmeans"]["centroids"] = _centroids
+        self._clustering_map["kmedoid"] = {}
+        self._clustering_map["kmedoid"]["centroids"] = _centroids
 
         logging.info("Generating semantic map")
-        for i in range(0, len(kmeans.labels_)):
-            label = kmeans.labels_[i]
+        for i in range(0, len(kmedoid.labels_)):
+            label = kmedoid.labels_[i]
             if label not in _semantic_map.keys():
                 _semantic_map[label] = []
             _semantic_map[label].append(i)
-        self._clustering_map["kmeans"]["semantic_map"] = _semantic_map
+        self._clustering_map["kmedoid"]["semantic_map"] = _semantic_map
 
         try:
             # Compute Intrinsic Measures to evaluate the cluster quality for Kmeans
-            silhouette = metrics.silhouette_score(self._sim_matrix, kmeans.labels_, metric="sqeuclidean")
-            dwvies = davies_bouldin_score(self._sim_matrix, kmeans.labels_)
-            calinski = metrics.calinski_harabasz_score(self._sim_matrix, kmeans.labels_)
-            self._clustering_map["kmeans"]["quality"] = {}
-            self._clustering_map["kmeans"]["quality"]["silhouette"] = silhouette
-            self._clustering_map["kmeans"]["quality"]["dwvies"] = dwvies
-            self._clustering_map["kmeans"]["quality"]["calinski"] = calinski
-            logging.info("[Kmeans] - Silhouette index: %0.3f" % silhouette)
-            logging.info("[Kmeans] - Davies Bouldin score: %0.3f" % dwvies)
-            logging.info("[Kmeans] - Calinski Harabasz score: %0.3f" % calinski)
+            silhouette = metrics.silhouette_score(self._sim_matrix, kmedoid.labels_, metric="sqeuclidean")
+            dwvies = davies_bouldin_score(self._sim_matrix, kmedoid.labels_)
+            calinski = metrics.calinski_harabasz_score(self._sim_matrix, kmedoid.labels_)
+            self._clustering_map["kmedoid"]["quality"] = {}
+            self._clustering_map["kmedoid"]["quality"]["silhouette"] = silhouette
+            self._clustering_map["kmedoid"]["quality"]["dwvies"] = dwvies
+            self._clustering_map["kmedoid"]["quality"]["calinski"] = calinski
+            logging.info("[kmedoid] - Silhouette index: %0.3f" % silhouette)
+            logging.info("[kmedoid] - Davies Bouldin score: %0.3f" % dwvies)
+            logging.info("[kmedoid] - Calinski Harabasz score: %0.3f" % calinski)
         except ValueError as ve:
             logging.error("Unable to compute clustery quality metrics:{}".format(ve))
 
