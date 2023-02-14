@@ -62,7 +62,6 @@ class SemanticMap:
         self._finish_build_matrix = None
         self._sim_matrix = None
         self._rdf_instances = []
-        self._alpha = None
         self._graphic_semantic_map = Network()
         self._pending = []
         self._queue_out = Queue()
@@ -82,11 +81,11 @@ class SemanticMap:
         _ = [q_in.put((xx, y)) for (xx, y) in lst_indexes]
         while not q_in.empty():
             (i, j) = q_in.get()
-            # with lock:
-            x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
-            self._queue_out.put((i, j, x))
+            with lock:
+                x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
+                self._queue_out.put((i, j, x))
             # logging.info("Found:{}".format(x))
-            #    time.sleep(2)
+                time.sleep(2)
 
     def get_name(self, concept_url):
         items = concept_url.split("/")
@@ -242,7 +241,7 @@ class SemanticMap:
 
         logging.info("Analysing centroid information")
         for centroid_index in clustering.cluster_centers_indices_:
-            _centroids.append(self.get_name(self._rdf_instances[centroid_index]))
+            _centroids.append(self._rdf_instances[centroid_index])
             _centroids_map[centroid_label] = int(centroid_index)
             centroid_label += 1
         self._clustering_map["affinity"] = {}
@@ -305,7 +304,7 @@ class SemanticMap:
 
         logging.info("Analysing centroid information")
         for i in range(0, len(kmedoid.medoid_indices_)):
-            _centroids.append(self.get_name(self._rdf_instances[i]))
+            _centroids.append(self._rdf_instances[i])
         self._clustering_map["kmedoids"]["centroids"] = _centroids
 
         logging.info("Generating semantic map")
@@ -337,65 +336,75 @@ class SemanticMap:
     def infer_central_term(self):
         entity_features_tool = EntityFeatures()
         concept_tool = ConceptSimilarity(Taxonomy(DBpediaDataTransform()), 'models/dbpedia_type_ic.txt')
-        concepts = {}
-        shared_concepts_among_centroids = set()
 
-        def add_centroid_concepts(centroid, centroid_type):
-            if "wikidata" not in centroid_type and "entity" not in centroid_type:
-                concepts[self.get_name(centroid)].add(centroid_type)
+        for clustering_algorithm, semantic_map in self._clustering_map.items():
+            # Obtain the list of types (RDF.RDF_TYPE) for each centroid
+            logging.info("Inferring central term for {0} clustering algorithm".format(clustering_algorithm))
+            concepts = {}
+            shared_concepts_among_centroids = set()
 
-        def add_ic(target_dict, c):
-            target_dict[c] = concept_tool.concept_ic(c)
+            def add_centroid_concepts(centroid, centroid_type):
+                if "wikidata" not in centroid_type and "entity" not in centroid_type:
+                    concepts[self.get_name(centroid)].add(centroid_type)
 
-        # Obtain the list of types (RDF.RDF_TYPE) for each centroid
-        for centroid in self._centroids:
-            if centroid not in concepts.keys():
-                concepts[self.get_name(centroid)] = set()
-            _ = [add_centroid_concepts(centroid, centroid_type) for centroid_type in
-                 entity_features_tool.type(centroid)]
+            def add_ic(target_dict, c):
+                target_dict[c] = concept_tool.concept_ic(c)
 
-        # Get the intersection of centroid types
-        for centroid, centroid_types in concepts.items():
-            if len(shared_concepts_among_centroids) == 0:
-                shared_concepts_among_centroids = centroid_types
-            else:
-                # Get the intersection for all shared types among centroids
-                shared_concepts_among_centroids = shared_concepts_among_centroids & centroid_types
+            for centroid in semantic_map['centroids']:
+                if centroid not in concepts.keys():
+                    concepts[self.get_name(centroid)] = set()
+                _ = [add_centroid_concepts(centroid, centroid_type) for centroid_type in entity_features_tool.type(centroid)]
 
-        # Once obtained the intersection, proceed to obtain the IC for each shared type and get the max
-        shared_concepts_dict = dict()
-        _ = [add_ic(shared_concepts_dict, c) for c in shared_concepts_among_centroids]
+            # Get the intersection of centroid types
+            for centroid, centroid_types in concepts.items():
+                if len(shared_concepts_among_centroids) == 0:
+                    shared_concepts_among_centroids = centroid_types
+                else:
+                    # Get the intersection for all shared types among centroids
+                    shared_concepts_among_centroids = shared_concepts_among_centroids & centroid_types
 
-        self._alpha = max(shared_concepts_dict.items(), key=operator.itemgetter(1))[0]
-        logging.info("Central term of the semantic map:{0}".format(self._alpha))
+            # Once obtained the intersection, proceed to obtain the IC for each shared type and get the max
+            shared_concepts_dict = dict()
+            _ = [add_ic(shared_concepts_dict, c) for c in shared_concepts_among_centroids]
+
+            semantic_map['alpha'] = max(shared_concepts_dict.items(), key=operator.itemgetter(1))[0]
+            logging.info("Central term of the semantic map:{0}".format(semantic_map['alpha']))
+            self.save_semantic_maps()
 
     def assemble_semantic_map(self):
-        # First, add main term:
-        alpha_indx = self.num_rdf_instances
-        # Alpha concept in gray
-        self._graphic_semantic_map.add_node(alpha_indx, label=self.get_name(self._alpha), size=20, color='#808080')
+        if self._clustering_map is None:
+            logging.error("Unable to read semantic map information")
+            return
 
-        # Second, add all centroids
-        for k, v in self._centroids_map.items():
-            idx = int(v)
-            # Centroids in blue
-            self._graphic_semantic_map.add_node(idx, label=self.get_name(self._rdf_instances[idx]), size=15,
+        for cls_algorithm, semantic_map in self._clustering_map.items():
+
+            # First, add main term:
+            alpha_indx = self.num_rdf_instances
+            # Alpha concept in gray
+            alpha = semantic_map['alpha']
+            _graphic_semantic_map.add_node(alpha_indx, label=self.get_name(alpha), size=20, color='#808080')
+
+            # Second, add all centroids
+            for k, v in semantic_map['centroids'].items():
+                idx = int(v)
+                # Centroids in blue
+                _graphic_semantic_map.add_node(idx, label=self.get_name(self._rdf_instances[idx]), size=15,
                                                 color='#4da6ff')
-            self._graphic_semantic_map.add_edge(alpha_indx, idx)
+                _graphic_semantic_map.add_edge(alpha_indx, idx)
 
-        # Finally, connect add the rest of entity instances and connect them with its centroid
-        for centroid, instance_lst in self._semantic_map.items():
-            centroid_index = int(self._centroids_map[centroid])
-            for instance in instance_lst:
-                if instance != centroid_index:  # Avoid adding the centroid itself
-                    # Non-centroids in white
-                    self._graphic_semantic_map.add_node(instance, label=self.get_name(self._rdf_instances[instance]),
+            # Finally, connect add the rest of entity instances and connect them with its centroid
+            for centroid, instance_lst in semantic_map.items():
+                centroid_index = int(self._centroids_map[centroid])
+                for instance in instance_lst:
+                    if instance != centroid_index:  # Avoid adding the centroid itself
+                        # Non-centroids in white
+                        self._graphic_semantic_map.add_node(instance, label=self.get_name(self._rdf_instances[instance]),
                                                         size=15, color='#ffffff')
-                    self._graphic_semantic_map.add_edge(centroid_index, instance)
+                        self._graphic_semantic_map.add_edge(centroid_index, instance)
 
-        # self._graphic_semantic_map.show_buttons(filter_=["nodes"])
-        self._graphic_semantic_map.toggle_physics(True)
-        self._graphic_semantic_map.show("results/{0}.html".format(self._dataset_name))
+            # self._graphic_semantic_map.show_buttons(filter_=["nodes"])
+            _graphic_semantic_map.toggle_physics(True)
+            _graphic_semantic_map.show("results/{0}_{1}.html".format(self._dataset_name, cls_algorithm))
 
     def load_names(self, dataset_name):
         lst_names = []

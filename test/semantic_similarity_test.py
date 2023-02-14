@@ -29,10 +29,10 @@ class SemanticSimilarityTest(unittest.TestCase):
     def test_build_similarity_books(self):
         os.chdir("../")
         test_instance = semantic_similarity.SemanticMap("books")
-        test_instance.build_similarity_matrix()
-        test_instance.compute_centroids()
-        # test_instance.infer_central_term()
-        # test_instance.assemble_semantic_map()
+        #test_instance.build_similarity_matrix()
+        #test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
         os.chdir("./test")
 
     def test_build_similarity_movies(self):
