@@ -62,7 +62,6 @@ class SemanticMap:
         self._finish_build_matrix = None
         self._sim_matrix = None
         self._rdf_instances = []
-        self._graphic_semantic_map = Network()
         self._pending = []
         self._queue_out = Queue()
         self._similarities_computed = 0
@@ -75,6 +74,22 @@ class SemanticMap:
         # Load pre-existing clustering configuration
         self._cls_map_filename = "semantic_maps/semantic_map_{0}.json".format(self._dataset_name)
         self.load_clustering_maps()
+
+        # Load RDF Graph
+        g = Graph()
+        dataset_filename = "datasets/{0}.nt".format(self._dataset_name)
+        g.parse(dataset_filename)
+        logging.info("Loading Knowledge graph from: {0}".format(dataset_filename))
+
+        # Print number of triples in document
+        logging.info('Number of n-triples {0}'.format(len(g)))
+
+        self._rdf_instances = []
+        # find all subjects of RDF.type
+        for person in g.subjects(RDF.type, None):
+            self._rdf_instances.append(person)
+
+        self.num_rdf_instances = len(self._rdf_instances)
 
     def compute_entity_similarity(self, lst_indexes):
         q_in = Queue()
@@ -97,19 +112,6 @@ class SemanticMap:
         return i, j
 
     def build_similarity_matrix(self, recompute_sim_matrix=False):
-        # Load RDF Graph
-        g = Graph()
-        g.parse("datasets/{0}.nt".format(self._dataset_name))
-
-        # Print number of triples in document
-        logging.info('Number of n-triples {0}'.format(len(g)))
-
-        self._rdf_instances = []
-        # find all subjects of RDF.type
-        for person in g.subjects(RDF.type, None):
-            self._rdf_instances.append(person)
-
-        self.num_rdf_instances = len(self._rdf_instances)
         n = self.num_rdf_instances
         logging.info("Number of named individuals:{0}".format(self.num_rdf_instances))
 
@@ -213,23 +215,20 @@ class SemanticMap:
         logging.info("Generating centroids with multiple clustering algorithms...")
         if self._sim_matrix is None:
             logging.error("Similarity matrix does not exist")
-            self.build_similarity_matrix(recompute_sim_matrix=True)
+            self.build_similarity_matrix()
 
-        self.compute_affinity_propagation()
+        #self.compute_affinity_propagation()
         self.compute_kmedoids()
         self.save_semantic_maps()
         logging.info("Centroids from multiple clustering algorithms already analyzed")
 
     def compute_affinity_propagation(self):
-        centroid_label = 0
-        _centroids = []
-        _centroids_map = {}
-        _semantic_map = {}
-
         if 'affinity' in self._clustering_map.keys():
             logging.info("Affinity propagation clustering already pre-computed for dataset {0}".format(self._dataset_name))
             return
 
+        _semantic_map = {}
+        self._clustering_map["affinity"] = {}
         logging.info("Computing affinity propagation clustering")
         tmp = np.ones(self.num_rdf_instances ** 2).reshape(self.num_rdf_instances, self.num_rdf_instances)
         distance_matrix = np.subtract(tmp, self._sim_matrix)
@@ -240,19 +239,14 @@ class SemanticMap:
                                          affinity='precomputed').fit(distance_matrix)
 
         logging.info("Analysing centroid information")
-        for centroid_index in clustering.cluster_centers_indices_:
-            _centroids.append(self._rdf_instances[centroid_index])
-            _centroids_map[centroid_label] = int(centroid_index)
-            centroid_label += 1
-        self._clustering_map["affinity"] = {}
-        self._clustering_map["affinity"]["centroids"] = _centroids
+        for centroid_index in range(len(clustering.cluster_centers_indices_)):
+            if centroid_index not in _semantic_map.keys():
+                _semantic_map[int(clustering.cluster_centers_indices_[centroid_index])] = []
 
         logging.info("Generating semantic map")
         for i in range(0, len(clustering.labels_)):
             label = int(clustering.labels_[i])
-            if label not in _semantic_map.keys():
-                _semantic_map[label] = []
-            _semantic_map[label].append(i)
+            _semantic_map[int(clustering.cluster_centers_indices_[label])].append(i)
         self._clustering_map["affinity"]["semantic_map"] = _semantic_map
 
         try:
@@ -294,25 +288,25 @@ class SemanticMap:
             self._clustering_map["kmedoids"] = {}
             self._clustering_map["kmedoids"]["k"] = int(kl.knee)
             kmedoid = kmedoids_lst_lst[kl.knee - 2]
-        elif 'kmedoids' not in self._clustering_map.keys():
+        elif 'k' in self._clustering_map["kmedoids"].keys():
             k = int(self._clustering_map["kmedoids"]["k"])
             logging.info("Using pre-existing number of clusters {0} for dataset {1}".format(k, self._dataset_name))
             kmedoid = KMedoids(n_clusters=k, metric='precomputed', random_state=0, method='pam', init='k-medoids++').fit(distance_matrix)
         elif 'kmedoids' in self._clustering_map.keys():
             logging.info("Using pre-computed kmedoids clustering info")
-            return
+            #return
 
         logging.info("Analysing centroid information")
         for i in range(0, len(kmedoid.medoid_indices_)):
-            _centroids.append(self._rdf_instances[i])
-        self._clustering_map["kmedoids"]["centroids"] = _centroids
+            indx = int(kmedoid.medoid_indices_[i])
+            if indx not in _semantic_map.keys():
+                _semantic_map[indx] = []
 
         logging.info("Generating semantic map")
         for i in range(0, len(kmedoid.labels_)):
-            label = int(kmedoid.labels_[i])
-            if label not in _semantic_map.keys():
-                _semantic_map[label] = []
-            _semantic_map[label].append(int(i))
+            centroid_key = int(kmedoid.medoid_indices_[kmedoid.labels_[i]])
+            _semantic_map[centroid_key].append(i)
+            logging.info("test")
         self._clustering_map["kmedoids"]["semantic_map"] = _semantic_map
 
         try:
@@ -350,10 +344,11 @@ class SemanticMap:
             def add_ic(target_dict, c):
                 target_dict[c] = concept_tool.concept_ic(c)
 
-            for centroid in semantic_map['centroids']:
+            for centroid, items in semantic_map['semantic_map'].items():
                 if centroid not in concepts.keys():
-                    concepts[self.get_name(centroid)] = set()
-                _ = [add_centroid_concepts(centroid, centroid_type) for centroid_type in entity_features_tool.type(centroid)]
+                    c_url = self._rdf_instances[int(centroid)]
+                    concepts[self.get_name(c_url)] = set()
+                _ = [add_centroid_concepts(c_url, centroid_type) for centroid_type in entity_features_tool.type(c_url)]
 
             # Get the intersection of centroid types
             for centroid, centroid_types in concepts.items():
@@ -382,25 +377,26 @@ class SemanticMap:
             alpha_indx = self.num_rdf_instances
             # Alpha concept in gray
             alpha = semantic_map['alpha']
+            _graphic_semantic_map = Network()
             _graphic_semantic_map.add_node(alpha_indx, label=self.get_name(alpha), size=20, color='#808080')
 
             # Second, add all centroids
-            for k, v in semantic_map['centroids'].items():
-                idx = int(v)
+            for k, v in semantic_map['semantic_map'].items():
+                idx = int(k)
                 # Centroids in blue
                 _graphic_semantic_map.add_node(idx, label=self.get_name(self._rdf_instances[idx]), size=15,
                                                 color='#4da6ff')
                 _graphic_semantic_map.add_edge(alpha_indx, idx)
 
             # Finally, connect add the rest of entity instances and connect them with its centroid
-            for centroid, instance_lst in semantic_map.items():
-                centroid_index = int(self._centroids_map[centroid])
+            for centroid, instance_lst in semantic_map['semantic_map'].items():
+                centroid_index = int(centroid)
                 for instance in instance_lst:
                     if instance != centroid_index:  # Avoid adding the centroid itself
                         # Non-centroids in white
-                        self._graphic_semantic_map.add_node(instance, label=self.get_name(self._rdf_instances[instance]),
+                        _graphic_semantic_map.add_node(instance, label=self.get_name(self._rdf_instances[instance]),
                                                         size=15, color='#ffffff')
-                        self._graphic_semantic_map.add_edge(centroid_index, instance)
+                        _graphic_semantic_map.add_edge(centroid_index, instance)
 
             # self._graphic_semantic_map.show_buttons(filter_=["nodes"])
             _graphic_semantic_map.toggle_physics(True)
