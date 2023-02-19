@@ -111,7 +111,7 @@ class SemanticMap:
         i = int(index / self.num_rdf_instances)
         return i, j
 
-    def build_similarity_matrix(self, recompute_sim_matrix=False):
+    def build_semantic_distance_matrix(self, recompute_sim_matrix=False):
         n = self.num_rdf_instances
         logging.info("Number of named individuals:{0}".format(self.num_rdf_instances))
 
@@ -215,9 +215,9 @@ class SemanticMap:
         logging.info("Generating centroids with multiple clustering algorithms...")
         if self._sim_matrix is None:
             logging.error("Similarity matrix does not exist")
-            self.build_similarity_matrix()
+            self.build_semantic_distance_matrix()
 
-        #self.compute_affinity_propagation()
+        self.compute_affinity_propagation()
         self.compute_kmedoids()
         self.save_semantic_maps()
         logging.info("Centroids from multiple clustering algorithms already analyzed")
@@ -246,7 +246,9 @@ class SemanticMap:
         logging.info("Generating semantic map")
         for i in range(0, len(clustering.labels_)):
             label = int(clustering.labels_[i])
-            _semantic_map[int(clustering.cluster_centers_indices_[label])].append(i)
+            centroid_key = int(clustering.cluster_centers_indices_[label])
+            if centroid_key != i:
+                _semantic_map[centroid_key].append(i)
         self._clustering_map["affinity"]["semantic_map"] = _semantic_map
 
         try:
@@ -294,7 +296,6 @@ class SemanticMap:
             kmedoid = KMedoids(n_clusters=k, metric='precomputed', random_state=0, method='pam', init='k-medoids++').fit(distance_matrix)
         elif 'kmedoids' in self._clustering_map.keys():
             logging.info("Using pre-computed kmedoids clustering info")
-            #return
 
         logging.info("Analysing centroid information")
         for i in range(0, len(kmedoid.medoid_indices_)):
@@ -305,8 +306,8 @@ class SemanticMap:
         logging.info("Generating semantic map")
         for i in range(0, len(kmedoid.labels_)):
             centroid_key = int(kmedoid.medoid_indices_[kmedoid.labels_[i]])
-            _semantic_map[centroid_key].append(i)
-            logging.info("test")
+            if centroid_key != i:
+                _semantic_map[centroid_key].append(i)
         self._clustering_map["kmedoids"]["semantic_map"] = _semantic_map
 
         try:
@@ -377,7 +378,7 @@ class SemanticMap:
             alpha_indx = self.num_rdf_instances
             # Alpha concept in gray
             alpha = semantic_map['alpha']
-            _graphic_semantic_map = Network()
+            _graphic_semantic_map = Network('1024px', '870px')
             _graphic_semantic_map.add_node(alpha_indx, label=self.get_name(alpha), size=20, color='#808080')
 
             # Second, add all centroids
@@ -398,7 +399,6 @@ class SemanticMap:
                                                         size=15, color='#ffffff')
                         _graphic_semantic_map.add_edge(centroid_index, instance)
 
-            # self._graphic_semantic_map.show_buttons(filter_=["nodes"])
             _graphic_semantic_map.toggle_physics(True)
             _graphic_semantic_map.show("results/{0}_{1}.html".format(self._dataset_name, cls_algorithm))
 
