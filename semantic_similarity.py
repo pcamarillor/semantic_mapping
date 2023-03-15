@@ -1,6 +1,7 @@
 import csv
 import os.path
 import time
+from operator import attrgetter
 
 import numpy as np
 import json
@@ -233,11 +234,26 @@ class SemanticMap:
         tmp = np.ones(self.num_rdf_instances ** 2).reshape(self.num_rdf_instances, self.num_rdf_instances)
         distance_matrix = np.subtract(tmp, self._sim_matrix)
         np.fill_diagonal(distance_matrix, 0)
-        clustering = AffinityPropagation(random_state=50,
-                                         max_iter=800,
-                                         preference=np.median(distance_matrix),
-                                         affinity='precomputed').fit(distance_matrix)
+        # ap_cls_selection_lst contains a list or triples (clustering instance, silhouette index, preference)
+        ap_cls_selection_lst = []
+        # Inferring the optimal preference value based on the number of generated clusters based on silhouette index
+        for preference in np.arange(0, 1, 0.1):
+            logging.info("Inferring optimal preference value for affinity propagation")
+            clustering = AffinityPropagation(random_state=50,
+                                max_iter=800,
+                                preference=preference,
+                                affinity='precomputed').fit(distance_matrix)
+            n_clusters = len(clustering.cluster_centers_indices_)
 
+            # Valid values are 2 to n_samples - 1 (inclusive)
+            if 2 < n_clusters < self.num_rdf_instances:
+                ap_cls_selection_lst.append((clustering,
+                                             metrics.silhouette_score(self._sim_matrix, clustering.labels_),
+                                             preference))
+
+        # Select cluster that maximizes silhouette index (2nd element)
+        clustering_triple = max(ap_cls_selection_lst, key=lambda x: x[1])
+        clustering = clustering_triple[0] # 1st element contains optimal clustering details
         logging.info("Analysing centroid information")
         for centroid_index in range(len(clustering.cluster_centers_indices_)):
             if centroid_index not in _semantic_map.keys():
@@ -249,14 +265,16 @@ class SemanticMap:
             centroid_key = int(clustering.cluster_centers_indices_[label])
             if centroid_key != i:
                 _semantic_map[centroid_key].append(i)
-        self._clustering_map["affinity"]["semantic_map"] = _semantic_map
 
+        # 3rd element in the triple contains the selected preference value for Affinity Propagation
+        self._clustering_map["affinity"]["preference"] = clustering_triple[2]
+        self._clustering_map["affinity"]["k"] = len(clustering.cluster_centers_indices_)
+        self._clustering_map["affinity"]["quality"] = {}
         try:
             # Compute Intrinsic Measures to evaluate the cluster quality for Affinity Propagation
             silhouette = metrics.silhouette_score(self._sim_matrix, clustering.labels_)
             dwvies = davies_bouldin_score(self._sim_matrix, clustering.labels_)
             calinski = metrics.calinski_harabasz_score(self._sim_matrix, clustering.labels_)
-            self._clustering_map["affinity"]["quality"] = {}
             self._clustering_map["affinity"]["quality"]["silhouette"] = float(silhouette)
             self._clustering_map["affinity"]["quality"]["dwvies"] = float(dwvies)
             self._clustering_map["affinity"]["quality"]["calinski"] = float(calinski)
@@ -264,7 +282,13 @@ class SemanticMap:
             logging.info("[Affinity Propagation] - Davies Bouldin score: %0.3f" % dwvies)
             logging.info("[Affinity Propagation] - Calinski Harabasz score: %0.3f" % calinski)
         except ValueError as ve:
+            self._clustering_map["affinity"]["quality"]["silhouette"] = -1
+            self._clustering_map["affinity"]["quality"]["dwvies"] = 0.0
+            self._clustering_map["affinity"]["quality"]["calinski"] = 0.0
             logging.error("Unable to compute clustery quality metrics:{}".format(ve))
+
+        self._clustering_map["affinity"]["semantic_map"] = _semantic_map
+        logging.info("Affinity propagation clustering finished")
 
     def compute_kmedoids(self):
         _semantic_map = {}
@@ -290,6 +314,7 @@ class SemanticMap:
             self._clustering_map["kmedoids"] = {}
             self._clustering_map["kmedoids"]["k"] = int(kl.knee)
             kmedoid = kmedoids_lst_lst[kl.knee - 2]
+            self._clustering_map["kmedoids"]["inertia"] = float(kmedoid.inertia_)
         elif 'k' in self._clustering_map["kmedoids"].keys():
             k = int(self._clustering_map["kmedoids"]["k"])
             logging.info("Using pre-existing number of clusters {0} for dataset {1}".format(k, self._dataset_name))
@@ -308,7 +333,6 @@ class SemanticMap:
             centroid_key = int(kmedoid.medoid_indices_[kmedoid.labels_[i]])
             if centroid_key != i:
                 _semantic_map[centroid_key].append(i)
-        self._clustering_map["kmedoids"]["semantic_map"] = _semantic_map
 
         try:
             # Compute Intrinsic Measures to evaluate the cluster quality for Kmeans
@@ -326,6 +350,7 @@ class SemanticMap:
             logging.error("Unable to compute clustery quality metrics:{}".format(ve))
             self._clustering_map["kmedoids"]["quality"]["dwvies"] = -1
 
+        self._clustering_map["kmedoids"]["semantic_map"] = _semantic_map
         logging.info("Kmeans clustering finished")
 
     def infer_central_term(self):

@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: semantic_mapping.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: vis.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in Hogan21
+
+Done.
+You've used 67 entries,
+            4087 wiz_defined-function locations,
+            1258 strings with 20631 characters,
+and the built_in function-call counts, 57851 in all, are:
+= -- 4673
+> -- 1431
+< -- 547
++ -- 833
+- -- 280
+* -- 2815
+:= -- 8329
+add.period$ -- 142
+call.type$ -- 67
+change.case$ -- 70
+chr.to.int$ -- 1266
+cite$ -- 68
+duplicate$ -- 4023
+empty$ -- 4494
+format.name$ -- 293
+if$ -- 13586
+int.to.chr$ -- 0
+int.to.str$ -- 67
+missing$ -- 689
+newline$ -- 240
+num.names$ -- 71
+pop$ -- 1562
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 4424
+stack$ -- 0
+substring$ -- 3153
+swap$ -- 3493
+text.length$ -- 125
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 67
+warning$ -- 1
+while$ -- 263
+width$ -- 69
+write$ -- 702
+(There was 1 warning)

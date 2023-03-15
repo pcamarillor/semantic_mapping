@@ -1,0 +1,1202 @@
+\let\TeXyear\year
+\documentclass{ieeeaccess}
+\let\setyear\year
+\let\year\TeXyear
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{helvet}  
+\usepackage{comment}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{setspace}
+
+\pgfplotsset{compat=1.7}
+\setyear{2023}
+\NewSpotColorSpace{PANTONE}
+\AddSpotColor{PANTONE} {PANTONE3015C} {PANTONE\SpotSpace 3015\SpotSpace C} {1 0.3 0 0.2}
+\SetPageColorSpace{PANTONE}
+
+\newtheorem{Problem}{Problem}
+\newtheorem{Definition}{Definition}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\captionsetup{font={sf,small,stretch=0.80},labelfont={bf,color=accessblue}}
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2017.DOI}
+
+\title{On semantic mapping to visualize Knowledge Graphs}
+\author{\uppercase{P. Camarillo-Ramirez}\authorrefmark{1},
+\uppercase{L. F. Guti\'{e}rrez-Preciado\authorrefmark{1}, and F. Cervantes-Alvarez}.\authorrefmark{1}}
+\address[1]{Western Institute of Technology and Higher Education, Tlaquepaque, Jalisco 45601 Mexico (pablo.camarillo@iteso.mx;lgutierrez@iteso.mx;fcervantes@iteso.mx)}
+
+\tfootnote{This work was supported in part by the  National Council of 
+Science and Technology of Mexico through grant 498322}
+
+\markboth
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+
+\corresp{Corresponding author: P. Camarillo-Ramirez (e-mail: pablo.camarillo@iteso.mx)}
+
+\graphicspath{ {img/} }
+
+\begin{abstract}
+Knowledge Graphs (KGs) are one of the most novel technologies used to
+improve search engines and support
+decision making in the life sciences since they structure information in graph form
+by encoding concepts as nodes, and the semantics of the relationship
+among concepts as edges. The analysis of KGs calls
+for an effective strategy to visualize them. However, the increasing
+size of KGs makes the exploring process a big challenge.
+A semantic map is a visual representation of related concepts that helps humans
+in the learning process. In this work, we propose to generate a simplified visual
+representation of a KGs by generating semantic maps. We apply several clustering 
+algorithms to group the \textit{related} concepts in KGs. We used different semantic similarity
+metrics to compute the matrix consumed by the clustering algorithms.
+
+\end{abstract}
+
+\begin{keywords}
+Knowledge graphs; Knowledge graphs visualization; Semantic similarity; Semantic mapping; Big Data;
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+
+Knowledge Graphs are considered one of the emerging technologies associated
+with Big Data by providing semantic structured information that can be 
+interpreted by machines, and such attribute is used to speed up the production
+of more intelligent systems \cite{Zou_2020}.The core idea behind a Knowledge 
+Graph (KG) is to represent knowledge from real world in a graph structure, 
+where nodes represent entities of interest and edges represent relations 
+between these entities \cite{Hogan21}. Recently, 
+academic and private organizations have constructed KGs, such as YAGO 
+\cite{suchanek2007yago}, DBPedia \cite{auer2007dbpedia}, Freebase 
+\cite{Freebase08}, NELL\cite{NELL10}, Google Knowledge Graph 
+\cite{GoogleKG12}, Microsoft Satori \cite{Satori13}, Facebook Entity
+Graph \cite{Facebook13}, and Wikidata \cite{Wikidata14}, which contain
+millions of entities and billions of relationships. The main applications 
+of KGs include the enhancement of search engines like Google \cite{GoogleKG12}
+or Bing \cite{Satori13}, question answering \cite{Chen2022}, information 
+retrieval, recommender systems \cite{Lin2022, Haotian2022}, domain-specific KG 
+building \cite{Zhang2022, Borrego2022, Guan2022}, and decision support in the 
+life sciences \cite{Zou_2020,Belleau08,Ruttenberg09,Momtchev09}.
+
+
+\Figure[h!](topskip=0pt, botskip=0pt, midskip=0pt)[width=0.95\textwidth]{img/TBoxAndAbox.pdf}
+{Small group of concepts and instances extracted from DBPedia. \label{Fig:TboxAndAbox}}
+
+Some definitions describe a KG as a graph-structured knowledge
+base \cite{nickel2015review, seufert2016instant}. In this work, we 
+consider a knowledge base a set of sentences/facts expressed in some 
+formal language such as description logic. According to description 
+logic terminology, knowledge bases have two types of axioms: a terminology
+box (TBox) and an assertion box (ABox) \cite{horrocks2008ontologies}, hence a 
+KG should contain these two sets of axioms to be considered as a knowledge 
+base. To exemplify the above idea, Figure \ref{Fig:TboxAndAbox} shows sets 
+TBox and ABox of a group of entities and relationships extracted from DBPedia
+\cite{auer2007dbpedia} \footnote{https://dbpedia.org}. In KGs, the ontology 
+classes (e.g.,\texttt{dbo:Book} \footnote{URIs mentioned in this document use
+the common prefixes described in https://prefix.cc} or \texttt{dbo:Movie})
+correspond with the TBox and describe concepts hierarchies, while the ontology 
+instances correspond with the ABox and describe entity instances (e.g., 
+\texttt{dbr:Lucasfilm} or \texttt{dbr:George\_RR\_Martin}) and their
+relationships.  Hierarchical relationships like \textit{is a} defines the 
+connection between each pair of concepts in TBox. For example, axioms 
+(\texttt{dbo:Book}, \textit{is a}, \texttt{dbo:Work})
+and (\texttt{dbo:film}, \textit{is a}, \texttt{dbo:Work}) describe
+the fact that both \texttt{dbo:Book} and \texttt{dbo:film} concepts
+are descendants of the class \texttt{dbo:Work}. Alternatively, in
+ABox, axioms also indicate the list of types that one entity
+instance may have. For instance, in Figure \ref{Fig:TboxAndAbox},
+the axiom (\texttt{dbr:A\_dance\_of\_dragons}, \textit{rdf:type},
+\texttt{dbo:Book}) indicates that resource
+\texttt{dbr:A\_dance\_of\_dragons} is an instance of class
+\texttt{dbo:Book}. Another type of axioms in ABox like
+(\texttt{dbr:George\_RR\_Martin}, is \textit{dbo:creator\_of}
+of, \texttt{dbr:DaenerysTargaryen}) and 
+(\texttt{dbr:George\_RR\_Martin}, is \textit{dbo:author} of,
+\texttt{dbr:A\_dance\_of\_dragons}) indicate
+that the instance \texttt{dbr:George\_RR\_Martin} has two semantic
+connections with \texttt{dbr:DaenerysTargaryen} and 
+\texttt{dbr:A\_dance\_of\_dragons} entity instances.
+
+Considering the continuous increase in size of the KGs, the goal of 
+visual graph analysis become uncertain due to a lacking ability to observe 
+details from the presented information. The visual data exploration is considered as a
+hypothesis-generator process by allowing users to gain a deep understanding 
+of the data \cite{keim2001visual}, hence producing an effective visual
+representation of a KG is crucial. Existing approaches to visualize KGs
+are focussed on drawing the whole structure
+\cite{gomez2018visualizing} preventing data analysts to explore the KG
+beyond its structural information. Consalvi et. al \cite{Consalvi2022} 
+propose an strategy to render large graphs in 
+
+Moreover, semantic mapping is a technique widely used to understand
+complex topics and consists of a categorical structuring of information 
+in a graphic form \cite{johnson1986semantic}. Semantic maps have 
+a central word indicating the main topic of the map and it is 
+connected with a set of keywords that groups the rest of the vocabulary. 
+Figure  \ref{fig:example_semantic_map} shows an
+example of a semantic map describing the topic \textit{Water}. It
+contains three node categories: (1) the central words (root), (2)
+the set of keywords (e.g., Usages, Living things, etc.), and (3) the
+vocabulary associated to each keyword, for instance, words
+\texttt{Cooking} and \texttt{Bathing} are associated with keyword 
+\textit{Usages}.
+
+\Figure[h]()[scale=0.35]{img/Water_Semantic_Map_no_colour.pdf}
+{Example of a semantic map of concepts and vocabulary  associated with topic
+ \textit{Water}.\label{fig:example_semantic_map}}
+
+
+In this paper, we hypothesize 
+that semantics maps are useful to visualize the high level of abstraction of 
+a KG based on the semantic closeness of its entity instances. To
+generate a semantic map it is necessary to find the groups of related 
+instances. In unsupervised learning, clustering algorithms classify data 
+into one or more classes depending on a similarity or distance measure 
+\cite{SCHAEFFER200727}. Theoretically, if a clustering strategy is applied
+over the set of entity instances of a KG, it will group those entity
+resulting groups can be used to build the semantic map.
+Section \ref{sec:results} presents a set of experiments validating the
+above notion.
+
+The main contribution of this work is the formal definition of the 
+semantic map of a KG as well as a set of experiments showing that semantic
+maps can be useful to provide a high-level view of a KG.
+
+
+The rest of this paper is structured as follows. In the Section
+\ref{sec:related}, we review the most relevant works associated with 
+knowledge graph visualization, graph clustering, semantic similarly, and 
+semantic mapping topics. Section \ref{sec:Method}, describes the proposed
+method to generate the semantic maps of a KG. Section \ref{sec:results} 
+presents a set of experiments evaluating the semantic maps generated from 
+a selected group of datasets extracted from DBPedia. Finally, Section
+\ref{sec:conclusions} presents a discussion on the obtained results as
+well as some final remarks for this work.
+
+\section{Related work}
+\label{sec:related}
+
+Let us provide a formal definition of KG before describing
+the most relevant topics associated with the semantic mapping process.
+
+\begin{Definition}[Knowledge Graph]
+Given a set of entities $V$, a set of property labels $L$,
+and a set of edges $E$ a Knowledge Graph $K$ is defined as
+$K = (V, L, E)$ where $E$ is a subset of the cross
+product of entities and property labels defined as 
+$V \times L \times V$. Each member of $E$ is referred to as a
+triple $(subject-property-value)$.
+\end{Definition}
+
+\subsection{Visual Data Exploration of knowledge graphs}
+The idea behind the visual data exploration process is to present 
+the data in some visual form, allowing users to draw conclusions 
+of the analyzed phenomena \cite{keim2001visual}. This process, also
+known as the \textit{information seeking mantra}, follows three steps: overview,
+zoom and filter, and details-on-demand \cite{Shneiderman96}. In this
+context, ontologies are considered one of the most relevant data
+visualization techniques. In the field of computer science, an ontology
+is a model for describing the world that consists of a set of types,
+properties, and relationship types \cite{Garshol2004MetadataTT}
+and by providing an initial attempt to visualize linked data.
+
+In regard to visual exploration of KGs, challenges include context
+adaptation, users input \cite{Koutra2019}, data heterogeneity
+\cite{OntoVis,6787141,1703364}, supporting diverse analysis tasks 
+(query, combination, filtering, etc.), and performance
+\cite{gomez2018visualizing}. In this study, semantic mapping proposal
+is to combine and reduce the number of edges in the KG using the semantic similarity among its
+entities.
+
+Recent applications have proven useful for large graph visualizations 
+to understand different phenomena, such as Bitcoin transactions 
+\cite{mcginn2016visualizing} and online discussions
+\cite{molina2017improving}. For big knowledge graphs, it is necessary a
+distributed implementation of the layout algorithms to improve the time 
+needed to generate the visual representation
+\cite{gomez2018visualizing}. 
+
+In addition of recent efforts on KGs visualization, there are some commercial
+products enabling analysts to visualize RDF graphs like Data
+Graphs\footnote{https://datagraphs.com} or the 
+family of tools developed by Cambridge Intelligence company: Keylines 
+\footnote{https://cambridge-intelligence.com/keylines/}, 
+ReGraph \footnote{https://cambridge-intelligence.com/regraph/}, and
+KronoGraph \footnote{https://cambridge-intelligence.com/kronograph/}
+that offer the capability to render KGs to support tasks in areas like 
+pharmacy and bio-science research or financial analysis. In the area of 
+free tools, there are two online tools that consumes RDF data and produce 
+a visual representation: RDF visualizer
+\footnote{https://issemantic.net/rdf-visualizer}
+and RDF grapher \footnote{https://www.ldf.fi/service/rdf-grapher}. The
+main limitation with these tools is the small amount of data they
+can process.
+
+\subsection{Knowledge Graph summarization}
+
+Recent works \cite{6787141,1703364,8801911}
+have shown that visualizing a simplified version of a large graph is an
+adequate alternative. In the context of data mining, summarization is the
+process of facilitating the identification of meaningful data. The
+applications of graph summarization include reduction of data
+volume and storage, speedup of graph algorithms and queries, interactive
+analysis support, and noise elimination \cite{liu2018graph}. Recently, it
+has been proposed to summarize large graphs in order 
+to enable an efficient visualization of their content. For example, in 
+\cite{Koutra2019}, the authors focus on summarizing KGs by taking
+advantage of individual interests to generate personalized knowledge graph
+summaries. In \cite{OntoVis}, Shen et al. propose a visual 
+analytics tool called OntoVis, which performs both structural and semantic
+abstractions to offer a summarized version of a large graph and thus
+being able to visualize a simplified version of the graph. Another
+related work is presented in \cite{koutra2014vog}, which describes the VoG
+(Vocabulary-based summarization of Graphs) algorithm to summarize and
+understand large graphs by constructing and visualizing subgraph-types, 
+such as starts, cliques, and chains. The visual abstraction presented in
+\cite{8801911}, transforms geo-tagged social media data into high-dimensional
+vectors by utilizing a doc2vec model.
+
+Regardless of the application, one of the main challenges of
+graph summarization is defining which data is of interest. Every
+summarization strategy depends on selecting an interest criteria to
+extract meaningful information \cite{liu2018graph}. However, to achieve a 
+concise definition of \textit{interesting} is not an easy task. For
+example, the FUSE algorithm \cite {Seah12} proposes a profit maximization
+model that seeks to find a summary by maximizing information profit under
+a budget constraint. On the other hand, VoG \cite{koutra2014vog} exploits
+the Minimum Description Length (MDL) principle aimed at identifying the
+best subgraphs by choosing those which save most bits. In the case of
+semantic abstraction proposed in \cite{8801911}, a dual-objective blue 
+noise sampling model is utilized to select a subset of social media data
+items supporting the spatial distribution and semantic correlation for
+the resulting simplified geographical visualization. The personalized 
+summaries of KGs described in \cite{Koutra2019}, the criteria to decide 
+which information is \textit{interesting} for each user is determined by
+reviewing the users' query history. The work of M. Tasnmin et al. 
+propose a strategy to find equivalent entities in a KG using the context 
+of each RDF Molecule \cite{Tasnim2020}. Semantic mapping process described
+in this document uses the semantic similarity between each pair of entity
+instances in the KG to infer the groups of related instances.
+
+\subsection{Semantic similarity}
+
+The semantic similarity is a metric used in Natural Processing Language 
+(NPL) and Information Retrieval (IR) areas \cite{HOVY20132} that
+represents how related are two concepts based on their hierarchical 
+relations \cite{resnik1995using}, \cite{turney2010frequency}. 
+In a KG, the semantic similarity between two entities $e_{1}, e_{2} \in V$
+is denoted as $sim(e_{1}, e_{2})$. Intuitively, semantic distance between
+two words is the most easy way to calculate semantic similarity and it is
+usually determined by the path connecting two entities in KG. Existing 
+semantic similarities metrics are classified in two main groups: corpus-based 
+and knowledge-based approaches \cite{mihalcea2006corpus}. Corpus-based 
+similarity metrics are focused on learning how similar are two concepts based 
+on the information from large corpora. Two examples of corpus-based similarity
+metrics are pointwise mutual information \cite{church1990word}, and latent 
+semantic analysis \cite{landauer1997solution}. In contrast, knowledge-based
+similarity metrics quantify the degree to which two words are 
+semantically related \cite{budanitsky2001semantic}. In KG, knowledge-based
+approaches, semantic similarity is determined using the information provided 
+by the TBox. Knowledge-based approaches include path-based metrics such as
+those proposed by Hulpus et at. \cite{hulpucs2015path}, Wu $\And$ Palmer
+\cite{wu1994verb}, and Leacock $\And$ Chodorow \cite{leacock1998combining}.
+Other knowledge-based measures utilize the Information Content (IC) metric like 
+Lin \cite{lin1998information}, Jiang and Conrath \cite{jiang1997semantic}, 
+and Resnik \cite{resnik1995using} metrics. IC of concepts is a statistical
+measure that computes the specificity of a concept over a corpus. Higher 
+values of IC indicate more specific concepts (e.g., \texttt{dbo:Book}) and lower 
+values of IC are associated with more general concepts (e.g., \texttt{owl:Thing}).
+Hybrid knowledge-based approaches like IC-graph \cite{ZhuIglesias2017} or Zhou
+\cite{zhou2008new} combine IC and some other metrics to compute how related two 
+words are. For instance, graph-based IC \cite{ZhuIglesias2017} uses 
+the counting services provided by DBPedia and it is calculated using the 
+following expression:
+
+\begin{equation}
+    IC_{graph}(c_{i}) = -logProb(c_{i})
+\end{equation}
+
+Where $Prob(c_{i}) = \frac{freq_{graph}(c_{i})}{N}$ and $N$ is the 
+number of entities in the KG. Let $\mathcal{E}(c_{i})$ the set of 
+entities having type of $c_{i}$, the frequency of concept $c_{i}$
+in the $KG$ is defined as $freq_{graph}(c_{i}) = |\mathcal{E}(c_{i})|$.
+
+\subsection{Centroid-based Clustering}
+
+There exist several techniques to clustering data and recent surveys
+summarize these clustering approaches based on the application or
+the type of data to group \cite{Dongkuan2015}, 
+\cite{DBLP:books/crc/aggarwal2013}, \cite{firdaus2015survey}. Types of
+clustering include Centroid-based, Density-based, Distribution-based, and
+Hierarchical clustering \cite{google_2022}.
+
+One of the phases of the semantic mapping process is to collocate each entity
+into the most appropiate cluster based on its semantic similarity. Each 
+resulting cluster needs a node that represents all entities contained on it. We
+denote the set of this representing nodes as the keywords of the semantic map. 
+Considering these keywords as centroids of clusters, the usage of a centroid-based
+clustering is crucial.
+
+The main idea of centroid-based clustering is to find
+\textit{k} centroids (or centers) followed by computing \textit{k} sets of data
+points that minimize the proximity with each center. For instance, K-means algorithm 
+tries to minimize the sim of the squared distance between the data points 
+and the cluster's centroid \cite{macqueen1967classification}. A variation of
+K-means is the PAM (Partitioning Around Medoids) algorithm that minimizes
+dissimilarities between points in a cluster and the centroids 
+\cite{kaufmanPAM}. The CLARA (Clustering Large Applications) algorithm is an extension of 
+PAM for large datasets \cite{kaufmanCLARA}. On the other hand, CLARANS 
+(Clustering Large Applications based on RANdomized Search) is a 
+partitioning algorithm focused on spatial data mining because it recognizes
+patters and relationships existing in spatial data such as topological
+data \cite{ng2002clarans}. One last centroid-based clustering algorithm is the Affinity Propagation (AP) algorithm which 
+consists on a message-passing procedure that looks for broadcasting messages of
+attractiveness and availability among data points \cite{frey2007clustering}.
+
+\section{Proposed method}
+\label{sec:Method}
+
+The notion behind the semantic map of a KG is to produce 
+a reduced version of the KG by exploiting the semantic 
+similarity between each pair of entities. To illustrate 
+this idea, let us generate a small KG from DBPedia containing 
+the list of some fictional characters from series of fantasy novels 
+by the novelist George R. R. Martin. Figure \ref{Fig:DefaultVisualization}a) 
+presents a visual representation produced by Gephi\footnote{https://gephi.org/}, 
+which is one of the most used tools to visualize networked data. However, 
+this kind of visualization is not visually super informative 
+or visually appealing which may lead in an ineffective
+exploratory visual analysis. On the contrary Figure \ref{Fig:DefaultVisualization}b)
+shows a semantic map of the KG by grouping the entity instances
+and showing the central concept of the map that connects the centroids of
+the cluster.
+
+\Figure[h!](topskip=0pt, botskip=0pt, midskip=0pt)[width=1\textwidth]{img/origin.pdf}
+{Visual representation from a small KG containing some fictional characters by George R.R. Martin. a) Contains the visual representation produced by Gephi. b) Inferred semantic map of the original KG.\label{Fig:DefaultVisualization}}
+
+\subsection{Clustering entities of Knowledge Graphs}
+
+The first phase of the semantic mapping process is to group 
+the entities of the KG based on the semantic closeness between
+each pair of entities in the KG. The main challenge of this
+phase is to extract numeric data from the KG and generate a set of
+groups of entities. 
+
+Our proposal consist of using a centroid-based clustering algorithm
+and generate a non-overlapping set of clusters by using the 
+semantic distance matrix as input of the selected clustering algorithm. The semantic relatedness among entities in 
+the KG is encoded in a \textbf{semantic distance matrix}.
+
+\begin{Definition}[Semantic distance matrix]
+Given a Knowledge Graph $K = (V, L, E)$, and $sim(e_{1}, 
+e_{2})$ the semantic similarity between entities $e_{1}$ 
+and $e_{2}$, the semantic similarity matrix $D(K)$ represents 
+the semantic distance between each pair of entities in $K$ i.e., 
+the value for cell  $d_{i,j} = 1 - sim(e_{i}, e_{j})$.
+\end{Definition}
+
+ The 
+relation between similarity and distance follows the notion that
+the higher is the similarity between two entities the lower is the
+distance between these entities. 
+
+The $i-th$ row of $D(K)$ is the vector containing semantic distance
+values between the $i-th$ entity and the rest of entities in the 
+KG. Let $C = \bigcup C_{i}$ the set of clusters resulting after applying 
+a centroid-based clustering algorithm. Each cluster $C_{i}$ has
+a centroid element denoted by $centroid(C_{i})$ and the set of centroid
+elements is denoted by $\mathcal{C} = \bigcup_{C_{i} \in C} centroid(C_{i})$.
+
+\subsection{Central concept of the semantic map}
+
+One of the main features of a semantic map is the 
+\textbf{central concept} that represents the main topic of this
+graphical representation. In this work, we denote this
+central concept as $\alpha$. In a regular semantic map,
+$\alpha$ is connected with a set of selected keywords (e.g., 
+{structures, characteristics, size, habitat, movie, kinds} in 
+Figure \ref{fig:example_semantic_map}). These keywords are used 
+to represent every group of words of the semantic map. This work
+proposes to use the centroids inferred by centroid-based 
+clustering algorithms \cite{Dongkuan2015} as the keywords 
+of a KG. Therefore, we denote these keywords as the set 
+of centroids $\mathcal{C}$ of the entities in a KG.
+
+To infer the central term $\alpha$, we propose to compute the
+$IC_{graph}$ measure for all types associated with each centroid
+in $\mathcal{C}$. Let $types(e_{i})$ to be the function to 
+retrieves set of types associated with the entity $e_{i}$, 
+we define $\mathcal{T}$ as the set of shared types among 
+all centroids in KG. This definition is formally described in
+equation \ref{eq:shared_types}.
+
+\begin{equation}
+    \label{eq:shared_types}
+    \mathcal{T} = \bigcap_{c_{i} \in \mathcal{C}} types(c_{i})
+\end{equation}
+
+\begin{Definition}[Central concept $\alpha$]
+Given a set of shared types 
+$\mathcal{T}$, the central concept $\alpha$ of $G$ is the concept
+$c_{i} \in \mathcal{T}$ with maximum $IC_{graph}$.
+\end{Definition}
+
+Thus, the central term $\alpha$ represents the most specific type
+among all centroids in the semantic map.
+
+\subsection{Semantic map of a Knowledge Graph}
+
+Semantic mapping process aggregates the process of clustering
+entities of KG and inferring the central term $\alpha$. 
+
+Let us define the semantic map of a KG:
+
+\begin{Definition}[Semantic map of a Knowledge Graph]
+Given a Knowledge Graph $K = (V, L, E)$ and $D(K)$ the semantic
+distance matrix associated with $K$, the semantic map of $K$ is 
+defined as $\mathcal{SM}(K) = (\alpha, \mathcal{C}, 
+\mathcal{NC}, E_{c}, E_{nc}, \Psi)$. Table \ref{tab:symbols}
+describes the symbols associated with semantic maps of KGs.
+\end{Definition}
+
+\begin{table}[!htb]
+\caption{Symbols associated with semantic maps of Knowledge
+Graphs.}
+\label{tab:symbols}
+\centering
+\begin{tabular}{ll}
+     \toprule
+     \textbf{Symbol} & 
+     \textbf{Description} 
+     \\
+     \midrule
+     $\alpha$ & Central concept of the semantic map. \\
+     $\mathcal{C}$ & Centroid entities $\mathcal{C} \subseteq V$ produced by a \\
+     & centroid-based clustering algorithm. \\
+     $E_{c}$ & Set of edges connecting each centroid with the \\
+     & central term $\alpha$, 
+    defined as $E_{c} =  \mathcal{C} \times \alpha$ \\
+    $\mathcal{NC}$ & Non-centroids entities with $\mathcal{NC} \subseteq V$ and \\
+    & 
+    $\mathcal{NC} \cap \mathcal{C} = \emptyset $. \\
+    $\Psi$ & Function $\mathcal{NC} \times \mathcal{C} \rightarrow E_{nc}$ that 
+    connects each \\
+    & non-centroid entity with its unique centroid entity. \\ 
+     \bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
+\section{Evaluation study}
+\label{sec:results}
+
+
+\Figure[h!](topskip=0pt, botskip=0pt, midskip=0pt)[width=0.95\textwidth]
+{img/semantic_mapping_process.pdf}
+{Semantic Mapping phases. 
+(a) Consume a KG as a list of n-triples, 
+(b) Generate the semantic distance matrix $D$,
+(c) Cluster entities using the matrix $D$,
+(d) Infer main term $\alpha$, and
+(e) Assemble the semantic map by connecting each centroid with $\alpha$.
+\label{fig:Semaf}}
+
+
+The goal of experiments described in this section is to validate the process
+of generating a visualization of a reduced version of a KG through a semantic map. We introduce a tool used to automate the process of generating semantic
+maps from different datasets. Then, we describe the datasets used to test the
+semantic mapping process and 
+finally we present the cluster quality obtained for each experiment.
+
+\subsection{Semantic Mapping Framework}
+
+Experiments are executed using a
+framework implemented using Python 3 language which depends on the 
+\textit{Sematch} framework \cite{ZHU201730} to perform SPARQL queries to 
+DBPedia public endpoint and compute the similarity measure used to compute $D$, 
+i.e., the function $sim(e_{i}, e_{j})$ corresponds with a SPARQL query to 
+DBPedia. Once generated $D$, the tool produces the set of centroids 
+$\mathcal{C}$ and the set of non-centroid $\mathcal{NC}$ nodes by using 
+two centroid-based clustering approaches: PAM and Affinity Propagation. We infer
+the main term $\alpha$ by maximizing the $IC_{graph}$ of common types of
+each centroid in $\mathcal{C}$. These shared types are the result of a series 
+of SPARQL queries to DBPedia (see Figure \ref{fig:sparql_query_type}). 
+
+\Figure[h!](topskip=0pt, botskip=0pt, midskip=0pt)[width=0.45\textwidth]{img/sparql_queries/SPARQL_type.pdf}
+{Template of the SPARQL query to get the list of types
+associated with each centroid.
+\label{fig:sparql_query_type}}
+
+Finally, our tool,
+assembles the semantic map by connecting $\alpha$ with each centroid and connecting 
+each centroid with all entities in the corresponding cluster. Figure \ref{fig:Semaf} 
+visually describes the phases of semantic mapping process.
+
+
+\subsection{Quality of semantic maps}
+
+The core of the semantic mapping process is to cluster the entity instances
+and obtain the set of centroids $\mathcal{C}$. In order to provide a 
+quantitative approach to validate semantic maps, we propose to associate the 
+quality of clusters computed with the quality of semantic maps. With this 
+evaluation strategy, we can learn how reliable are the groups shown in the 
+semantic map.
+
+Literature offers two classes of clustering validation measures: external 
+clustering validation and internal clustering validation  
+\cite{DBLP:books/crc/aggarwal2013}. Internal validation metrics 
+evaluate the quality of a clustering algorithm based on its intrinsic 
+properties, while external validation methods evaluate the quality of a 
+clustering solution based on its agreement with a known label of the data. Since there is no known label of the datasets used in the experiments
+described in this work, our proposal is to use internal validation measures
+such as Silhouette score, Davies-Bouldin score, and Calinski-Harabasz Index.
+
+Each internal validation metric measure different aspects of the clusters. For 
+example, Silhouette score measures how well each data point fits into its 
+assigned cluster compared to other clusters and the score ranges goes from -1 
+to 1, where a higher score indicates better cluster quality 
+\cite{kaufmanPAM}. Inertia of a cluster, also known as the within-cluster sum
+of squares (WSS) metric measures how tightly packed the data points are 
+within each cluster. The goal is to minimize inertia, which is equivalent to 
+maximizing the distances between clusters. On the other 
+hand, Dunn index measures the distance between the nearest points in 
+different clusters and the distance between the farthest points in each 
+cluster \cite{dunn1974well}. A higher Dunn index indicates better cluster 
+quality. Another known quality measure is the Davies-Bouldin index which 
+measures the similarity between each cluster and its closest neighboring 
+cluster, while also considering the cluster's internal
+similarity \cite{davies1979cluster}. A lower index indicates better cluster 
+quality. Finally, Calinski-Harabasz index measures the ratio of between-cluster
+variance to to within-cluster variance \cite{calinski1974dendrite}. A higher 
+value of Calinski-Harabasz index indicates better cluster quality. 
+
+
+\subsection{Datasets}
+Datasets used to validate the process are obtained by
+performing a SPARQL query against DBPedia KG through its
+public endpoint \footnote{https://dbpedia.org/sparql/} and results are saved as N-Triples format\footnote{
+N-Triples is a subset of the more complex RDF/XML syntax, 
+and is designed to be human-readable as well as 
+machine-readable. It is a plain text format that represents 
+RDF statements using subject-predicate-object triples, with
+each element separated by whitespace and terminated by a 
+period.}, i.e., each dataset is a list of 
+subject-predicate-object triples. The intention of each 
+dataset is to represent different knowledge domains 
+accumulated in DBPedia and how they can be reduced and 
+visualized using semantic maps.
+
+\subsubsection{SCI-FI-MOVIES.NT}
+A list of triples describing sci-fi movies stashed in 
+DBPedia with a gross greater than eight billion of dollars.
+
+\subsubsection{FANTASY-NOVELS.NT}
+This dataset contains all fantasy novels kept in DBPedia KG
+published after year 2000.
+
+\subsubsection{CITIES.NT}
+According to DBPedia, the list of cities with a total
+population greater than five millions. 
+
+\subsubsection{MAMMALS.NT}
+This resultset representing the mammals stored in DBPedia.
+
+\subsubsection{PLANTS.NT}
+This list contains all plants found in latin america region.
+
+\subsubsection{SONGS.NT}
+This collection of triples contains all rock songs reaching 
+Diamond rank worlwide.
+
+\subsubsection{MOVIES-AND-SONGS.NT}
+
+\subsubsection{MAMMALS-AND-PLANTS.NT}
+
+\begin{table}[!htb]
+\caption{Dataset summary}
+\label{tab:symbols}
+\centering
+\begin{tabular}{ll}
+     \toprule
+     \textbf{Dataset} & 
+     \textbf{Number of triples} 
+     \\
+     \midrule
+     SCI-FI-MOVIES.NT & 188 \\
+     FANTASY-NOVELS.NT & 693 \\
+     CITIES.NT & 127 \\
+     MAMMALS.NT &  \\
+     PLANTS.NT &  \\
+     SONGS.NT &  \\
+     MOVIES-AND-SONGS.NT &  \\
+     MAMMALS-AND-PLANTS.NT &  \\
+     \bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Experimental results}
+
+A key hyperparameter in the PAM clustering algorithm is the number of clusters 
+we want to generate. Determining this hyperparameter is
+a crucial step in clustering and we determine this value by using the elbow 
+method\footnote{The elbow method is a heuristic approach to determine the 
+optimal number of clusters in a datase and the idea behind this method is that
+as the number of clusters increases, the WCSS decreases, as the distance between 
+each data point and its assigned center becomes smaller.}. Table \ref{tab:elbow_numbers} describes the optimal number of clusters 
+suggested by the elbow method for each dataset to use the PAM clustering strategy.
+
+\begin{table}[!htb]
+\caption{Optimal number of clusters(\textit{k}) for PAM clustering suggested by 
+selbow method.}
+\label{tab:elbow_numbers}
+\centering
+\begin{tabular}{lcc}
+     \toprule
+     \textbf{Dataset} & 
+     \textbf{Optimal \textit{k}} &
+     \textbf{WSS}
+     \\
+     \midrule
+     SCI-FI-MOVIES.NT & 24 & 0.27 \\
+     FANTASY-NOVELS.NT & 40 & 1.73 \\
+     CITIES.NT & 16 & 1.69 \\
+     
+     
+     \bottomrule
+\end{tabular}
+\end{table}
+
+The \textit{preference} parameter is a crucial hyperparameter in the Affinity 
+Propagation clustering algorithm, which determines the number of clusters
+that will be generated. A higher preference value will result in more 
+clusters, as more data points will be selected as exemplars, while a lower 
+preference value will lead to fewer clusters, as fewer data points will be 
+selected as exemplars. Therefore, it is often necessary to perform
+sensitivity analysis by trying different values of the preference parameter 
+to find the optimal number of clusters. Our proposal is to maximize the
+silhouette index of resulting clustering after running Affinity Propagation 
+with preference values that goes from 0.1 to 0.9 since this is the range of 
+possible semantic distance values in the distance matrix. 
+
+\begin{table}[!htb]
+    \caption{Optimal value of \textit{preference} hyperparameter 
+    in the Affinity Propagation clustering.}
+    \label{tab:preference_numbers}
+    \centering
+    \begin{tabular}{lcc}
+         \toprule
+         \textbf{Dataset} & 
+         \textbf{Number} &
+         \textbf{Preference}
+         \\
+         & \textbf{of clusters \textit{k}} & \\
+         \midrule
+         SCI-FI-MOVIES.NT & 5 & 0.8 \\ 
+         FANTASY-NOVELS.NT & 6 & 0.8 \\
+         CITIES.NT & 5 & 0.5 \\
+         \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\begin{table*}[!htb]
+\caption{Semantic mapping quality results}
+\label{table}
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{PAM} 
+& \multicolumn{3}{c}{Affinity Propagation} \\
+\hline
+\textbf{Dataset} & 
+\footnotesize
+Silhouette & 
+\footnotesize
+Davies-Bouldin & 
+\footnotesize
+Calinski-Harabasz &
+\footnotesize
+Silhouette & 
+\footnotesize
+Davies-Bouldin & 
+\footnotesize
+Calinski-Harabasz \\
+& 
+\footnotesize
+score 
+&
+\footnotesize
+score &
+\footnotesize
+Index &
+\footnotesize
+score &
+\footnotesize
+score &
+\footnotesize
+Index \\
+\hline
+MOVIES\_SCIFI & 0.86 & 0.28 & 1366.07 & 0.45 & 2.33 & 17.38 \\
+FANTASY\_NOVELS  & 0.66 & 3.73 & 133.56 & 0.38 & 1.53 & 10.93 \\
+CITIES.NT & 0.69 & 0.46 & 281.70 & 0.47 & 1.27 & 77.45 \\
+
+\bottomrule
+\end{tabular}
+\label{tab1}
+\end{table*}
+
+
+\Figure[h]()[scale=0.12]{img/semantic_maps/movies_sci_fi_affinity.png}
+{Semantic map obtained using AP clustering alforithm for MOVIES\_SCIFI dataset.\label{fig:semantic_map_movies_affinity}}
+
+\Figure[h]()[scale=0.12]{img/semantic_maps/movies_sci_fi_kmedoids.png}
+{Semantic map obtained using PAM algorithm for MOVIES\_SCIFI dataset.\label{fig:semantic_map_movies_affinity}}
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+
+\begin{comment}
+
+
+
+\section{Methodology}
+\label{sec:Method}
+
+% Describe the problem
+
+\subsection{Preliminaries}
+
+A \textbf{graph} $G$, also known as network, is an abstract data type consisting
+of a finite set of vertices (nodes) $V$, a finite set of links (edges) $E$ (disjoint
+from $V$), and an \textit{incidence function} $\psi_{G}$ that associates with each
+edge of $G$, an unordered pair of vertices of $G$. If $e \in E$ and $u, v \in V$ such that 
+$\psi_{G}(e) =  uv$, then $e$ is said to join $u$ and $v$; the vertices $u$ and $v$ are
+called the \textit{ends} of $e$ \cite{bondy1976graph}.
+
+When a graph has attributes associated to nodes or edges, it can be
+considered a knowledge graph. A \textbf{knowledge graph}
+$KG=(E,R,T)$ consists of a set of entities $E$, a set of relations 
+$R$, and a set of triples $T \subseteq E \times R \times E^{1}$. A
+triple connecting entities $e_{i},e_{j} \in E$ with relation $r_{k} 
+\in R$ is denoted $x_{ijk} = (e_{i},r_{k},e_{j})$ \cite{Koutra2019}. 
+In other words, KGs consist in a collection of facts formed 
+by $<subject,predicate,object>$. These collections are typically
+represented in languages, such as RDF (Resource Description
+Framework) \cite{RDF} and OWL (Ontology Web Language) \cite{OWL}.
+
+% TODO: Define a semantic map 
+
+The semantic problem consists of finding a SM(G), such that 
+
+
+
+\begin{Definition}
+\textbf{Functional summary of a Knowledge Graph} \\
+Let $K_{i}$ be a set of functional clusters such that $C(u) \in K_{i}$ if and only if
+$i \in C(i)$. For every $C(u) \in S_{\Delta}$, let $\Psi^{C(u)}$ be the structural knowledge
+information value of $C(u)$. Given a knowledge graph $KG = (E,V,T)$ and input parameters
+$b, d$, and $k$, the \textit{functional summarization problem adapted to KGs} generates a
+\textit{k-cluster} FSKG $\Theta_{KG} = (S, F, P_{i}, \alpha)$ subject to $\vert S \vert = k$.
+
+\end{Definition}
+
+\section{Experimental results}
+\label{sec:results}
+The adaptation of the FUSE algorithm proposed in this work is implemented in Python and Java
+programming languages. Results presented in this section correspond to experiments that were run on 
+a machine with 2 GHz Quad-Core Intel Core i7 processor, 8 GB 1600 MHz DDR3, a graphics
+card Intel Iris Pro with 1536 MB, and 250 GB of flash storage. The software tool utilized to
+perform the efficiency evaluation is WebVOWL \footnote{http://www.visualdataweb.de}.
+
+\subsection{Evaluation metrics}
+
+The use of heatmaps works as a high-level view of the similarity matrix to
+visualize which groups of concepts are more likely to be clustered together \cite{NGUYEN201495}. 
+
+
+In order to validate whether the similarity measure obtained has impact in the cluster
+quality, we use the ANOVA test.
+
+
+
+\subsection{Creating a semantic map for DBpedia datasets}
+In order to validate our initial hypothesis that proposes 
+
+
+Cluster Analysis
+Jiawei Han, ... Jian Pei, in Data Mining (Third Edition), 2012
+10.6.3 Measuring Clustering Quality
+Suppose you have assessed the clustering tendency of a given data set. You may have also tried to predetermine the number of clusters in the set. You can now apply one or multiple clustering methods to obtain clusterings of the data set. “How good is the clustering generated by a method, and how can we compare the clusterings generated by different methods?”
+We have a few methods to choose from for measuring the quality of a clustering. In general, these methods can be categorized into two groups according to whether ground truth is available. Here, ground truth is the ideal clustering that is often built using human experts.
+If ground truth is available, it can be used by extrinsic methods, which compare the clustering against the group truth and measure. If the ground truth is unavailable, we can use intrinsic methods, which evaluate the goodness of a clustering by considering how well the clusters are separated. Ground truth can be considered as supervision in the form of “cluster labels.” Hence, extrinsic methods are also known as supervised methods, while intrinsic methods are unsupervised methods.
+
+
+\begin{table}[!ht]
+\caption{Structural information of FIBO}
+\label{tab:fibo}
+\centering
+\begin{tabular}{|l|l|l|l}
+\hline
+\bfseries Metric & \bfseries Value \\
+Axioms & 6498 \\
+Logical axiom count & 1530 \\
+Declaration axioms count & 889 \\
+Class count & 403 \\
+Object property count & 266 \\
+Data property count & 85 \\
+Annotation Property count & 96 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+We begin with the quality analysis of the functional clusters that were obtained
+using the adapted FUSE algorithm. Quality results obtained from the modified FUSE algorithm
+are compared with the graph based $k-means$ algorithm \cite{GraphMinning:2013}. Figure 
+\ref{fig:ClustersQuality} plots the values of precision and recall for every summarized network with
+different summary levels. The user-defined parameters were used with the following
+values $\beta = 0.0.1$, $b = 3$, and $d = 0$. The precision values
+for all summarized graphs were above 60\%. In contrast, recall values
+decreased when the summary level increased.
+
+Figure \ref{fig:ClustersQualityClassical} shows the values for precision and recall
+metrics using the k-means algorithm. The kernel matrix associated with every network analyzed
+is generated by using the Laplacian Kernel and the number of centroids is 5.
+
+
+
+
+\subsection{Efficiency evaluation of functional summaries}
+To compute the visual representation efficiency of clusters
+generated by the modified FUSE algorithm, we appled the methodology
+proposed in \cite{Camarillo20}. This task-based evaluation methodology 
+consists of two phases: establishing the context of use and analyzing
+the exploratory data analysis tasks under study.
+
+
+
+\subsubsection{Establishing the context of use for network visualization user interface}
+\textbf{Generate the network to be visualized.} Network \textit{mahindas} is selected to perform the
+efficiency assessment. The summary level is set at $k = 5$. The visualization of
+the generated summary is shown in Figure \ref{Fig:Vis_1}.
+
+\begin{figure}[h!]
+    \centering
+     \input{Vis_1.tikz}
+     \caption{Visual representation of the functional cluster of network mahindas with $k=5$}
+     \label{Fig:Vis_1}
+\end{figure}
+
+\begin{figure*}[!h]
+\centering
+\resizebox{2\columnwidth}{!}{
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={precision},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.8,0.1)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.88)(5,0.82)(10,0.8)(15,0.85)(20,0.86)(25,0.91)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.98)(5,0.77)(10,0.82)(15,0.77)(20,0.74)(25,0.67)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.76)(5,0.75)(10,0.82)(15,0.79)(20,0.78)(25,0.83)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.56)(5,0.58)(10,0.63)(15,0.62)(20,0.57)(25,0.55)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Precision of functional clusters generated by adapted FUSE algorithm}
+    \label{fig:Precision}
+\end{subfigure}
+
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={recall},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.8,0.08)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.73)(5,0.81)(10,0.8)(15,0.83)(20,0.84)(25,0.74)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.54)(5,0.63)(10,0.55)(15,0.51)(20,0.45)(25,0.53)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.87)(5,0.65)(10,0.73)(15,0.69)(20,0.68)(25,0.72)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.93)(5,0.72)(10,0.51)(15,0.52)(20,0.63)(25,0.72)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Recall of generated functional clusters from adapted FUSE algorithm}
+    \label{fig:Recall}
+\end{subfigure}
+}
+
+
+\caption{Cluster quality obtained using the adapted FUSE algorithm to summarize KGs from the financial sector. (a) Precision values. (b) Recall values}
+\label{fig:ClustersQuality}
+\end{figure*}
+
+
+\begin{figure*}[!h]
+\centering
+\resizebox{2\columnwidth}{!}{
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={precision},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.3,0.1)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.97)(5,0.57)(10,0.55)(15,0.51)(20,0.43)(25,0.41)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.98)(5,0.77)(10,0.83)(15,0.48)(20,0.55)(25,0.35)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.95)(5,0.53)(10,0.55)(15,0.39)(20,0.28)(25,0.33)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.93)(5,0.88)(10,0.77)(15,0.82)(20,0.67)(25,0.65)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Precision of clusters generated the graph-based $k-means$ algorithm}
+    \label{fig:Precision}
+\end{subfigure}
+
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={recall},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.8,0.08)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.85)(5,0.71)(10,0.75)(15,0.68)(20,0.65)(25,0.57)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.77)(5,0.66)(10,0.68)(15,0.71)(20,0.65)(25,0.58)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.83)(5,0.85)(10,0.71)(15,0.69)(20,0.73)(25,0.68)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.81)(5,0.82)(10,0.78)(15,0.75)(20,0.63)(25,0.65)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Recall of generated clusters generated by the graph-based $k-means$ algorithm}
+    \label{fig:Recall}
+\end{subfigure}
+}
+
+
+\caption{Cluster quality obtained using the graph-based $k-means$ algorithm to summarize KGs from the financial sector. (a) Precision values. (b) Recall values}
+\label{fig:ClustersQualityClassical}
+\end{figure*}
+
+\textbf{Define a subset of visual data exploration tasks}
+The following three tasks associated with the decision-making 
+process in the financial sector are selected to conduct
+the usability assessment:
+
+\begin{enumerate}
+    \item \textbf{FIBO01}: Observe the neighbors of the \textit{mean} term.
+    \item \textbf{FIBO02}: Observe the relationships associated with the \textit{geopolitical entity} node. 
+    \item \textbf{FIBO03}: Identify two types of relationships.
+\end{enumerate}
+
+\textbf{Select a group of analysts}. The tasks mentioned above were performed by
+two analysts familiarized with graphs concepts and exploratory data analysis.
+
+\textbf{Fix the layout algorithm}. The algorithm selected to generate the layout of the 
+analyzed summary is the Fruchterman-Reingold algorithm.
+
+\subsubsection{Analyze visual data exploration tasks}
+\textbf{Measure time to complete every task}
+As it is suggested in \cite{Camarillo20}, the efficiency of the obtained visual representation 
+is measured by recording the analysis session where every user completes the visual exploration
+tasks. After completing each task, the recording is stopped and the duration of this video represents
+the value of the time needed to compute the efficiency metric. The efficiency of the visual 
+representation is computed using the following formula:
+
+\begin{equation}
+  Efficiency = \frac{\sum_{j=1}^{R} \sum_{i=1}^{N} \frac{n_{ij}}{t_{ij}}}{NR}
+  \label{eq:Efficiency}
+\end{equation}
+
+Where N is the number of tasks, R is the number of users, if the user
+successfully completes the $i-th$ task $n_{ij} = 1$ otherwise  $n_{ij} = 0$
+and $t_{ij}$ represents the time spent by $j-th$ user to complete the $i-th$
+task. In Figure \ref{fig:Efficiency}, the visualized clustering result is 
+16\% less efficiency for tasks \textbf{FIBO02} and \textbf{FIBO03}
+compared with task \textbf{FIBO01}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+    ybar,
+    enlargelimits=0.15,
+    ylabel={Average Time Spent (in seconds)},
+    xlabel={Tasks identifier},
+    legend style={at={(0.5,-0.2)},
+    anchor=north,legend columns=-1},
+    %width=0.8*\textwidth,
+    %height=9cm,
+    %bar width=40pt,
+    symbolic x coords={FIBO01,FIBO02,FIBO03},
+    xtick=data,
+    nodes near coords,
+    nodes near coords align={vertical}
+    ]
+            \addplot
+            coordinates {(FIBO01,42.7) (FIBO02,50.1) (FIBO03,48.5)};
+            
+            \addplot
+            coordinates {(FIBO01,45.0) (FIBO02,43.6) (FIBO03,30.5)};
+            
+            \legend{Summarized network, Original network}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Efficiency of visual data exploration tasks performed on functional summaries}
+    \label{fig:Efficiency}
+\end{figure}
+
+\subsection{Discussion}
+
+The modified FUSE algorithm suggests that the summary level 
+do not affect precision values. For \textit{beacxc} and \textit{beause}
+datasets, precision reaches 0.82 when summary level is $k = 25$. The
+only network in which precision decreases when the summary level is increased
+is \textit{beaflw}, falling out to 0.76 when $k = 25$. The lowest precision was
+observed for the clusters computed for the \textit{mahindas} network, which barley 
+exceeds 0.6 for $k = 10$ and $k = 15$. Precision values of the modified FUSE algorithm
+are better than the precision values obtained
+with the $k-means$ algorithm. With $k = 25$, the maximum precision value for $k-means$
+clustering is 0.65, which is the barley greater than the minimum precision value obtained
+by the adapted FUSE algorithm.
+
+On the other hand, recall values show a poor quality for clusters computed when the
+level of summary is increased compared with the $k-means$ clustering strategy. For \textit{beaflw} 
+network, the recall value is 0.54 when the summary level is $k = 1$, when the summary level $k$
+increases to $25$, this metric falls out to 0.53. In general, this pattern of
+decreasing the recall value while the summary level increases occurs for 
+the four summarized networks. In contrast, the recall values observed in
+experiments with the $k-means$ clustering show a stability trend when the summary level increases. When
+the summary level is 25, the minimum recall value is 0.57 ($beacxc$ network).
+
+Regarding visual representation efficiency of the \textit{mahindas} network, the
+user interface needs to be improved. The analysts that fulfill the visual 
+exploration tasks using the summarized network invested more time than the 
+time spent to perform the analysis tasks by visualizing the entire graph. For
+a common task, such as \textbf{FIBO02}, users spent 50.1 seconds in average.
+Future work is on improving the usability evaluation of the 
+visualization systems that manage summarized networks due to the poor performance of the user interface.
+
+\section{Conclusion}
+
+In this paper an adaptation of the FUSE algorithm is utilized to summarize knowledge graphs. In order to generate the functional clusters, the structural knowledge information value is introduced as a parameter to determine whether a node from the original graph belongs or not to the initial clusters. Public data from the financial sector is used to validate the initial hypothesis of the applicability of the FUSE algorithm to generate functional clusters for different biology domains.  Then,  summarized networks are visualized and the efficiency of this visual representation is measured to evaluate the usability of functional clusters for exploratory data analysis tasks.
+\end{comment}
+
+\bibliography{vis} 
+\bibliographystyle{IEEEtran}
+\EOD
+
+\end{document}

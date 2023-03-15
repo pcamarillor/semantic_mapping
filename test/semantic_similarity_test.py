@@ -53,6 +53,15 @@ class SemanticSimilarityTest(unittest.TestCase):
         # test_instance.assemble_semantic_map()
         os.chdir("./test")
 
+    def test_build_similarity_cities(self):
+        os.chdir("../")
+        test_instance = semantic_similarity.SemanticMap("cities")
+        test_instance.build_semantic_distance_matrix()
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
+        os.chdir("./test")
+
 
 if __name__ == '__main__':
     unittest.main()

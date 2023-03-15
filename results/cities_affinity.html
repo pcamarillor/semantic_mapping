@@ -1,0 +1,204 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 870px;
+            height: 1024px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+        #loadingBar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 870px;
+            height: 1024px;
+            background-color:rgba(200,200,200,0.8);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            opacity:1;
+        }
+
+        #bar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:20px;
+            height:20px;
+            margin:auto auto auto auto;
+            border-radius:11px;
+            border:2px solid rgba(30,30,30,0.05);
+            background: rgb(0, 173, 246); /* Old browsers */
+            box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+        }
+
+        #border {
+            position:absolute;
+            top:10px;
+            left:10px;
+            width:500px;
+            height:23px;
+            margin:auto auto auto auto;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            border-radius:10px;
+        }
+
+        #text {
+            position:absolute;
+            top:8px;
+            left:530px;
+            width:30px;
+            height:50px;
+            margin:auto auto auto auto;
+            font-size:22px;
+            color: #000000;
+        }
+
+        div.outerBorder {
+            position:relative;
+            top:400px;
+            width:600px;
+            height:44px;
+            margin:auto auto auto auto;
+            border:8px solid rgba(0,0,0,0.1);
+            background: rgb(252,252,252); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+            border-radius:72px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+<div id="loadingBar">
+    <div class="outerBorder">
+        <div id="text">0%</div>
+        <div id="border">
+            <div id="bar"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#808080", "id": 127, "label": "City", "shape": "dot", "size": 20}, {"color": "#4da6ff", "id": 8, "label": "Dalian", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 28, "label": "Xiamen", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 45, "label": "Moscow", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 108, "label": "Suzhou", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 118, "label": "Nantong", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 4, "label": "Istanbul", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 9, "label": "Mexico_City", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 10, "label": "Kunming", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 11, "label": "Delhi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 12, "label": "Lagos", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 15, "label": "Cairo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 17, "label": "Shijiazhuang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 18, "label": "Bangkok", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 20, "label": "Nanjing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 29, "label": "Jinan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 30, "label": "Lahore", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 34, "label": "Shenyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 41, "label": "Luoyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 46, "label": "Guiyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 47, "label": "Hyderabad", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 53, "label": "Hangzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 60, "label": "Hefei", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 62, "label": "Nanning", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 63, "label": "Abidjan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 64, "label": "Ankara", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 71, "label": "Taiyuan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 74, "label": "Seoul", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 79, "label": "Chengdu", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 83, "label": "Harbin", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 84, "label": "Fuzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 86, "label": "Zhengzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 87, "label": "Beijing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 90, "label": "Riyadh", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 94, "label": "Johannesburg", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 95, "label": "New_York_City", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 96, "label": "Nanchang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 105, "label": "Wuhan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 111, "label": "Xi\u0027an", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 113, "label": "Xianyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 114, "label": "Jakarta", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 116, "label": "Giza", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 119, "label": "Tokyo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 121, "label": "Guangzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 122, "label": "Douala", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 124, "label": "Changchun", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 125, "label": "Singapore", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 0, "label": "Liwa,_Warmian-Masurian_Voivodeship", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 1, "label": "Xinxiang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 2, "label": "Tai\u0027an", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 3, "label": "Zhangzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 5, "label": "Zhoukou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 7, "label": "Heze", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 13, "label": "Zunyi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 16, "label": "Langfang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 19, "label": "Dazhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 21, "label": "Guangxi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 22, "label": "Jieyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 23, "label": "Cangzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 24, "label": "Quanzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 25, "label": "Anyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 26, "label": "Dongguan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 27, "label": "Maoming", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 31, "label": "Veracruz", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 32, "label": "Jingzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 33, "label": "Baoding", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 35, "label": "Huizhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 36, "label": "Weifang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 38, "label": "Zhanjiang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 39, "label": "Yantai", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 40, "label": "Bangalore", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 42, "label": "Mumbai", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 43, "label": "Shanghai", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 44, "label": "Taizhou,_Zhejiang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 48, "label": "Tangshan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 49, "label": "Special_wards_of_Tokyo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 50, "label": "Chongqing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 51, "label": "Dezhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 54, "label": "Fuyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 55, "label": "Xuzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 56, "label": "Wuxi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 57, "label": "Wenzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 59, "label": "Ahmedabad", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 66, "label": "Ningbo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 68, "label": "Huanggang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 69, "label": "Jiaxing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 70, "label": "Shangrao", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 72, "label": "Metro_Manila", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 73, "label": "Xinyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 75, "label": "Shaoxing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 76, "label": "Qingdao", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 77, "label": "Xingtai", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 78, "label": "Jinhua", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 80, "label": "Zhumadian", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 82, "label": "Xiangyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 85, "label": "Yueyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 88, "label": "Yancheng", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 89, "label": "Shaoyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 92, "label": "Handan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 97, "label": "Qujing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 98, "label": "Ganzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 100, "label": "Linyi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 101, "label": "Brandizzo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 102, "label": "Chennai", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 103, "label": "Suzhou,_Anhui", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 104, "label": "Jining", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 106, "label": "Foshan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 107, "label": "Liaocheng", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 109, "label": "Shangqiu", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 110, "label": "Yongzhou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 112, "label": "Hengyang", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 115, "label": "Sydney", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 117, "label": "Changde", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 120, "label": "Yulin,_Guangxi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 123, "label": "Bijie", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 126, "label": "Weinan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 6, "label": "Shantou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 14, "label": "Ho_Chi_Minh_City", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 37, "label": "Dar_es_Salaam", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 52, "label": "Rio_de_Janeiro", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 58, "label": "Surat", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 61, "label": "Karachi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 65, "label": "Tianjin", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 67, "label": "Hanoi", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 81, "label": "London", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 91, "label": "Bogot\u00e1", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 93, "label": "Alexandria", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 99, "label": "Shenzhen", "shape": "dot", "size": 15}]);
+        edges = new vis.DataSet([{"from": 127, "to": 8}, {"from": 127, "to": 28}, {"from": 127, "to": 45}, {"from": 127, "to": 108}, {"from": 127, "to": 118}, {"from": 28, "to": 4}, {"from": 28, "to": 9}, {"from": 28, "to": 10}, {"from": 28, "to": 11}, {"from": 28, "to": 12}, {"from": 28, "to": 15}, {"from": 28, "to": 17}, {"from": 28, "to": 18}, {"from": 28, "to": 20}, {"from": 28, "to": 29}, {"from": 28, "to": 30}, {"from": 28, "to": 34}, {"from": 28, "to": 41}, {"from": 28, "to": 46}, {"from": 28, "to": 47}, {"from": 28, "to": 53}, {"from": 28, "to": 60}, {"from": 28, "to": 62}, {"from": 28, "to": 63}, {"from": 28, "to": 64}, {"from": 28, "to": 71}, {"from": 28, "to": 74}, {"from": 28, "to": 79}, {"from": 28, "to": 83}, {"from": 28, "to": 84}, {"from": 28, "to": 86}, {"from": 28, "to": 87}, {"from": 28, "to": 90}, {"from": 28, "to": 94}, {"from": 28, "to": 95}, {"from": 28, "to": 96}, {"from": 28, "to": 105}, {"from": 28, "to": 111}, {"from": 28, "to": 113}, {"from": 28, "to": 114}, {"from": 28, "to": 116}, {"from": 28, "to": 119}, {"from": 28, "to": 121}, {"from": 28, "to": 122}, {"from": 28, "to": 124}, {"from": 28, "to": 125}, {"from": 45, "to": 0}, {"from": 45, "to": 1}, {"from": 45, "to": 2}, {"from": 45, "to": 3}, {"from": 45, "to": 5}, {"from": 45, "to": 7}, {"from": 45, "to": 13}, {"from": 45, "to": 16}, {"from": 45, "to": 19}, {"from": 45, "to": 21}, {"from": 45, "to": 22}, {"from": 45, "to": 23}, {"from": 45, "to": 24}, {"from": 45, "to": 25}, {"from": 45, "to": 26}, {"from": 45, "to": 27}, {"from": 45, "to": 31}, {"from": 45, "to": 32}, {"from": 45, "to": 33}, {"from": 45, "to": 35}, {"from": 45, "to": 36}, {"from": 45, "to": 38}, {"from": 45, "to": 39}, {"from": 45, "to": 40}, {"from": 45, "to": 42}, {"from": 45, "to": 43}, {"from": 45, "to": 44}, {"from": 45, "to": 48}, {"from": 45, "to": 49}, {"from": 45, "to": 50}, {"from": 45, "to": 51}, {"from": 45, "to": 54}, {"from": 45, "to": 55}, {"from": 45, "to": 56}, {"from": 45, "to": 57}, {"from": 45, "to": 59}, {"from": 45, "to": 66}, {"from": 45, "to": 68}, {"from": 45, "to": 69}, {"from": 45, "to": 70}, {"from": 45, "to": 72}, {"from": 45, "to": 73}, {"from": 45, "to": 75}, {"from": 45, "to": 76}, {"from": 45, "to": 77}, {"from": 45, "to": 78}, {"from": 45, "to": 80}, {"from": 45, "to": 82}, {"from": 45, "to": 85}, {"from": 45, "to": 88}, {"from": 45, "to": 89}, {"from": 45, "to": 92}, {"from": 45, "to": 97}, {"from": 45, "to": 98}, {"from": 45, "to": 100}, {"from": 45, "to": 101}, {"from": 45, "to": 102}, {"from": 45, "to": 103}, {"from": 45, "to": 104}, {"from": 45, "to": 106}, {"from": 45, "to": 107}, {"from": 45, "to": 109}, {"from": 45, "to": 110}, {"from": 45, "to": 112}, {"from": 45, "to": 115}, {"from": 45, "to": 117}, {"from": 45, "to": 120}, {"from": 45, "to": 123}, {"from": 45, "to": 126}, {"from": 118, "to": 6}, {"from": 118, "to": 14}, {"from": 118, "to": 37}, {"from": 118, "to": 52}, {"from": 118, "to": 58}, {"from": 118, "to": 61}, {"from": 118, "to": 65}, {"from": 118, "to": 67}, {"from": 118, "to": 81}, {"from": 118, "to": 91}, {"from": 118, "to": 93}, {"from": 118, "to": 99}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+        network.on("stabilizationProgress", function(params) {
+      		document.getElementById('loadingBar').removeAttribute("style");
+	        var maxWidth = 496;
+	        var minWidth = 20;
+	        var widthFactor = params.iterations/params.total;
+	        var width = Math.max(minWidth,maxWidth * widthFactor);
+
+	        document.getElementById('bar').style.width = width + 'px';
+	        document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+	    });
+	    network.once("stabilizationIterationsDone", function() {
+	        document.getElementById('text').innerHTML = '100%';
+	        document.getElementById('bar').style.width = '496px';
+	        document.getElementById('loadingBar').style.opacity = 0;
+	        // really clean the dom element
+	        setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+	    });
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
