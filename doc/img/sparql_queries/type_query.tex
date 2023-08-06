@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{listings}
+\begin{document}
+
+
+\begin{lstlisting}[language=SQL, basicstyle=\footnotesize\ttfamily]
+SELECT DISTINCT ?o WHERE {
+<RDF Concept> 
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+?o .
+} LIMIT 1
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[language=SQL, basicstyle=\footnotesize\ttfamily]
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbp: <https://dbpedia.org/property/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+CONSTRUCT { 
+   ?book rdf:type  yago:FWikicatFantasyNovels .
+}
+WHERE {
+    ?book rdf:type yago:WikicatFantasyNovels .
+    FILTER ( dbp:published > "2000-1-1"^^xsd:date  )
+}
+\end{lstlisting}
+
+\newpage
+\begin{lstlisting}[language=SQL, basicstyle=\footnotesize\ttfamily]
+PREFIX yago: <http://dbpedia.org/class/yago/>
+PREFIX dbp: <https://dbpedia.org/property/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+CONSTRUCT { 
+   ?movie rdf:type  yago:Movie106613686 .
+}
+WHERE {
+    ?movie rdf:type yago:Movie106613686 ;
+            dbo:wikiPageWikiLink dbc:American_science_fiction_action_films ;
+            dbo:gross ?gross .
+    FILTER(?gross > 8E8)
+}
+\end{lstlisting}
+
+\newpage
+\begin{lstlisting}[language=SQL, basicstyle=\footnotesize\ttfamily]
+    PREFIX yago: <http://dbpedia.org/class/yago/>
+    PREFIX dbp: <https://dbpedia.org/property/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>    
+CONSTRUCT { 
+   ?city rdf:type  yago:City108524735 .
+ }
+WHERE
+     {
+       ?city rdf:type yago:City108524735 ;
+                dbo:populationTotal ?populationTotal .
+        FILTER(?populationTotal > 5E6 )
+     }
+\end{lstlisting}
+\end{document}

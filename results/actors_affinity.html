@@ -1,0 +1,204 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 870px;
+            height: 1024px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+        #loadingBar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 870px;
+            height: 1024px;
+            background-color:rgba(200,200,200,0.8);
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            opacity:1;
+        }
+
+        #bar {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:20px;
+            height:20px;
+            margin:auto auto auto auto;
+            border-radius:11px;
+            border:2px solid rgba(30,30,30,0.05);
+            background: rgb(0, 173, 246); /* Old browsers */
+            box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+        }
+
+        #border {
+            position:absolute;
+            top:10px;
+            left:10px;
+            width:500px;
+            height:23px;
+            margin:auto auto auto auto;
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            border-radius:10px;
+        }
+
+        #text {
+            position:absolute;
+            top:8px;
+            left:530px;
+            width:30px;
+            height:50px;
+            margin:auto auto auto auto;
+            font-size:22px;
+            color: #000000;
+        }
+
+        div.outerBorder {
+            position:relative;
+            top:400px;
+            width:600px;
+            height:44px;
+            margin:auto auto auto auto;
+            border:8px solid rgba(0,0,0,0.1);
+            background: rgb(252,252,252); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+            border-radius:72px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+<div id="loadingBar">
+    <div class="outerBorder">
+        <div id="text">0%</div>
+        <div id="border">
+            <div id="bar"></div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#808080", "id": 166, "label": "WikicatActors", "shape": "dot", "size": 20}, {"color": "#4da6ff", "id": 24, "label": "Samantha_Mumba", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 29, "label": "Patrick_Stewart", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 61, "label": "Bill_Cosby", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 0, "label": "Brendan_Gleeson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 7, "label": "Rosario_Dawson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 11, "label": "Peter_Fonda", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 13, "label": "Brian_Blessed", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 17, "label": "Scott_Paulin", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 18, "label": "Pete_Postlethwaite", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 21, "label": "David_Duchovny", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 32, "label": "Paul_Giamatti", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 33, "label": "Dennis_Quaid", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 41, "label": "Billy_Dee_Williams", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 45, "label": "Roy_Dotrice", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 48, "label": "Bill_Nighy", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 50, "label": "Ron_Silver", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 51, "label": "Patricia_Vel\u00e1squez", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 54, "label": "Peter_Ustinov", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 58, "label": "Samuel_L._Jackson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 66, "label": "Carrie_Fisher", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 68, "label": "Hugo_Weaving", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 72, "label": "David_Suchet", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 73, "label": "David_Hasselhoff", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 75, "label": "Rob_Schneider", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 79, "label": "Ron_Perlman", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 90, "label": "Delroy_Lindo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 99, "label": "Dennis_Hopper", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 100, "label": "Sam_Elliott", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 103, "label": "Benedict_Cumberbatch", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 107, "label": "Roddy_Piper", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 108, "label": "Robert_Townsend_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 119, "label": "Sandra_Bullock", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 121, "label": "Ben_Affleck", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 130, "label": "Bill_Paxton", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 134, "label": "Scarlett_Johansson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 137, "label": "Sam_Worthington", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 138, "label": "Blythe_Danner", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 146, "label": "Brian_Cox_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 151, "label": "Carl_Weathers", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 152, "label": "Brent_Spiner", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 153, "label": "John_de_Lancie", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 156, "label": "David_Oyelowo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 157, "label": "John_Ratzenberger", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 1, "label": "Big_Daddy_Kane", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 2, "label": "Remy_Ryan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 3, "label": "Peter_Wyngarde", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 5, "label": "Harry_Shum,_Jr.", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 6, "label": "Josh_Lucas", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 8, "label": "Sam_Neill", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 9, "label": "Robert_Preston_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 10, "label": "Scotty_Beckett", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 12, "label": "David_Hedison", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 15, "label": "Billy_Drago", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 16, "label": "Jordi_Moll\u00e0", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 23, "label": "Carrie-Anne_Moss", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 25, "label": "Jonathan_Banks", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 26, "label": "Peter_Mayhew", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 27, "label": "Paul_Logan_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 28, "label": "Roger_L._Jackson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 30, "label": "Patrick_Muldoon", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 31, "label": "Bokeem_Woodbine", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 34, "label": "Ronny_Cox", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 35, "label": "Sam_Rockwell", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 36, "label": "Josh_Charles", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 38, "label": "Billy_Bob_Thornton", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 40, "label": "David_Field_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 46, "label": "Jon_Polito", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 47, "label": "Richard_Norton_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 49, "label": "Sam_J._Jones", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 53, "label": "Johnny_Knoxville", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 57, "label": "David_Johansen", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 62, "label": "Dave_Bautista", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 63, "label": "Robin_Shou", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 64, "label": "Dean_Devlin", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 65, "label": "Rhona_Mitra", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 67, "label": "Dennis_Christopher", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 70, "label": "Brian_O\u0027Shaughnessy_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 76, "label": "Denise_Richards", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 78, "label": "Paul_Koslo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 80, "label": "Peter_Nelson_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 81, "label": "Richard_Crane_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 83, "label": "Rob_Lowe", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 84, "label": "Huntz_Hall", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 85, "label": "Paul_Rudd", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 88, "label": "Carice_van_Houten", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 89, "label": "Josef_Sommer", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 92, "label": "Richard_Lynch", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 95, "label": "Caprice_Benedetti", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 98, "label": "Holt_McCallany", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 101, "label": "Julius_Harris", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 102, "label": "Renee_Griffin", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 105, "label": "John_Travolta", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 109, "label": "Denice_Duff", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 110, "label": "Riley_Smith", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 112, "label": "Peter_Jason", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 113, "label": "Sam_Shepard", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 116, "label": "Brendan_Fletcher", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 120, "label": "Paul_Bettany", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 123, "label": "Rihanna", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 133, "label": "Joseph_Whipp", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 135, "label": "David_Bradley_(American_actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 136, "label": "Sam_Bottoms", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 139, "label": "Jonny_Lee_Miller", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 140, "label": "Bo_Hopkins", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 141, "label": "Robert_Tessier", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 142, "label": "Richard_Roxburgh", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 143, "label": "Sanaa_Lathan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 145, "label": "Rene_Russo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 148, "label": "Judith_Chapman", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 150, "label": "Paul_Le_Mat", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 158, "label": "Cary_Guffey", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 159, "label": "Barry_Pepper", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 161, "label": "Johnathon_Schaech", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 163, "label": "Beverly_D\u0027Angelo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 164, "label": "Barret_Oliver", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 165, "label": "Cameron_Bright", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 4, "label": "Patricia_Clarkson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 14, "label": "Dayle_Haddon", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 19, "label": "Casper_Van_Dien", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 20, "label": "Billy_Crudup", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 22, "label": "Cameron_Daddo", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 37, "label": "Jude_Law", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 39, "label": "Renee_O\u0027Connor", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 42, "label": "Ben_Kingsley", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 43, "label": "Judy_Greer", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 44, "label": "Barry_Bostwick", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 52, "label": "Melinda_Dillon", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 55, "label": "Robert_Z\u0027Dar", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 56, "label": "John_Rhys-Davies", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 59, "label": "Ren\u00e9e_Soutendijk", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 60, "label": "Peter_Cushing", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 69, "label": "Barry_Corbin", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 71, "label": "Richard_Dawson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 74, "label": "David_Strathairn", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 77, "label": "David_Carradine", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 82, "label": "Brenda_Bakke", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 86, "label": "Ben_Cross", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 87, "label": "David_Warner_(actor)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 91, "label": "Juliette_Binoche", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 93, "label": "Robert_Patrick", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 94, "label": "Caroline_Munro", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 96, "label": "Rub\u00e9n_Blades", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 97, "label": "Barnard_Hughes", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 104, "label": "Richard_Crenna", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 106, "label": "Denzel_Washington", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 111, "label": "Jonathan_Frakes", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 114, "label": "Joss_Ackland", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 115, "label": "Camilla_Belle", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 117, "label": "Paula_Patton", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 118, "label": "Carla_Gugino", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 122, "label": "Paul_Winfield", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 124, "label": "Richard_Jordan", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 125, "label": "Bobby_Cannavale", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 126, "label": "David_Dastmalchian", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 127, "label": "Dawn_Olivieri", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 128, "label": "Beth_Toussaint", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 129, "label": "Priscilla_Lawson", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 131, "label": "Belinda_Bauer_(actress)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 132, "label": "Roscoe_Lee_Browne", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 144, "label": "Samantha_Morton", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 147, "label": "Persis_Khambatta", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 149, "label": "Paul_Dano", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 154, "label": "Rosalind_Cash", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 155, "label": "Patricia_Arquette", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 160, "label": "Rip_Torn", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 162, "label": "Peter_Weller", "shape": "dot", "size": 15}]);
+        edges = new vis.DataSet([{"from": 166, "to": 24}, {"from": 166, "to": 29}, {"from": 166, "to": 61}, {"from": 24, "to": 0}, {"from": 24, "to": 7}, {"from": 24, "to": 11}, {"from": 24, "to": 13}, {"from": 24, "to": 17}, {"from": 24, "to": 18}, {"from": 24, "to": 21}, {"from": 24, "to": 32}, {"from": 24, "to": 33}, {"from": 24, "to": 41}, {"from": 24, "to": 45}, {"from": 24, "to": 48}, {"from": 24, "to": 50}, {"from": 24, "to": 51}, {"from": 24, "to": 54}, {"from": 24, "to": 58}, {"from": 24, "to": 66}, {"from": 24, "to": 68}, {"from": 24, "to": 72}, {"from": 24, "to": 73}, {"from": 24, "to": 75}, {"from": 24, "to": 79}, {"from": 24, "to": 90}, {"from": 24, "to": 99}, {"from": 24, "to": 100}, {"from": 24, "to": 103}, {"from": 24, "to": 107}, {"from": 24, "to": 108}, {"from": 24, "to": 119}, {"from": 24, "to": 121}, {"from": 24, "to": 130}, {"from": 24, "to": 134}, {"from": 24, "to": 137}, {"from": 24, "to": 138}, {"from": 24, "to": 146}, {"from": 24, "to": 151}, {"from": 24, "to": 152}, {"from": 24, "to": 153}, {"from": 24, "to": 156}, {"from": 24, "to": 157}, {"from": 29, "to": 1}, {"from": 29, "to": 2}, {"from": 29, "to": 3}, {"from": 29, "to": 5}, {"from": 29, "to": 6}, {"from": 29, "to": 8}, {"from": 29, "to": 9}, {"from": 29, "to": 10}, {"from": 29, "to": 12}, {"from": 29, "to": 15}, {"from": 29, "to": 16}, {"from": 29, "to": 23}, {"from": 29, "to": 25}, {"from": 29, "to": 26}, {"from": 29, "to": 27}, {"from": 29, "to": 28}, {"from": 29, "to": 30}, {"from": 29, "to": 31}, {"from": 29, "to": 34}, {"from": 29, "to": 35}, {"from": 29, "to": 36}, {"from": 29, "to": 38}, {"from": 29, "to": 40}, {"from": 29, "to": 46}, {"from": 29, "to": 47}, {"from": 29, "to": 49}, {"from": 29, "to": 53}, {"from": 29, "to": 57}, {"from": 29, "to": 62}, {"from": 29, "to": 63}, {"from": 29, "to": 64}, {"from": 29, "to": 65}, {"from": 29, "to": 67}, {"from": 29, "to": 70}, {"from": 29, "to": 76}, {"from": 29, "to": 78}, {"from": 29, "to": 80}, {"from": 29, "to": 81}, {"from": 29, "to": 83}, {"from": 29, "to": 84}, {"from": 29, "to": 85}, {"from": 29, "to": 88}, {"from": 29, "to": 89}, {"from": 29, "to": 92}, {"from": 29, "to": 95}, {"from": 29, "to": 98}, {"from": 29, "to": 101}, {"from": 29, "to": 102}, {"from": 29, "to": 105}, {"from": 29, "to": 109}, {"from": 29, "to": 110}, {"from": 29, "to": 112}, {"from": 29, "to": 113}, {"from": 29, "to": 116}, {"from": 29, "to": 120}, {"from": 29, "to": 123}, {"from": 29, "to": 133}, {"from": 29, "to": 135}, {"from": 29, "to": 136}, {"from": 29, "to": 139}, {"from": 29, "to": 140}, {"from": 29, "to": 141}, {"from": 29, "to": 142}, {"from": 29, "to": 143}, {"from": 29, "to": 145}, {"from": 29, "to": 148}, {"from": 29, "to": 150}, {"from": 29, "to": 158}, {"from": 29, "to": 159}, {"from": 29, "to": 161}, {"from": 29, "to": 163}, {"from": 29, "to": 164}, {"from": 29, "to": 165}, {"from": 61, "to": 4}, {"from": 61, "to": 14}, {"from": 61, "to": 19}, {"from": 61, "to": 20}, {"from": 61, "to": 22}, {"from": 61, "to": 37}, {"from": 61, "to": 39}, {"from": 61, "to": 42}, {"from": 61, "to": 43}, {"from": 61, "to": 44}, {"from": 61, "to": 52}, {"from": 61, "to": 55}, {"from": 61, "to": 56}, {"from": 61, "to": 59}, {"from": 61, "to": 60}, {"from": 61, "to": 69}, {"from": 61, "to": 71}, {"from": 61, "to": 74}, {"from": 61, "to": 77}, {"from": 61, "to": 82}, {"from": 61, "to": 86}, {"from": 61, "to": 87}, {"from": 61, "to": 91}, {"from": 61, "to": 93}, {"from": 61, "to": 94}, {"from": 61, "to": 96}, {"from": 61, "to": 97}, {"from": 61, "to": 104}, {"from": 61, "to": 106}, {"from": 61, "to": 111}, {"from": 61, "to": 114}, {"from": 61, "to": 115}, {"from": 61, "to": 117}, {"from": 61, "to": 118}, {"from": 61, "to": 122}, {"from": 61, "to": 124}, {"from": 61, "to": 125}, {"from": 61, "to": 126}, {"from": 61, "to": 127}, {"from": 61, "to": 128}, {"from": 61, "to": 129}, {"from": 61, "to": 131}, {"from": 61, "to": 132}, {"from": 61, "to": 144}, {"from": 61, "to": 147}, {"from": 61, "to": 149}, {"from": 61, "to": 154}, {"from": 61, "to": 155}, {"from": 61, "to": 160}, {"from": 61, "to": 162}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+        network.on("stabilizationProgress", function(params) {
+      		document.getElementById('loadingBar').removeAttribute("style");
+	        var maxWidth = 496;
+	        var minWidth = 20;
+	        var widthFactor = params.iterations/params.total;
+	        var width = Math.max(minWidth,maxWidth * widthFactor);
+
+	        document.getElementById('bar').style.width = width + 'px';
+	        document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+	    });
+	    network.once("stabilizationIterationsDone", function() {
+	        document.getElementById('text').innerHTML = '100%';
+	        document.getElementById('bar').style.width = '496px';
+	        document.getElementById('loadingBar').style.opacity = 0;
+	        // really clean the dom element
+	        setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+	    });
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
