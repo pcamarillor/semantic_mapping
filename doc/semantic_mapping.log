@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  14 MAR 2023 22:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 APR 2023 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -223,15 +223,26 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
- (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+)) (/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count112
+\float@exts=\toks23
+\float@box=\box35
+\@float@everytoks=\toks24
+\@floatcapt=\box36
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@ALC@unique=\count112
-\c@ALC@line=\count113
-\c@ALC@rem=\count114
-\c@ALC@depth=\count115
+\@float@every@algorithm=\toks25
+\c@algorithm=\count113
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count114
+\c@ALC@line=\count115
+\c@ALC@rem=\count116
+\c@ALC@depth=\count117
 \ALC@tlm=\skip50
 \algorithmicindent=\skip51
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -412,8 +423,9 @@ Package caption Warning: Unsupported document class (or package) detected,
 See the caption package documentation for explanation.
 
 Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEtablestring \begin {flushleft} \vspace *{5pt} {\vss \color {accessblue}\tablecapheadfont #1. \ }{\raggedright \tablecapfont #2\vss }\end {flushleft} \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox \@tempboxa \hbox {\strut {\color {accessblue}\figcapheadfont #1. \ }\raggedright \figcapfont #2\strut }\ifdim \wd \@tempboxa <\columnwidth \setbox \@tempboxa \hbox {{\color {accessblue}\figcapheadfont #1. \ }}\mbox {}\hfill \begin {tabular}{@{}l@{}}\noindent \raggedright \unhbox \@tempboxa \figcapfont #2\end {tabular}\hfill \mbox {}\else \setbox \@tempboxa \hbox {{\color {accessblue}\figcapheadfont #1. \ }}{\vss \raggedright \noindent \unhbox \@tempboxa \figcapfont #2\vss }\fi \fi \vskip 1pt plus 1pt minus 1pt.
-\c@caption@flags=\count116
-\c@ContinuedFloat=\count117
+\c@caption@flags=\count118
+\c@ContinuedFloat=\count119
+Package caption Info: float package is loaded.
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/comment/comment.sty
@@ -421,11 +433,11 @@ Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS)
  Excluding comment 'comment') (/usr/local/texlive/2019/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
  (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks23
+\pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen147
 \pgfutil@tempdimb=\dimen148
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box35
+\pgfutil@abb=\box37
  (/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -435,10 +447,10 @@ Package: pgf 2019/04/04 v3.1.2 (3.1.2)
  (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2019/04/04 v3.1.2 (3.1.2)
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen149
 \pgf@y=\dimen150
@@ -450,14 +462,14 @@ Package: pgfsys 2019/04/04 v3.1.2 (3.1.2)
 \pgf@yc=\dimen156
 \w@pgf@writea=\write4
 \r@pgf@reada=\read1
-\c@pgf@counta=\count118
-\c@pgf@countb=\count119
-\c@pgf@countc=\count120
-\c@pgf@countd=\count121
-\t@pgf@toka=\toks27
-\t@pgf@tokb=\toks28
-\t@pgf@tokc=\toks29
-\pgf@sys@id@count=\count122
+\c@pgf@counta=\count120
+\c@pgf@countb=\count121
+\c@pgf@countc=\count122
+\c@pgf@countd=\count123
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count124
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2019/04/04 v3.1.2 (3.1.2)
 )
@@ -468,8 +480,8 @@ File: pgfsys-pdftex.def 2019/04/04 v3.1.2 (3.1.2)
 File: pgfsys-common-pdf.def 2019/04/04 v3.1.2 (3.1.2)
 ))) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfsyssoftpath@smallbuffer@items=\count123
-\pgfsyssoftpath@bigbuffer@items=\count124
+\pgfsyssoftpath@smallbuffer@items=\count125
+\pgfsyssoftpath@bigbuffer@items=\count126
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )) (/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -492,13 +504,13 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 Package: pgfcore 2019/04/04 v3.1.2 (3.1.2)
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen157
-\pgfmath@count=\count125
-\pgfmath@box=\box36
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
+\pgfmath@count=\count127
+\pgfmath@box=\box38
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count126
+\c@pgfmathroundto@lastzeros=\count128
 )) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@picminx=\dimen158
@@ -525,10 +537,10 @@ File: pgfcorepathusage.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@shorten@start@additional=\dimen175
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfpic=\box37
-\pgf@hbox=\box38
-\pgf@layerbox@main=\box39
-\pgf@picture@serial@count=\count127
+\pgfpic=\box39
+\pgf@hbox=\box40
+\pgf@layerbox@main=\box41
+\pgf@picture@serial@count=\count129
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgflinewidth=\dimen176
@@ -549,13 +561,13 @@ File: pgfcorearrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \pgf@max=\dimen181
-\pgf@sys@shading@range@num=\count128
-\pgf@shadingcount=\count129
+\pgf@sys@shading@range@num=\count130
+\pgf@shadingcount=\count131
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2019/04/04 v3.1.2 (3.1.2)
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfexternal@startupbox=\box40
+\pgfexternal@startupbox=\box42
 )) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -566,7 +578,7 @@ File: pgfcorepatterns.code.tex 2019/04/04 v3.1.2 (3.1.2)
 File: pgfcorerdf.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ))) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfnodeparttextbox=\box41
+\pgfnodeparttextbox=\box43
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
@@ -580,13 +592,13 @@ Package: pgffor 2019/04/04 v3.1.2 (3.1.2)
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen184
 \pgffor@skip=\dimen185
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 )) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2019/04/04 v3.1.2 (3.1.2)
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgf@plot@mark@count=\count130
+\pgf@plot@mark@count=\count132
 \pgfplotmarksize=\dimen186
 )
 \tikz@lastx=\dimen187
@@ -595,54 +607,54 @@ File: pgflibraryplothandlers.code.tex 2019/04/04 v3.1.2 (3.1.2)
 \tikz@lastysaved=\dimen190
 \tikzleveldistance=\dimen191
 \tikzsiblingdistance=\dimen192
-\tikz@figbox=\box42
-\tikz@figbox@bg=\box43
-\tikz@tempbox=\box44
-\tikz@tempbox@bg=\box45
-\tikztreelevel=\count131
-\tikznumberofchildren=\count132
-\tikznumberofcurrentchild=\count133
-\tikz@fig@count=\count134
+\tikz@figbox=\box44
+\tikz@figbox@bg=\box45
+\tikz@tempbox=\box46
+\tikz@tempbox@bg=\box47
+\tikztreelevel=\count133
+\tikznumberofchildren=\count134
+\tikznumberofcurrentchild=\count135
+\tikz@fig@count=\count136
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfmatrixcurrentrow=\count135
-\pgfmatrixcurrentcolumn=\count136
-\pgf@matrix@numberofcolumns=\count137
+\pgfmatrixcurrentrow=\count137
+\pgfmatrixcurrentcolumn=\count138
+\pgf@matrix@numberofcolumns=\count139
 )
-\tikz@expandcount=\count138
+\tikz@expandcount=\count140
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2019/04/04 v3.1.2 (3.1.2)
 ))) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks35
-\t@pgfplots@tokb=\toks36
-\t@pgfplots@tokc=\toks37
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
 \pgfplots@tmpa=\dimen193
-\c@pgfplots@coordindex=\count139
-\c@pgfplots@scanlineindex=\count140
+\c@pgfplots@coordindex=\count141
+\c@pgfplots@scanlineindex=\count142
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary arithmetics for your pgf version...
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgflibraryfpu.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count141
+\c@pgfmathroundto@lastzeros=\count143
 )) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count142
+\c@pgfplotsarray@tmp=\count144
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count143
-\t@pgfplotstable@a=\toks38
+\c@pgfplotstable@counta=\count145
+\t@pgfplotstable@a=\toks41
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count144
+\c@pgfplotslibrarysurf@no=\count146
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen194
 \pgfdecoratedremainingdistance=\dimen195
 \pgfdecoratedinputsegmentcompleteddistance=\dimen196
 \pgfdecoratedinputsegmentremainingdistance=\dimen197
 \pgf@decorate@distancetomove=\dimen198
-\pgf@decorate@repeatstate=\count145
+\pgf@decorate@repeatstate=\count147
 \pgfdecorationsegmentamplitude=\dimen199
 \pgfdecorationsegmentlength=\dimen256
 )
-\tikz@lib@dec@box=\box46
+\tikz@lib@dec@box=\box48
 ) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count146
+\pgfplots@numplots=\count148
 \pgfplots@xmin@reg=\dimen257
 \pgfplots@xmax@reg=\dimen258
 \pgfplots@ymin@reg=\dimen259
@@ -658,30 +670,30 @@ Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code.tex (/usr/local/texlive/2019/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.coltype.code.tex)) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen263
-\ar@mcellbox=\box47
+\ar@mcellbox=\box49
 \extrarowheight=\dimen264
-\NC@list=\toks39
+\NC@list=\toks42
 \extratabsurround=\skip52
 \backup@length=\skip53
-\ar@cellbox=\box48
+\ar@cellbox=\box50
 )) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count147
-\lst@gtempboxa=\box49
-\lst@token=\toks40
-\lst@length=\count148
+\lst@mode=\count149
+\lst@gtempboxa=\box51
+\lst@token=\toks43
+\lst@length=\count150
 \lst@currlwidth=\dimen265
-\lst@column=\count149
-\lst@pos=\count150
+\lst@column=\count151
+\lst@pos=\count152
 \lst@lostspace=\dimen266
 \lst@width=\dimen267
-\lst@newlines=\count151
-\lst@lineno=\count152
+\lst@newlines=\count153
+\lst@lineno=\count154
 \lst@maxwidth=\dimen268
  (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
-\c@lstnumber=\count153
-\lst@skipnumbers=\count154
-\lst@framebox=\box50
+\c@lstnumber=\count155
+\lst@skipnumbers=\count156
+\lst@framebox=\box52
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/02/27 1.8b listings configuration
 ))
@@ -698,29 +710,29 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \cmidrulesep=\dimen276
 \cmidrulekern=\dimen277
 \defaultaddspace=\dimen278
-\@cmidla=\count155
-\@cmidlb=\count156
+\@cmidla=\count157
+\@cmidlb=\count158
 \@aboverulesep=\dimen279
 \@belowrulesep=\dimen280
-\@thisruleclass=\count157
-\@lastruleclass=\count158
+\@thisruleclass=\count159
+\@lastruleclass=\count160
 \@thisrulewidth=\dimen281
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx.sty (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2019-05-07 L3 programming layer (loader) 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2019-05-07 L3 programming layer (code)
-\c_max_int=\count159
-\l_tmpa_int=\count160
-\l_tmpb_int=\count161
-\g_tmpa_int=\count162
-\g_tmpb_int=\count163
-\g__kernel_prg_map_int=\count164
-\c__ior_term_ior=\count165
-\c_log_iow=\count166
-\l_iow_line_count_int=\count167
-\l__iow_line_target_int=\count168
-\l__iow_one_indent_int=\count169
-\l__iow_indent_int=\count170
+\c_max_int=\count161
+\l_tmpa_int=\count162
+\l_tmpb_int=\count163
+\g_tmpa_int=\count164
+\g_tmpb_int=\count165
+\g__kernel_prg_map_int=\count166
+\c__ior_term_ior=\count167
+\c_log_iow=\count168
+\l_iow_line_count_int=\count169
+\l__iow_line_target_int=\count170
+\l__iow_one_indent_int=\count171
+\l__iow_indent_int=\count172
 \c_zero_dim=\dimen282
 \c_max_dim=\dimen283
 \l_tmpa_dim=\dimen284
@@ -739,83 +751,83 @@ Package: expl3 2019-05-07 L3 programming layer (code)
 \l_tmpb_muskip=\muskip14
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count171
-\l__intarray_loop_int=\count172
+\l_keys_choice_int=\count173
+\l__intarray_loop_int=\count174
 \c__intarray_sp_dim=\dimen288
-\g__intarray_font_int=\count173
-\c__fp_leading_shift_int=\count174
-\c__fp_middle_shift_int=\count175
-\c__fp_trailing_shift_int=\count176
-\c__fp_big_leading_shift_int=\count177
-\c__fp_big_middle_shift_int=\count178
-\c__fp_big_trailing_shift_int=\count179
-\c__fp_Bigg_leading_shift_int=\count180
-\c__fp_Bigg_middle_shift_int=\count181
-\c__fp_Bigg_trailing_shift_int=\count182
-\c__kernel_randint_max_int=\count183
-\g__fp_array_int=\count184
-\l__fp_array_loop_int=\count185
-\l__sort_length_int=\count186
-\l__sort_min_int=\count187
-\l__sort_top_int=\count188
-\l__sort_max_int=\count189
-\l__sort_true_max_int=\count190
-\l__sort_block_int=\count191
-\l__sort_begin_int=\count192
-\l__sort_end_int=\count193
-\l__sort_A_int=\count194
-\l__sort_B_int=\count195
-\l__sort_C_int=\count196
-\l__tl_analysis_normal_int=\count197
-\l__tl_analysis_index_int=\count198
-\l__tl_analysis_nesting_int=\count199
-\l__tl_analysis_type_int=\count266
-\l__regex_internal_a_int=\count267
-\l__regex_internal_b_int=\count268
-\l__regex_internal_c_int=\count269
-\l__regex_balance_int=\count270
-\l__regex_group_level_int=\count271
-\l__regex_mode_int=\count272
-\c__regex_cs_in_class_mode_int=\count273
-\c__regex_cs_mode_int=\count274
-\l__regex_catcodes_int=\count275
-\l__regex_default_catcodes_int=\count276
-\c__regex_catcode_D_int=\count277
-\c__regex_catcode_S_int=\count278
-\c__regex_catcode_L_int=\count279
-\c__regex_catcode_O_int=\count280
-\c__regex_catcode_A_int=\count281
-\c__regex_all_catcodes_int=\count282
-\l__regex_show_lines_int=\count283
-\l__regex_min_state_int=\count284
-\l__regex_max_state_int=\count285
-\l__regex_left_state_int=\count286
-\l__regex_right_state_int=\count287
-\l__regex_capturing_group_int=\count288
-\l__regex_min_pos_int=\count289
-\l__regex_max_pos_int=\count290
-\l__regex_curr_pos_int=\count291
-\l__regex_start_pos_int=\count292
-\l__regex_success_pos_int=\count293
-\l__regex_curr_char_int=\count294
-\l__regex_curr_catcode_int=\count295
-\l__regex_last_char_int=\count296
-\l__regex_case_changed_char_int=\count297
-\l__regex_curr_state_int=\count298
-\l__regex_step_int=\count299
-\l__regex_min_active_int=\count300
-\l__regex_max_active_int=\count301
-\l__regex_replacement_csnames_int=\count302
-\l__regex_match_count_int=\count303
-\l__regex_min_submatch_int=\count304
-\l__regex_submatch_int=\count305
-\l__regex_zeroth_submatch_int=\count306
-\g__regex_trace_regex_int=\count307
-\c_empty_box=\box51
-\l_tmpa_box=\box52
-\l_tmpb_box=\box53
-\g_tmpa_box=\box54
-\g_tmpb_box=\box55
+\g__intarray_font_int=\count175
+\c__fp_leading_shift_int=\count176
+\c__fp_middle_shift_int=\count177
+\c__fp_trailing_shift_int=\count178
+\c__fp_big_leading_shift_int=\count179
+\c__fp_big_middle_shift_int=\count180
+\c__fp_big_trailing_shift_int=\count181
+\c__fp_Bigg_leading_shift_int=\count182
+\c__fp_Bigg_middle_shift_int=\count183
+\c__fp_Bigg_trailing_shift_int=\count184
+\c__kernel_randint_max_int=\count185
+\g__fp_array_int=\count186
+\l__fp_array_loop_int=\count187
+\l__sort_length_int=\count188
+\l__sort_min_int=\count189
+\l__sort_top_int=\count190
+\l__sort_max_int=\count191
+\l__sort_true_max_int=\count192
+\l__sort_block_int=\count193
+\l__sort_begin_int=\count194
+\l__sort_end_int=\count195
+\l__sort_A_int=\count196
+\l__sort_B_int=\count197
+\l__sort_C_int=\count198
+\l__tl_analysis_normal_int=\count199
+\l__tl_analysis_index_int=\count266
+\l__tl_analysis_nesting_int=\count267
+\l__tl_analysis_type_int=\count268
+\l__regex_internal_a_int=\count269
+\l__regex_internal_b_int=\count270
+\l__regex_internal_c_int=\count271
+\l__regex_balance_int=\count272
+\l__regex_group_level_int=\count273
+\l__regex_mode_int=\count274
+\c__regex_cs_in_class_mode_int=\count275
+\c__regex_cs_mode_int=\count276
+\l__regex_catcodes_int=\count277
+\l__regex_default_catcodes_int=\count278
+\c__regex_catcode_D_int=\count279
+\c__regex_catcode_S_int=\count280
+\c__regex_catcode_L_int=\count281
+\c__regex_catcode_O_int=\count282
+\c__regex_catcode_A_int=\count283
+\c__regex_all_catcodes_int=\count284
+\l__regex_show_lines_int=\count285
+\l__regex_min_state_int=\count286
+\l__regex_max_state_int=\count287
+\l__regex_left_state_int=\count288
+\l__regex_right_state_int=\count289
+\l__regex_capturing_group_int=\count290
+\l__regex_min_pos_int=\count291
+\l__regex_max_pos_int=\count292
+\l__regex_curr_pos_int=\count293
+\l__regex_start_pos_int=\count294
+\l__regex_success_pos_int=\count295
+\l__regex_curr_char_int=\count296
+\l__regex_curr_catcode_int=\count297
+\l__regex_last_char_int=\count298
+\l__regex_case_changed_char_int=\count299
+\l__regex_curr_state_int=\count300
+\l__regex_step_int=\count301
+\l__regex_min_active_int=\count302
+\l__regex_max_active_int=\count303
+\l__regex_replacement_csnames_int=\count304
+\l__regex_match_count_int=\count305
+\l__regex_min_submatch_int=\count306
+\l__regex_submatch_int=\count307
+\l__regex_zeroth_submatch_int=\count308
+\g__regex_trace_regex_int=\count309
+\c_empty_box=\box53
+\l_tmpa_box=\box54
+\l_tmpb_box=\box55
+\g_tmpa_box=\box56
+\g_tmpb_box=\box57
 \l__box_top_dim=\dimen289
 \l__box_bottom_dim=\dimen290
 \l__box_left_dim=\dimen291
@@ -824,8 +836,8 @@ Package: expl3 2019-05-07 L3 programming layer (code)
 \l__box_bottom_new_dim=\dimen294
 \l__box_left_new_dim=\dimen295
 \l__box_right_new_dim=\dimen296
-\l__box_internal_box=\box56
-\l__coffin_internal_box=\box57
+\l__box_internal_box=\box58
+\l__coffin_internal_box=\box59
 \l__coffin_internal_dim=\dimen297
 \l__coffin_offset_x_dim=\dimen298
 \l__coffin_offset_y_dim=\dimen299
@@ -833,13 +845,13 @@ Package: expl3 2019-05-07 L3 programming layer (code)
 \l__coffin_y_dim=\dimen301
 \l__coffin_x_prime_dim=\dimen302
 \l__coffin_y_prime_dim=\dimen303
-\c_empty_coffin=\box58
-\l__coffin_aligned_coffin=\box59
-\l__coffin_aligned_internal_coffin=\box60
-\l_tmpa_coffin=\box61
-\l_tmpb_coffin=\box62
-\g_tmpa_coffin=\box63
-\g_tmpb_coffin=\box64
+\c_empty_coffin=\box60
+\l__coffin_aligned_coffin=\box61
+\l__coffin_aligned_internal_coffin=\box62
+\l_tmpa_coffin=\box63
+\l_tmpb_coffin=\box64
+\g_tmpa_coffin=\box65
+\g_tmpb_coffin=\box66
 \l__coffin_bounding_shift_dim=\dimen304
 \l__coffin_left_corner_dim=\dimen305
 \l__coffin_right_corner_dim=\dimen306
@@ -847,55 +859,55 @@ Package: expl3 2019-05-07 L3 programming layer (code)
 \l__coffin_top_corner_dim=\dimen308
 \l__coffin_scaled_total_height_dim=\dimen309
 \l__coffin_scaled_width_dim=\dimen310
-\c__coffin_empty_coffin=\box65
-\l__coffin_display_coffin=\box66
-\l__coffin_display_coord_coffin=\box67
-\l__coffin_display_pole_coffin=\box68
+\c__coffin_empty_coffin=\box67
+\l__coffin_display_coffin=\box68
+\l__coffin_display_coord_coffin=\box69
+\l__coffin_display_pole_coffin=\box70
 \l__coffin_display_offset_dim=\dimen311
 \l__coffin_display_x_dim=\dimen312
 \l__coffin_display_y_dim=\dimen313
 \g__file_internal_ior=\read2
-\l__seq_internal_a_int=\count308
-\l__seq_internal_b_int=\count309
-\c__deprecation_minus_one=\count310
+\l__seq_internal_a_int=\count310
+\l__seq_internal_b_int=\count311
+\c__deprecation_minus_one=\count312
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count311
-\l__driver_pdf_tmp_box=\box69
+\l__driver_color_stack_int=\count313
+\l__driver_pdf_tmp_box=\box71
 )) (/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2019-05-03 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count312
-\g__xparse_grabber_int=\count313
-\l__xparse_m_args_int=\count314
-\l__xparse_v_nesting_int=\count315
+\l__xparse_current_arg_int=\count314
+\g__xparse_grabber_int=\count315
+\l__xparse_m_args_int=\count316
+\l__xparse_v_nesting_int=\count317
 )
 Package: siunitx 2018/05/17 v2.7s A comprehensive (SI) units package
  (/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2019-05-03 LaTeX2e option processing using LaTeX3 keys
 )
-\l__siunitx_tmp_box=\box70
+\l__siunitx_tmp_box=\box72
 \l__siunitx_tmp_dim=\dimen314
-\l__siunitx_tmp_int=\count316
-\l__siunitx_number_mantissa_length_int=\count317
-\l__siunitx_number_uncert_length_int=\count318
-\l__siunitx_round_int=\count319
-\l__siunitx_process_decimal_int=\count320
-\l__siunitx_process_uncertainty_int=\count321
-\l__siunitx_process_fixed_int=\count322
-\l__siunitx_process_integer_min_int=\count323
-\l__siunitx_process_precision_int=\count324
-\l__siunitx_group_min_int=\count325
-\l__siunitx_angle_marker_box=\box71
-\l__siunitx_angle_unit_box=\box72
+\l__siunitx_tmp_int=\count318
+\l__siunitx_number_mantissa_length_int=\count319
+\l__siunitx_number_uncert_length_int=\count320
+\l__siunitx_round_int=\count321
+\l__siunitx_process_decimal_int=\count322
+\l__siunitx_process_uncertainty_int=\count323
+\l__siunitx_process_fixed_int=\count324
+\l__siunitx_process_integer_min_int=\count325
+\l__siunitx_process_precision_int=\count326
+\l__siunitx_group_min_int=\count327
+\l__siunitx_angle_marker_box=\box73
+\l__siunitx_angle_unit_box=\box74
 \l__siunitx_angle_marker_dim=\dimen315
 \l__siunitx_angle_unit_dim=\dimen316
-\l__siunitx_unit_int=\count326
-\l__siunitx_unit_denominator_int=\count327
-\l__siunitx_unit_numerator_int=\count328
-\l__siunitx_unit_prefix_int=\count329
-\l__siunitx_unit_prefix_base_int=\count330
-\l__siunitx_unit_prefix_gram_int=\count331
-\l__siunitx_number_product_int=\count332
+\l__siunitx_unit_int=\count328
+\l__siunitx_unit_denominator_int=\count329
+\l__siunitx_unit_numerator_int=\count330
+\l__siunitx_unit_prefix_int=\count331
+\l__siunitx_unit_prefix_base_int=\count332
+\l__siunitx_unit_prefix_gram_int=\count333
+\l__siunitx_number_product_int=\count334
 \c__siunitx_one_fill_skip=\skip60
 \l__siunitx_table_unit_align_skip=\skip61
 \l__siunitx_table_exponent_dim=\dimen317
@@ -907,10 +919,10 @@ Package: l3keys2e 2019-05-03 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_fill_pre_dim=\dimen323
 \l__siunitx_table_fill_post_dim=\dimen324
 \l__siunitx_table_fill_mid_dim=\dimen325
-\l__siunitx_table_pre_box=\box73
-\l__siunitx_table_post_box=\box74
-\l__siunitx_table_mantissa_box=\box75
-\l__siunitx_table_result_box=\box76
+\l__siunitx_table_pre_box=\box75
+\l__siunitx_table_post_box=\box76
+\l__siunitx_table_mantissa_box=\box77
+\l__siunitx_table_result_box=\box78
 \l__siunitx_table_number_align_skip=\skip62
 \l__siunitx_table_text_align_skip=\skip63
  (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
@@ -918,60 +930,57 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 )) (/usr/local/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-\PANTONE=\toks41
-\c@Problem=\count333
-\c@Definition=\count334
+\PANTONE=\toks44
+\c@Problem=\count335
+\c@Definition=\count336
  (./semantic_mapping.aux
-
-LaTeX Warning: Label `tab:symbols' multiply defined.
-
 
 LaTeX Warning: Label `fig:semantic_map_movies_affinity' multiply defined.
 
 )
 \openout1 = `semantic_mapping.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 40.
 
 -- Lines per column: 56 (exact).
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 35.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 40.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 
 LaTeX Font Warning: Font shape `T1/ptm/n/n' undefined
-(Font)              using `T1/ptm/m/n' instead on input line 35.
+(Font)              using `T1/ptm/m/n' instead on input line 40.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count335
+\scratchcounter=\count337
 \scratchdimen=\dimen326
-\scratchbox=\box77
-\nofMPsegments=\count336
-\nofMParguments=\count337
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count338
+\scratchbox=\box79
+\nofMPsegments=\count338
+\nofMParguments=\count339
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count340
 \MPscratchDim=\dimen327
-\MPnumerator=\count339
-\makeMPintoPDFobject=\count340
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
+\everyMPtoPDFconversion=\toks46
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
@@ -1011,162 +1020,157 @@ Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.16} (current compat level: 1.7).
 
-\c@lstlisting=\count341
+\c@lstlisting=\count343
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <bullet.png, id=8, 12.045pt x 35.38219pt>
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 55.
+Package pdftex.def Info: bullet.png  used on input line 60.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 55.
+Package xcolor Warning: Incompatible color definition on input line 60.
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 55.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 60.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 
 LaTeX Font Warning: Font shape `T1/phv/n/n' undefined
-(Font)              using `T1/phv/m/n' instead on input line 55.
+(Font)              using `T1/phv/m/n' instead on input line 60.
 
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 71.
+Package pdftex.def Info: bullet.png  used on input line 76.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 
-Package xcolor Warning: Incompatible color definition on input line 71.
+Package xcolor Warning: Incompatible color definition on input line 76.
 
 
-Package xcolor Warning: Incompatible color definition on input line 77.
+Package xcolor Warning: Incompatible color definition on input line 82.
 
-LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 77.
-LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 77.
+LaTeX Font Info:    Calculating math sizes for size <9.9> on input line 82.
+LaTeX Font Info:    Calculating math sizes for size <6.6> on input line 82.
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 77--77
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 82--82
 []  
  []
 
 
-Overfull \hbox (9.2679pt too wide) in paragraph at lines 77--77
+Overfull \hbox (9.2679pt too wide) in paragraph at lines 82--82
 []  
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 79.
+Package xcolor Warning: Incompatible color definition on input line 84.
 
-<img/TBoxAndAbox.pdf, id=9, 556.84839pt x 262.16545pt>
-File: img/TBoxAndAbox.pdf Graphic file (type pdf)
-<use img/TBoxAndAbox.pdf>
-Package pdftex.def Info: img/TBoxAndAbox.pdf  used on input line 104.
-(pdftex.def)             Requested size: 479.86412pt x 225.9219pt.
-File: img/TBoxAndAbox.pdf Graphic file (type pdf)
-<use img/TBoxAndAbox.pdf>
-Package pdftex.def Info: img/TBoxAndAbox.pdf  used on input line 104.
-(pdftex.def)             Requested size: 479.86412pt x 225.9219pt.
-LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 104.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 90.
 
-Package xcolor Warning: Incompatible color definition on input line 104.
+LaTeX Warning: Citation `Zou_2020' on page 1 undefined on input line 90.
 
 
-Package xcolor Warning: Incompatible color definition on input line 104.
+LaTeX Warning: Citation `Hogan21' on page 1 undefined on input line 93.
 
 
-Package xcolor Warning: Incompatible color definition on input line 104.
+LaTeX Warning: Citation `suchanek2007yago' on page 1 undefined on input line 95.
 
 
-Package xcolor Warning: Incompatible color definition on input line 104.
+LaTeX Warning: Citation `auer2007dbpedia' on page 1 undefined on input line 95.
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 116.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-
-LaTeX Font Warning: Font shape `T1/pcr/n/n' undefined
-(Font)              using `T1/pcr/m/n' instead on input line 116.
+LaTeX Warning: Citation `Freebase08' on page 1 undefined on input line 96.
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 106--140
-\T1/ptm/n/n/10 both \T1/pcr/n/n/10 dbo:Book \T1/ptm/n/n/10 and \T1/pcr/n/n/10 dbo:film \T1/ptm/n/n/10 con-cepts are de-scen-
- []
+LaTeX Warning: Citation `NELL10' on page 1 undefined on input line 96.
 
 
-Underfull \hbox (badness 1377) in paragraph at lines 106--140
-\T1/ptm/n/n/10 dants of the class \T1/pcr/n/n/10 dbo:Work\T1/ptm/n/n/10 . Al-ter-na-tively, in ABox,
- []
+LaTeX Warning: Citation `GoogleKG12' on page 1 undefined on input line 97.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--140
-\T1/ptm/n/n/10 (\T1/pcr/n/n/10 dbr:A_dance_of_dragons\T1/ptm/n/n/10 , \T1/ptm/m/it/10 rdf:type\T1/ptm/n/n/10 , \T1/pcr/n/n/10 dbo:Book\T1/ptm/n/n/10 )
- []
+LaTeX Warning: Citation `Satori13' on page 1 undefined on input line 97.
 
 
-Underfull \hbox (badness 7221) in paragraph at lines 106--140
-\T1/ptm/n/n/10 in-di-cates that re-source \T1/pcr/n/n/10 dbr:A_dance_of_dragons
- []
+LaTeX Warning: Citation `Facebook13' on page 1 undefined on input line 98.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--140
-\T1/ptm/n/n/10 is an in-stance of class \T1/pcr/n/n/10 dbo:Book\T1/ptm/n/n/10 . An-other type
- []
+LaTeX Warning: Citation `Wikidata14' on page 1 undefined on input line 98.
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 106--140
-\T1/ptm/n/n/10 of ax-ioms in ABox like (\T1/pcr/n/n/10 dbr:George_RR_Martin\T1/ptm/n/n/10 ,
- []
+LaTeX Warning: Citation `GoogleKG12' on page 1 undefined on input line 100.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--140
-\T1/ptm/n/n/10 is \T1/ptm/m/it/10 dbo:creator_of \T1/ptm/n/n/10 of, \T1/pcr/n/n/10 dbr:DaenerysTargaryen\T1/ptm/n/n/10 )
- []
+LaTeX Warning: Citation `Satori13' on page 1 undefined on input line 101.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--140
-\T1/ptm/n/n/10 and (\T1/pcr/n/n/10 dbr:George_RR_Martin\T1/ptm/n/n/10 , is \T1/ptm/m/it/10 dbo:author \T1/ptm/n/n/10 of,
- []
+LaTeX Warning: Citation `Chen2022' on page 1 undefined on input line 101.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--140
-\T1/pcr/n/n/10 dbr:A_dance_of_dragons\T1/ptm/n/n/10 ) in-di-cate that the in-
- []
+LaTeX Warning: Citation `Lin2022' on page 1 undefined on input line 102.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--140
-\T1/ptm/n/n/10 stance \T1/pcr/n/n/10 dbr:George_RR_Martin \T1/ptm/n/n/10 has two se-man-
- []
+LaTeX Warning: Citation `Haotian2022' on page 1 undefined on input line 102.
 
 
-Underfull \hbox (badness 2142) in paragraph at lines 106--140
-\T1/ptm/n/n/10 tic con-nec-tions with \T1/pcr/n/n/10 dbr:DaenerysTargaryen \T1/ptm/n/n/10 and
- []
+LaTeX Warning: Citation `Zhang2022' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Borrego2022' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Guan2022' on page 1 undefined on input line 103.
+
+
+LaTeX Warning: Citation `Zou_2020' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `Belleau08' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `Ruttenberg09' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `Momtchev09' on page 1 undefined on input line 104.
+
+
+LaTeX Warning: Citation `keim2001visual' on page 1 undefined on input line 113.
+
+
+LaTeX Warning: Citation `gomez2018visualizing' on page 1 undefined on input line 121.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-Package xcolor Warning: Incompatible color definition on input line 140.
+LaTeX Warning: Citation `johnson1986semantic' on page 1 undefined on input line 128.
 
-<logo.png, id=10, 206.27063pt x 53.44969pt>
+
+LaTeX Warning: Citation `SCHAEFFER200727' on page 1 undefined on input line 138.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+Package xcolor Warning: Incompatible color definition on input line 144.
+
+<logo.png, id=9, 206.27063pt x 53.44969pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 140.
+Package pdftex.def Info: logo.png  used on input line 144.
 (pdftex.def)             Requested size: 91.32pt x 23.66309pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1192,123 +1196,414 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
  <./logo.png> <./bullet.png>]
-<img/Water_Semantic_Map_no_colour.pdf, id=21, 672.12506pt x 661.7804pt>
-File: img/Water_Semantic_Map_no_colour.pdf Graphic file (type pdf)
-<use img/Water_Semantic_Map_no_colour.pdf>
-Package pdftex.def Info: img/Water_Semantic_Map_no_colour.pdf  used on input line 167.
-(pdftex.def)             Requested size: 235.24728pt x 231.6266pt.
-File: img/Water_Semantic_Map_no_colour.pdf Graphic file (type pdf)
-<use img/Water_Semantic_Map_no_colour.pdf>
-Package pdftex.def Info: img/Water_Semantic_Map_no_colour.pdf  used on input line 167.
-(pdftex.def)             Requested size: 235.24728pt x 231.6266pt.
+
+Package xcolor Warning: Incompatible color definition on input line 166.
 
 
-Package xcolor Warning: Incompatible color definition on input line 167.
+LaTeX Warning: Citation `nickel2015review' on page 2 undefined on input line 171.
 
 
-Package xcolor Warning: Incompatible color definition on input line 167.
+LaTeX Warning: Citation `seufert2016instant' on page 2 undefined on input line 171.
 
 
-Package xcolor Warning: Incompatible color definition on input line 167.
+LaTeX Warning: Citation `RDF' on page 2 undefined on input line 177.
 
 
-Package xcolor Warning: Incompatible color definition on input line 167.
+LaTeX Warning: Citation `OWL' on page 2 undefined on input line 177.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 2460) has occurred while \output is active []
-
-<notaglinelogo.png, id=22, 169.38281pt x 42.91031pt>
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 187.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
+Underfull \hbox (badness 2126) in paragraph at lines 169--184
+\T1/ptm/n/n/10 Some def-i-ni-tions de-scribe a KG as a graph-structured
  []
 
 
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
+Underfull \hbox (badness 1701) in paragraph at lines 169--184
+\T1/ptm/n/n/10 knowl-edge base [\T1/ptm/b/n/10 ?\T1/ptm/n/n/10 ], [\T1/ptm/b/n/10 ?\T1/ptm/n/n/10 ]. In this work, we con-sider a
  []
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[2 <./notaglinelogo.png> <./img/TBoxAndAbox.pdf> <./img/Water_Semantic_Map_no_colour.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 197.
-
-
-Package xcolor Warning: Incompatible color definition on input line 212.
-
-
-Package xcolor Warning: Incompatible color definition on input line 256.
-
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 301.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
+Underfull \hbox (badness 3088) in paragraph at lines 169--184
+\T1/ptm/n/n/10 knowl-edge base a set of sen-tences/-facts ex-pressed in
  []
 
 
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
+LaTeX Warning: Citation `horrocks2008ontologies' on page 2 undefined on input line 187.
+
+
+LaTeX Warning: Citation `auer2007dbpedia' on page 2 undefined on input line 192.
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 193.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+
+LaTeX Font Warning: Font shape `T1/pcr/n/n' undefined
+(Font)              using `T1/pcr/m/n' instead on input line 193.
+
+
+Underfull \hbox (badness 3209) in paragraph at lines 185--218
+\T1/ptm/n/n/10 bases have two types of ax-ioms: a ter-mi-nol-ogy box
  []
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
+Underfull \hbox (badness 2875) in paragraph at lines 185--218
+\T1/ptm/n/n/10 should con-tain these two sets of ax-ioms to be con-
  []
 
-[3]
 
-Package xcolor Warning: Incompatible color definition on input line 302.
-
-
-Package xcolor Warning: Incompatible color definition on input line 345.
+Underfull \hbox (badness 1681) in paragraph at lines 185--218
+\T1/ptm/n/n/10 sid-ered as a knowl-edge base. To ex-em-plify the above
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 377.
-
-<img/origin.pdf, id=76, 560.38449pt x 304.59114pt>
-File: img/origin.pdf Graphic file (type pdf)
-<use img/origin.pdf>
-Package pdftex.def Info: img/origin.pdf  used on input line 396.
-(pdftex.def)             Requested size: 505.12177pt x 274.55707pt.
-File: img/origin.pdf Graphic file (type pdf)
-<use img/origin.pdf>
-Package pdftex.def Info: img/origin.pdf  used on input line 396.
-(pdftex.def)             Requested size: 505.12177pt x 274.55707pt.
-
-Package xcolor Warning: Incompatible color definition on input line 396.
+Underfull \hbox (badness 1694) in paragraph at lines 185--218
+[]\T1/ptm/n/n/10 . In KGs, the on-tol-ogy classes (e.g.,\T1/pcr/n/n/10 dbo:Book [] \T1/ptm/n/n/10 or
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 396.
+Underfull \hbox (badness 2237) in paragraph at lines 185--218
+\T1/pcr/n/n/10 dbo:Movie\T1/ptm/n/n/10 ) cor-re-spond with the TBox and de-scribe
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 396.
+Underfull \hbox (badness 1831) in paragraph at lines 185--218
+\T1/ptm/n/n/10 con-cepts hi-er-ar-chies, while the on-tol-ogy in-stances cor-
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 396.
+Underfull \hbox (badness 2941) in paragraph at lines 185--218
+\T1/ptm/n/n/10 re-spond with the ABox and de-scribe en-tity in-stances
+ []
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 185--218
+\T1/ptm/n/n/10 (e.g.,\T1/pcr/n/n/10 dbr:Lucasfilm \T1/ptm/n/n/10 or \T1/pcr/n/n/10 dbr:George_RR_Martin\T1/ptm/n/n/10 )
+ []
+
+
+Underfull \hbox (badness 1400) in paragraph at lines 185--218
+\T1/ptm/n/n/10 both \T1/pcr/n/n/10 dbo:Book \T1/ptm/n/n/10 and \T1/pcr/n/n/10 dbo:film \T1/ptm/n/n/10 con-cepts are de-scen-
+ []
+
+
+Underfull \hbox (badness 1377) in paragraph at lines 185--218
+\T1/ptm/n/n/10 dants of the class \T1/pcr/n/n/10 dbo:Work\T1/ptm/n/n/10 . Al-ter-na-tively, in ABox,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--218
+\T1/ptm/n/n/10 (\T1/pcr/n/n/10 dbr:A_dance_of_dragons\T1/ptm/n/n/10 , \T1/ptm/m/it/10 rdf:type\T1/ptm/n/n/10 , \T1/pcr/n/n/10 dbo:Book\T1/ptm/n/n/10 )
+ []
+
+
+Underfull \hbox (badness 7221) in paragraph at lines 185--218
+\T1/ptm/n/n/10 in-di-cates that re-source \T1/pcr/n/n/10 dbr:A_dance_of_dragons
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--218
+\T1/ptm/n/n/10 is an in-stance of class \T1/pcr/n/n/10 dbo:Book\T1/ptm/n/n/10 . An-other type
+ []
+
+
+Underfull \hbox (badness 2050) in paragraph at lines 185--218
+\T1/ptm/n/n/10 of ax-ioms in ABox like (\T1/pcr/n/n/10 dbr:George_RR_Martin\T1/ptm/n/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--218
+\T1/ptm/n/n/10 is \T1/ptm/m/it/10 dbo:creator_of \T1/ptm/n/n/10 of, \T1/pcr/n/n/10 dbr:DaenerysTargaryen\T1/ptm/n/n/10 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--218
+\T1/ptm/n/n/10 and (\T1/pcr/n/n/10 dbr:George_RR_Martin\T1/ptm/n/n/10 , is \T1/ptm/m/it/10 dbo:author \T1/ptm/n/n/10 of,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--218
+\T1/pcr/n/n/10 dbr:A_dance_of_dragons\T1/ptm/n/n/10 ) in-di-cate that the in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--218
+\T1/ptm/n/n/10 stance \T1/pcr/n/n/10 dbr:George_RR_Martin \T1/ptm/n/n/10 has two se-man-
+ []
+
+
+Underfull \hbox (badness 2142) in paragraph at lines 185--218
+\T1/ptm/n/n/10 tic con-nec-tions with \T1/pcr/n/n/10 dbr:DaenerysTargaryen \T1/ptm/n/n/10 and
+ []
+
+<img/TBoxAndAbox.pdf, id=20, 556.84839pt x 262.16545pt>
+File: img/TBoxAndAbox.pdf Graphic file (type pdf)
+<use img/TBoxAndAbox.pdf>
+Package pdftex.def Info: img/TBoxAndAbox.pdf  used on input line 220.
+(pdftex.def)             Requested size: 479.86412pt x 225.9219pt.
+File: img/TBoxAndAbox.pdf Graphic file (type pdf)
+<use img/TBoxAndAbox.pdf>
+Package pdftex.def Info: img/TBoxAndAbox.pdf  used on input line 220.
+(pdftex.def)             Requested size: 479.86412pt x 225.9219pt.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 220.
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 220.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package xcolor Warning: Incompatible color definition on input line 235.
+
+
+Package xcolor Warning: Incompatible color definition on input line 241.
+
+
+LaTeX Warning: Citation `keim2001visual' on page 2 undefined on input line 244.
+
+
+LaTeX Warning: Citation `Shneiderman96' on page 2 undefined on input line 246.
+
+
+LaTeX Warning: Citation `Garshol2004MetadataTT' on page 2 undefined on input line 250.
+
+
+LaTeX Warning: Citation `Koutra2019' on page 2 undefined on input line 254.
+
+
+LaTeX Warning: Citation `OntoVis' on page 2 undefined on input line 255.
+
+
+LaTeX Warning: Citation `6787141' on page 2 undefined on input line 255.
+
+
+LaTeX Warning: Citation `1703364' on page 2 undefined on input line 255.
+
+
+LaTeX Warning: Citation `gomez2018visualizing' on page 2 undefined on input line 257.
+
+
+LaTeX Warning: Citation `mcginn2016visualizing' on page 2 undefined on input line 265.
+
+
+LaTeX Warning: Citation `molina2017improving' on page 2 undefined on input line 266.
+
+
+LaTeX Warning: Citation `gomez2018visualizing' on page 2 undefined on input line 269.
+
+
+LaTeX Warning: Citation `Consalvi2022' on page 2 undefined on input line 269.
+
+<notaglinelogo.png, id=21, 169.38281pt x 42.91031pt>
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 286.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[2 <./notaglinelogo.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 287.
+
+
+LaTeX Warning: Citation `6787141' on page 3 undefined on input line 289.
+
+
+LaTeX Warning: Citation `1703364' on page 3 undefined on input line 289.
+
+
+LaTeX Warning: Citation `8801911' on page 3 undefined on input line 289.
+
+
+LaTeX Warning: Citation `liu2018graph' on page 3 undefined on input line 295.
+
+
+LaTeX Warning: Citation `Koutra2019' on page 3 undefined on input line 298.
+
+
+LaTeX Warning: Citation `OntoVis' on page 3 undefined on input line 300.
+
+
+LaTeX Warning: Citation `koutra2014vog' on page 3 undefined on input line 304.
+
+
+LaTeX Warning: Citation `8801911' on page 3 undefined on input line 308.
+
+
+LaTeX Warning: Citation `liu2018graph' on page 3 undefined on input line 314.
+
+
+LaTeX Warning: Citation `Seah12' on page 3 undefined on input line 316.
+
+
+LaTeX Warning: Citation `koutra2014vog' on page 3 undefined on input line 318.
+
+
+LaTeX Warning: Citation `8801911' on page 3 undefined on input line 321.
+
+
+LaTeX Warning: Citation `Koutra2019' on page 3 undefined on input line 325.
+
+
+LaTeX Warning: Citation `Tasnim2020' on page 3 undefined on input line 329.
+
+
+Package xcolor Warning: Incompatible color definition on input line 333.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 350.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[3 <./img/TBoxAndAbox.pdf>]
+<img/Water_Semantic_Map_no_colour.pdf, id=55, 672.12506pt x 661.7804pt>
+File: img/Water_Semantic_Map_no_colour.pdf Graphic file (type pdf)
+<use img/Water_Semantic_Map_no_colour.pdf>
+Package pdftex.def Info: img/Water_Semantic_Map_no_colour.pdf  used on input line 353.
+(pdftex.def)             Requested size: 235.24728pt x 231.6266pt.
+File: img/Water_Semantic_Map_no_colour.pdf Graphic file (type pdf)
+<use img/Water_Semantic_Map_no_colour.pdf>
+Package pdftex.def Info: img/Water_Semantic_Map_no_colour.pdf  used on input line 353.
+(pdftex.def)             Requested size: 235.24728pt x 231.6266pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 353.
+
+
+Package xcolor Warning: Incompatible color definition on input line 353.
+
+
+Package xcolor Warning: Incompatible color definition on input line 353.
+
+
+Package xcolor Warning: Incompatible color definition on input line 353.
+
+
+Package xcolor Warning: Incompatible color definition on input line 355.
+
+
+LaTeX Warning: Citation `HOVY20132' on page 4 undefined on input line 358.
+
+
+LaTeX Warning: Citation `resnik1995using' on page 4 undefined on input line 360.
+
+
+LaTeX Warning: Citation `turney2010frequency' on page 4 undefined on input line 360.
+
+
+LaTeX Warning: Citation `mihalcea2006corpus' on page 4 undefined on input line 366.
+
+
+LaTeX Warning: Citation `church1990word' on page 4 undefined on input line 369.
+
+
+LaTeX Warning: Citation `landauer1997solution' on page 4 undefined on input line 370.
+
+
+LaTeX Warning: Citation `budanitsky2001semantic' on page 4 undefined on input line 372.
+
+
+LaTeX Warning: Citation `hulpucs2015path' on page 4 undefined on input line 375.
+
+
+LaTeX Warning: Citation `wu1994verb' on page 4 undefined on input line 376.
+
+
+LaTeX Warning: Citation `leacock1998combining' on page 4 undefined on input line 376.
+
+
+LaTeX Warning: Citation `lin1998information' on page 4 undefined on input line 378.
+
+
+LaTeX Warning: Citation `jiang1997semantic' on page 4 undefined on input line 378.
+
+
+LaTeX Warning: Citation `resnik1995using' on page 4 undefined on input line 379.
+
+
+LaTeX Warning: Citation `ZhuIglesias2017' on page 4 undefined on input line 383.
+
+
+LaTeX Warning: Citation `zhou2008new' on page 4 undefined on input line 384.
+
+
+LaTeX Warning: Citation `ZhuIglesias2017' on page 4 undefined on input line 385.
 
 
 Package xcolor Warning: Incompatible color definition on input line 398.
 
+
+LaTeX Warning: Citation `Dongkuan2015' on page 4 undefined on input line 402.
+
+
+LaTeX Warning: Citation `DBLP:books/crc/aggarwal2013' on page 4 undefined on input line 403.
+
+
+LaTeX Warning: Citation `firdaus2015survey' on page 4 undefined on input line 403.
+
+
+LaTeX Warning: Citation `google_2022' on page 4 undefined on input line 405.
+
+
+LaTeX Warning: Citation `macqueen1967classification' on page 4 undefined on input line 418.
+
+
+LaTeX Warning: Citation `kaufmanPAM' on page 4 undefined on input line 421.
+
+
+LaTeX Warning: Citation `kaufmanCLARA' on page 4 undefined on input line 422.
+
+
+LaTeX Warning: Citation `ng2002clarans' on page 4 undefined on input line 426.
+
+
+LaTeX Warning: Citation `frey2007clustering' on page 4 undefined on input line 430.
+
+
+Package xcolor Warning: Incompatible color definition on input line 432.
+
+
+LaTeX Warning: Citation `DBLP:books/crc/aggarwal2013' on page 4 undefined on input line 436.
+
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 417.
+Package pdftex.def Info: notaglinelogo.png  used on input line 446.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1325,63 +1620,52 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[4]
+[4 <./img/Water_Semantic_Map_no_colour.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 431.
-
-
-Package xcolor Warning: Incompatible color definition on input line 468.
+LaTeX Warning: Citation `kaufmanPAM' on page 5 undefined on input line 450.
 
 
-Package xcolor Warning: Incompatible color definition on input line 485.
+LaTeX Warning: Citation `dunn1974well' on page 5 undefined on input line 457.
 
 
-Package xcolor Warning: Incompatible color definition on input line 485.
+LaTeX Warning: Citation `davies1979cluster' on page 5 undefined on input line 461.
 
 
-Package xcolor Warning: Incompatible color definition on input line 485.
+LaTeX Warning: Citation `calinski1974dendrite' on page 5 undefined on input line 463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 485.
+Package xcolor Warning: Incompatible color definition on input line 465.
+
+<img/origin.pdf, id=83, 560.38449pt x 304.59114pt>
+File: img/origin.pdf Graphic file (type pdf)
+<use img/origin.pdf>
+Package pdftex.def Info: img/origin.pdf  used on input line 469.
+(pdftex.def)             Requested size: 505.12177pt x 274.55707pt.
+File: img/origin.pdf Graphic file (type pdf)
+<use img/origin.pdf>
+Package pdftex.def Info: img/origin.pdf  used on input line 469.
+(pdftex.def)             Requested size: 505.12177pt x 274.55707pt.
+
+Package xcolor Warning: Incompatible color definition on input line 469.
 
 
-Overfull \hbox (14.284pt too wide) in paragraph at lines 488--508
- [][] 
- []
+Package xcolor Warning: Incompatible color definition on input line 469.
 
 
-Package xcolor Warning: Incompatible color definition on input line 514.
-
-<img/semantic_mapping_process.pdf, id=84, 923.54912pt x 184.78877pt>
-File: img/semantic_mapping_process.pdf Graphic file (type pdf)
-<use img/semantic_mapping_process.pdf>
-Package pdftex.def Info: img/semantic_mapping_process.pdf  used on input line 526.
-(pdftex.def)             Requested size: 479.86412pt x 96.01457pt.
-File: img/semantic_mapping_process.pdf Graphic file (type pdf)
-<use img/semantic_mapping_process.pdf>
-Package pdftex.def Info: img/semantic_mapping_process.pdf  used on input line 526.
-(pdftex.def)             Requested size: 479.86412pt x 96.01457pt.
-
-Package xcolor Warning: Incompatible color definition on input line 526.
+Package xcolor Warning: Incompatible color definition on input line 469.
 
 
-Package xcolor Warning: Incompatible color definition on input line 526.
-
-
-Package xcolor Warning: Incompatible color definition on input line 526.
-
-
-Package xcolor Warning: Incompatible color definition on input line 526.
+Package xcolor Warning: Incompatible color definition on input line 469.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 535.
+Package xcolor Warning: Incompatible color definition on input line 488.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 535.
+Package pdftex.def Info: notaglinelogo.png  used on input line 561.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1398,42 +1682,43 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[5 <./img/origin.pdf, page is rotated 90 degrees>]
-<img/sparql_queries/SPARQL_type.pdf, id=101, 252.43219pt x 50.04898pt>
-File: img/sparql_queries/SPARQL_type.pdf Graphic file (type pdf)
-<use img/sparql_queries/SPARQL_type.pdf>
-Package pdftex.def Info: img/sparql_queries/SPARQL_type.pdf  used on input line 552.
-(pdftex.def)             Requested size: 227.30324pt x 45.06808pt.
-File: img/sparql_queries/SPARQL_type.pdf Graphic file (type pdf)
-<use img/sparql_queries/SPARQL_type.pdf>
-Package pdftex.def Info: img/sparql_queries/SPARQL_type.pdf  used on input line 552.
-(pdftex.def)             Requested size: 227.30324pt x 45.06808pt.
+[5]
+
+Package xcolor Warning: Incompatible color definition on input line 587.
 
 
-Package xcolor Warning: Incompatible color definition on input line 552.
+LaTeX Warning: Citation `Dongkuan2015' on page 6 undefined on input line 598.
 
 
-Package xcolor Warning: Incompatible color definition on input line 552.
+Package xcolor Warning: Incompatible color definition on input line 641.
+
+<img/semantic_mapping_process.pdf, id=87, 923.54912pt x 184.78877pt>
+File: img/semantic_mapping_process.pdf Graphic file (type pdf)
+<use img/semantic_mapping_process.pdf>
+Package pdftex.def Info: img/semantic_mapping_process.pdf  used on input line 651.
+(pdftex.def)             Requested size: 479.86412pt x 96.01457pt.
+File: img/semantic_mapping_process.pdf Graphic file (type pdf)
+<use img/semantic_mapping_process.pdf>
+Package pdftex.def Info: img/semantic_mapping_process.pdf  used on input line 651.
+(pdftex.def)             Requested size: 479.86412pt x 96.01457pt.
+
+Package xcolor Warning: Incompatible color definition on input line 651.
 
 
-Package xcolor Warning: Incompatible color definition on input line 552.
+Package xcolor Warning: Incompatible color definition on input line 651.
 
 
-Package xcolor Warning: Incompatible color definition on input line 552.
+Package xcolor Warning: Incompatible color definition on input line 651.
 
 
-Package xcolor Warning: Incompatible color definition on input line 560.
+Package xcolor Warning: Incompatible color definition on input line 651.
 
 
-Underfull \vbox (badness 2547) has occurred while \output is active []
-
-
-
-Package xcolor Warning: Incompatible color definition on input line 598.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 612.
+Package pdftex.def Info: notaglinelogo.png  used on input line 664.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1450,209 +1735,253 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[6 <./img/semantic_mapping_process.pdf> <./img/sparql_queries/SPARQL_type.pdf>]
+[6 <./img/origin.pdf, page is rotated 90 degrees>]
 
-Package xcolor Warning: Incompatible color definition on input line 613.
-
-
-Package xcolor Warning: Incompatible color definition on input line 617.
+Package xcolor Warning: Incompatible color definition on input line 667.
 
 
-Package xcolor Warning: Incompatible color definition on input line 621.
+Package xcolor Warning: Incompatible color definition on input line 667.
 
 
-Package xcolor Warning: Incompatible color definition on input line 625.
+Package xcolor Warning: Incompatible color definition on input line 667.
 
 
-Package xcolor Warning: Incompatible color definition on input line 628.
+Package xcolor Warning: Incompatible color definition on input line 667.
 
 
-Package xcolor Warning: Incompatible color definition on input line 631.
+Package xcolor Warning: Incompatible color definition on input line 735.
 
 
-Package xcolor Warning: Incompatible color definition on input line 635.
+Package xcolor Warning: Incompatible color definition on input line 745.
 
 
-Package xcolor Warning: Incompatible color definition on input line 637.
+LaTeX Warning: Citation `ZHU201730' on page 7 undefined on input line 749.
+
+<img/sparql_queries/SPARQL_type.pdf, id=104, 252.43219pt x 50.04898pt>
+File: img/sparql_queries/SPARQL_type.pdf Graphic file (type pdf)
+<use img/sparql_queries/SPARQL_type.pdf>
+Package pdftex.def Info: img/sparql_queries/SPARQL_type.pdf  used on input line 767.
+(pdftex.def)             Requested size: 227.30324pt x 45.06808pt.
+File: img/sparql_queries/SPARQL_type.pdf Graphic file (type pdf)
+<use img/sparql_queries/SPARQL_type.pdf>
+Package pdftex.def Info: img/sparql_queries/SPARQL_type.pdf  used on input line 767.
+(pdftex.def)             Requested size: 227.30324pt x 45.06808pt.
+
+Package xcolor Warning: Incompatible color definition on input line 767.
 
 
-Package xcolor Warning: Incompatible color definition on input line 640.
+Package xcolor Warning: Incompatible color definition on input line 767.
 
 
-Package xcolor Warning: Incompatible color definition on input line 640.
+Package xcolor Warning: Incompatible color definition on input line 767.
 
 
-Package xcolor Warning: Incompatible color definition on input line 640.
+Package xcolor Warning: Incompatible color definition on input line 767.
 
 
-Package xcolor Warning: Incompatible color definition on input line 640.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 663.
+Package xcolor Warning: Incompatible color definition on input line 770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 676.
+Package xcolor Warning: Incompatible color definition on input line 770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 676.
+Package xcolor Warning: Incompatible color definition on input line 770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 676.
+Package xcolor Warning: Incompatible color definition on input line 770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 676.
+Overfull \hbox (15.81422pt too wide) in paragraph at lines 773--800
+ [][] 
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 709.
+Package xcolor Warning: Incompatible color definition on input line 802.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 802.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 709.
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 709.
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[7 <./img/semantic_mapping_process.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 817.
 
 
-Package xcolor Warning: Incompatible color definition on input line 709.
+Package xcolor Warning: Incompatible color definition on input line 830.
 
 
-Package xcolor Warning: Incompatible color definition on input line 730.
+Package xcolor Warning: Incompatible color definition on input line 830.
 
 
-Package xcolor Warning: Incompatible color definition on input line 730.
+Package xcolor Warning: Incompatible color definition on input line 830.
 
 
-Package xcolor Warning: Incompatible color definition on input line 730.
+Package xcolor Warning: Incompatible color definition on input line 830.
 
 
-Package xcolor Warning: Incompatible color definition on input line 730.
+Package xcolor Warning: Incompatible color definition on input line 867.
 
-<img/semantic_maps/movies_sci_fi_affinity.png, id=216, 1727.45375pt x 2027.575pt>
+
+Package xcolor Warning: Incompatible color definition on input line 867.
+
+
+Package xcolor Warning: Incompatible color definition on input line 867.
+
+
+Package xcolor Warning: Incompatible color definition on input line 867.
+
+
+Overfull \hbox (13.8947pt too wide) in paragraph at lines 870--888
+ [][] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 890.
+
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 913.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[8 <./img/sparql_queries/SPARQL_type.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 916.
+
+
+Package xcolor Warning: Incompatible color definition on input line 916.
+
+
+Package xcolor Warning: Incompatible color definition on input line 916.
+
+
+Package xcolor Warning: Incompatible color definition on input line 916.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package xcolor Warning: Incompatible color definition on input line 966.
+
+
+Package xcolor Warning: Incompatible color definition on input line 973.
+
+
+Package xcolor Warning: Incompatible color definition on input line 973.
+
+
+Package xcolor Warning: Incompatible color definition on input line 973.
+
+
+Package xcolor Warning: Incompatible color definition on input line 973.
+
+
+Overfull \hbox (6.18906pt too wide) in paragraph at lines 984--985
+\T1/pcr/m/n/8 yago:WikicatFantasyNovels|  
+ []
+
+
+Overfull \hbox (6.18906pt too wide) in paragraph at lines 996--997
+\T1/pcr/m/n/8 yago:Abstraction100002137|  
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1002.
+
+<img/semantic_maps/movies_sci_fi_affinity.png, id=223, 1727.45375pt x 2027.575pt>
 File: img/semantic_maps/movies_sci_fi_affinity.png Graphic file (type png)
 <use img/semantic_maps/movies_sci_fi_affinity.png>
-Package pdftex.def Info: img/semantic_maps/movies_sci_fi_affinity.png  used on input line 777.
+Package pdftex.def Info: img/semantic_maps/movies_sci_fi_affinity.png  used on input line 1022.
 (pdftex.def)             Requested size: 207.2855pt x 243.29851pt.
 File: img/semantic_maps/movies_sci_fi_affinity.png Graphic file (type png)
 <use img/semantic_maps/movies_sci_fi_affinity.png>
-Package pdftex.def Info: img/semantic_maps/movies_sci_fi_affinity.png  used on input line 777.
+Package pdftex.def Info: img/semantic_maps/movies_sci_fi_affinity.png  used on input line 1022.
 (pdftex.def)             Requested size: 207.2855pt x 243.29851pt.
 
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 1022.
 
 
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 1022.
 
 
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 1022.
 
 
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 1022.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/semantic_maps/movies_sci_fi_kmedoids.png, id=218, 1645.14626pt x 1990.43625pt>
+<img/semantic_maps/movies_sci_fi_kmedoids.png, id=225, 1645.14626pt x 1990.43625pt>
 File: img/semantic_maps/movies_sci_fi_kmedoids.png Graphic file (type png)
 <use img/semantic_maps/movies_sci_fi_kmedoids.png>
-Package pdftex.def Info: img/semantic_maps/movies_sci_fi_kmedoids.png  used on input line 780.
+Package pdftex.def Info: img/semantic_maps/movies_sci_fi_kmedoids.png  used on input line 1025.
 (pdftex.def)             Requested size: 197.40903pt x 238.84204pt.
 File: img/semantic_maps/movies_sci_fi_kmedoids.png Graphic file (type png)
 <use img/semantic_maps/movies_sci_fi_kmedoids.png>
-Package pdftex.def Info: img/semantic_maps/movies_sci_fi_kmedoids.png  used on input line 780.
+Package pdftex.def Info: img/semantic_maps/movies_sci_fi_kmedoids.png  used on input line 1025.
 (pdftex.def)             Requested size: 197.40903pt x 238.84204pt.
 
-Package xcolor Warning: Incompatible color definition on input line 780.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 780.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 780.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 780.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package xcolor Warning: Incompatible color definition on input line 782.
+Package xcolor Warning: Incompatible color definition on input line 1027.
 
-Excluding 'comment' comment. (./semantic_mapping.bbl
-
-Package xcolor Warning: Incompatible color definition on input line 2.
-
-
-Underfull \hbox (badness 7133) in paragraph at lines 66--70
-[]\T1/ptm/m/n/7.61 A. Sing-hal. (2012) In-tro-duc-ing the Knowl-
- []
-
-
-Underfull \hbox (badness 2418) in paragraph at lines 66--70
-\T1/ptm/m/n/7.61 edge Graph: things, not strings. [On-line]. Avail-
- []
-
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 70.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[7]
-File: notaglinelogo.png Graphic file (type png)
-<use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 166.
-(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Overfull \hbox (505.12177pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-[8 <./img/semantic_maps/movies_sci_fi_affinity.png> <./img/semantic_maps/movies_sci_fi_kmedoids.png>]
-Underfull \hbox (badness 4096) in paragraph at lines 263--266
-[]\T1/ptm/m/n/7.61 R. Mi-hal-cea, C. Cor-ley, and C. Strap-pa-r-ava, ``Corpus-based and
- []
-
-
-Underfull \hbox (badness 1675) in paragraph at lines 340--343
-[]\T1/ptm/m/n/7.61 ``Clustering al-go-rithms,'' Jul 2022. [On-line]. Avail-able:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 340--343
-\T1/ptm/m/n/7.61 https://developers.google.com/machine-learning/clustering/clustering-
- []
-
-)
+Excluding 'comment' comment.
+No file semantic_mapping.bbl.
 File: bullet.png Graphic file (type png)
 <use bullet.png>
-Package pdftex.def Info: bullet.png  used on input line 1200.
+Package pdftex.def Info: bullet.png  used on input line 1442.
 (pdftex.def)             Requested size: 5.0pt x 14.6871pt.
 File: notaglinelogo.png Graphic file (type png)
 <use notaglinelogo.png>
-Package pdftex.def Info: notaglinelogo.png  used on input line 1202.
+Package pdftex.def Info: notaglinelogo.png  used on input line 1444.
 (pdftex.def)             Requested size: 91.32pt x 23.1352pt.
 
 Overfull \hbox (505.12177pt too wide) has occurred while \output is active
@@ -1669,27 +1998,52 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[9] (./semantic_mapping.aux)
+[9 <./img/semantic_maps/movies_sci_fi_affinity.png> <./img/semantic_maps/movies_sci_fi_kmedoids.png>]
+File: notaglinelogo.png Graphic file (type png)
+<use notaglinelogo.png>
+Package pdftex.def Info: notaglinelogo.png  used on input line 1444.
+(pdftex.def)             Requested size: 91.32pt x 23.1352pt.
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Overfull \hbox (505.12177pt too wide) has occurred while \output is active
+[]
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[10
+
+] (./semantic_mapping.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 39564 strings out of 492616
- 933118 string characters out of 6129482
- 1030780 words of memory out of 5000000
- 42906 multiletter control sequences out of 15000+600000
- 634593 words of font info for 170 fonts, out of 8000000 for 9000
+ 39687 strings out of 492616
+ 934663 string characters out of 6129482
+ 1032605 words of memory out of 5000000
+ 43025 multiletter control sequences out of 15000+600000
+ 631288 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,13n,96p,790b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,13n,96p,790b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on semantic_mapping.pdf (9 pages, 1991475 bytes).
+Output written on semantic_mapping.pdf (10 pages, 1992414 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
+ 292 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  79 words of extra memory for PDF output out of 10000 (max. 10000000)
 

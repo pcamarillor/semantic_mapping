@@ -100,8 +100,8 @@ class SemanticMap:
             with lock:
                 x = entity_similarity.similarity(self._rdf_instances[i], self._rdf_instances[j])
                 self._queue_out.put((i, j, x))
-            # logging.info("Found:{}".format(x))
-                time.sleep(2)
+            #    logging.info("Found:{}".format(x))
+            #    time.sleep(2)
 
     def get_name(self, concept_url):
         items = concept_url.split("/")

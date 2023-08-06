@@ -62,6 +62,50 @@ class SemanticSimilarityTest(unittest.TestCase):
         test_instance.assemble_semantic_map()
         os.chdir("./test")
 
+    def test_build_similarity_diseases(self):
+        os.chdir("../")
+        test_instance = semantic_similarity.SemanticMap("diseases")
+        test_instance.build_semantic_distance_matrix()
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
+        os.chdir("./test")
+    def test_build_similarity_drugs(self):
+        os.chdir("../")
+        test_instance = semantic_similarity.SemanticMap("drugs")
+        test_instance.build_semantic_distance_matrix()
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
+        os.chdir("./test")
+
+    def test_build_similarity_actors(self):
+        os.chdir("../")
+        test_instance = semantic_similarity.SemanticMap("actors")
+        test_instance.build_semantic_distance_matrix()
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
+        os.chdir("./test")
+
+    def test_build_similarity_actors_movies(self):
+        os.chdir("../")
+        test_instance = semantic_similarity.SemanticMap("actors-movies")
+        test_instance.build_semantic_distance_matrix()
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
+        os.chdir("./test")
+
+    def test_build_similarity_diseases_drugs(self):
+        os.chdir("../")
+        test_instance = semantic_similarity.SemanticMap("diseases-drugs")
+        test_instance.build_semantic_distance_matrix()
+        test_instance.compute_centroids()
+        test_instance.infer_central_term()
+        test_instance.assemble_semantic_map()
+        os.chdir("./test")
+
 
 if __name__ == '__main__':
     unittest.main()

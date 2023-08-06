@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 870px;
+            height: 1024px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#808080", "id": 54, "label": "Drug", "shape": "dot", "size": 20}, {"color": "#4da6ff", "id": 0, "label": "Vinorelbine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 1, "label": "Pregabalin", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 2, "label": "Mesalazine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 3, "label": "Duloxetine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 4, "label": "Azacitidine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 5, "label": "Treprostinil", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 6, "label": "Ambrisentan", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 7, "label": "Pirfenidone", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 8, "label": "Docetaxel", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 9, "label": "Iloprost", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 10, "label": "Paracetamol", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 11, "label": "Clindamycin", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 12, "label": "Fondaparinux", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 13, "label": "Pentamidine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 14, "label": "Topotecan", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 15, "label": "Nifurtimox", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 16, "label": "Propranolol", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 17, "label": "Benznidazole", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 18, "label": "Etoposide", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 19, "label": "Bromocriptine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 20, "label": "Sirolimus", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 21, "label": "Cisplatin", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 22, "label": "Propafenone", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 24, "label": "Albendazole", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 26, "label": "Octreotide", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 28, "label": "Paclitaxel", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 30, "label": "Milnacipran", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 32, "label": "Isavuconazole", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 35, "label": "Carboplatin", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 36, "label": "Loperamide", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 39, "label": "Gemcitabine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 40, "label": "Clotrimazole", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 43, "label": "Midodrine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 44, "label": "Teduglutide", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 47, "label": "Bismuth_subsalicylate", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 48, "label": "Ecallantide", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 51, "label": "Tetrabenazine", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 52, "label": "Nimodipine", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 23, "label": "Droxidopa", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 33, "label": "Budesonide", "shape": "dot", "size": 15}]);
+        edges = new vis.DataSet([{"from": 54, "to": 0}, {"from": 54, "to": 1}, {"from": 54, "to": 2}, {"from": 54, "to": 3}, {"from": 54, "to": 4}, {"from": 54, "to": 5}, {"from": 54, "to": 6}, {"from": 54, "to": 7}, {"from": 54, "to": 8}, {"from": 54, "to": 9}, {"from": 54, "to": 10}, {"from": 54, "to": 11}, {"from": 54, "to": 12}, {"from": 54, "to": 13}, {"from": 54, "to": 14}, {"from": 54, "to": 15}, {"from": 54, "to": 16}, {"from": 54, "to": 17}, {"from": 54, "to": 18}, {"from": 54, "to": 19}, {"from": 54, "to": 20}, {"from": 54, "to": 21}, {"from": 54, "to": 22}, {"from": 54, "to": 24}, {"from": 54, "to": 26}, {"from": 54, "to": 28}, {"from": 54, "to": 30}, {"from": 54, "to": 32}, {"from": 54, "to": 35}, {"from": 54, "to": 36}, {"from": 54, "to": 39}, {"from": 54, "to": 40}, {"from": 54, "to": 43}, {"from": 54, "to": 44}, {"from": 54, "to": 47}, {"from": 54, "to": 48}, {"from": 54, "to": 51}, {"from": 54, "to": 52}, {"from": 40, "to": 23}, {"from": 40, "to": 33}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

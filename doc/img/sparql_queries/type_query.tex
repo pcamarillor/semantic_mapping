@@ -38,9 +38,21 @@ WHERE {
             dbo:gross ?gross .
     FILTER(?gross > 8E8)
 }
-
 \end{lstlisting}
+
 \newpage
-
-
+\begin{lstlisting}[language=SQL, basicstyle=\footnotesize\ttfamily]
+    PREFIX yago: <http://dbpedia.org/class/yago/>
+    PREFIX dbp: <https://dbpedia.org/property/>
+    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>    
+CONSTRUCT { 
+   ?city rdf:type  yago:City108524735 .
+ }
+WHERE
+     {
+       ?city rdf:type yago:City108524735 ;
+                dbo:populationTotal ?populationTotal .
+        FILTER(?populationTotal > 5E6 )
+     }
+\end{lstlisting}
 \end{document}

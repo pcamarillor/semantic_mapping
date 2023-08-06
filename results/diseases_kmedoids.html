@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vis-network@latest/styles/vis-network.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vis-network@latest/dist/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 870px;
+            height: 1024px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#808080", "id": 36, "label": "Disease114070360", "shape": "dot", "size": 20}, {"color": "#4da6ff", "id": 0, "label": "Q_fever", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 23, "label": "Minamata_disease", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 22, "label": "Kawasaki_disease", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 33, "label": "AIDS", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 4, "label": "Argentine_hemorrhagic_fever", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 9, "label": "Opsoclonus_myoclonus_syndrome", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 20, "label": "Cryoglobulinemia", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 10, "label": "Freeman\u2013Sheldon_syndrome", "shape": "dot", "size": 15}, {"color": "#4da6ff", "id": 5, "label": "Plague_(disease)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 1, "label": "Melioidosis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 2, "label": "Parasitic_disease", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 3, "label": "Clonorchiasis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 6, "label": "Coinfection", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 8, "label": "Bartonellosis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 12, "label": "Yersiniosis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 14, "label": "Nocardiosis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 15, "label": "Gastrointestinal_disease", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 16, "label": "Ehrlichiosis_ewingii_infection", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 18, "label": "Carrion\u0027s_disease", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 21, "label": "Ross_River_fever", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 25, "label": "Cheilitis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 26, "label": "Human_granulocytic_anaplasmosis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 27, "label": "Legionnaires\u0027_disease", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 29, "label": "Vesiculobullous_disease", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 31, "label": "Syphilitic_aortitis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 32, "label": "Pest", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 34, "label": "Eumycetoma", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 35, "label": "Buruli_ulcer", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 24, "label": "Bolivian_hemorrhagic_fever", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 11, "label": "Hepatitis_B", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 13, "label": "Autism_spectrum", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 17, "label": "Tick-borne_encephalitis", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 28, "label": "Hepatitis_C", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 30, "label": "Kuru_(disease)", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 7, "label": "Immunodeficiency\u2013centromeric_instability\u2013facial_anomalies_syndrome", "shape": "dot", "size": 15}, {"color": "#ffffff", "id": 19, "label": "Shaken_baby_syndrome", "shape": "dot", "size": 15}]);
+        edges = new vis.DataSet([{"from": 36, "to": 0}, {"from": 36, "to": 23}, {"from": 36, "to": 22}, {"from": 36, "to": 33}, {"from": 36, "to": 4}, {"from": 36, "to": 9}, {"from": 36, "to": 20}, {"from": 36, "to": 10}, {"from": 36, "to": 5}, {"from": 0, "to": 1}, {"from": 0, "to": 2}, {"from": 0, "to": 3}, {"from": 0, "to": 6}, {"from": 0, "to": 8}, {"from": 0, "to": 12}, {"from": 0, "to": 14}, {"from": 0, "to": 15}, {"from": 0, "to": 16}, {"from": 0, "to": 18}, {"from": 0, "to": 21}, {"from": 0, "to": 25}, {"from": 0, "to": 26}, {"from": 0, "to": 27}, {"from": 0, "to": 29}, {"from": 0, "to": 31}, {"from": 0, "to": 32}, {"from": 0, "to": 34}, {"from": 0, "to": 35}, {"from": 4, "to": 24}, {"from": 9, "to": 11}, {"from": 9, "to": 13}, {"from": 9, "to": 17}, {"from": 9, "to": 28}, {"from": 9, "to": 30}, {"from": 10, "to": 7}, {"from": 10, "to": 19}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
