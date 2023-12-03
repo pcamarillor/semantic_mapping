@@ -1,0 +1,770 @@
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{helvet}  
+
+ \usepackage{comment}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.7}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary{decorations.markings,decorations.shapes,decorations,arrows,automata,backgrounds,petri,shapes.geometric}  
+\usepackage{xcolor} 
+
+\NewSpotColorSpace{PANTONE}
+\AddSpotColor{PANTONE} {PANTONE3015C} {PANTONE\SpotSpace 3015\SpotSpace C} {1 0.3 0 0.2}
+\SetPageColorSpace{PANTONE}
+%\usepackage{tikz}  
+%\usepackage{helvet}  
+%\usetikzlibrary{decorations.markings,decorations.shapes,decorations,arrows,automata,backgrounds,petri,shapes.geometric}  
+%\usepackage{xcolor} 
+\newtheorem{Problem}{Problem}
+\newtheorem{Definition}{Definition}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.2017.DOI}
+
+\title{On semantic mapping to visualize Knowledge Graphs}
+\author{\uppercase{P. Camarillo-Ramirez}\authorrefmark{1},
+\uppercase{F. Cervantes-Alvarez\authorrefmark{1}, and L. F. Guti\'{e}rrez-Preciado}.\authorrefmark{1}}
+\address[1]{Western Institute of Technology and Higher Education, Tlaquepaque, Jalisco 45601 Mexico (ng724453@iteso.mx;fcervantes@iteso.mx;lgutierrez@iteso.mx)}
+
+\tfootnote{This work was supported in part by the  National Council of 
+Science and Technology of Mexico through grant 498322}
+
+\markboth
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+{Author \headeretal: Preparation of Papers for IEEE TRANSACTIONS and JOURNALS}
+
+\corresp{Corresponding author: P. Camarillo-Ramirez (e-mail: ng724453@iteso.mx)}
+
+\begin{abstract}
+Knowledge Graphs (KGs) are one of the most novel technologies used to
+improve search engines and support
+decision making in the life sciences since they structure information in graph form
+by encoding concepts as nodes, and the semantics of the relationship
+among concepts as edges. The analysis of these kind of structures calls
+for an effective strategy to visualize them. However, the increasing
+size of KGs makes the exploring process a big challenge.
+A semantic map is a visual representation of related concepts that helps humans
+in the learning process. In this work, we propose to generate a simplified visual
+representation of a KGs by generating a semantic maps. We used the affinity propagation
+algorithm to find the \textit{related} concepts in KGs. We used different semantic similarity
+measures to compute the groups of related concepts.
+
+
+\end{abstract}
+
+\begin{keywords}
+Knowledge graphs; Knowledge graphs visualization; Semantic similarity; Semantic mapping; Big Data;
+\end{keywords}
+
+\titlepgskip=-15pt
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+Knowledge Graphs (KGs) are considered one of the emerging technologies 
+associated with Big Data that are leading the digital ecosystems by 
+providing a mechanism to obtain valuable information from heterogeneous 
+digital means \cite{Panetta19}. KGs encode knowledge from different sources
+into structured documents that can be interpreted by machines. Recently, 
+academic and private organizations have constructed KGs, such as YAGO 
+\cite{suchanek2007yago}, DBPedia \cite{auer2007dbpedia}, Freebase 
+\cite{Freebase08}, NELL\cite{NELL10}, Google Knowledge Graph 
+\cite{GoogleKG12}, Microsoft Satori \cite{Satori13}, Facebook Entity
+Graph \cite{Facebook13}, and Wikidata \cite{Wikidata14}, which contain
+millions of entities and billions of relationships. The main applications 
+of KGs include the enhancement of search engines like Google \cite{GoogleKG12}
+or Bing \cite{Satori13} as well as question answering and decision support
+in the life sciences \cite{Belleau08,Ruttenberg09,Momtchev09}. 
+
+Considering the continuous increase in size of these graphs, the goal of 
+visual graph analysis become uncertain due to a lacking ability to observe 
+details from the information presented. The visual data exploration is considered as a
+hypothesis-generator process by allowing users to gain a deep understanding 
+of the data, and thus come up with a new hypothesis thought visualization software
+tools\cite{keim2001visual}. On the other hand, semantic mapping is a technique widely used to understand
+new concepts which consists of a categorical structuring of information 
+in a graphic form \cite{johnson1986semantic}, hence getting an effective visual
+representation of a KG is crucial. 
+
+In this paper, we hypothesize 
+that semantics maps are useful to visualize the high level of abstraction of 
+a KG. To generate effective semantic maps it is necessary to compute 
+how similar are two concepts in the KG. The main challenge to build a semantic map
+from a KG is to compute the groups of concepts based on their 
+semantic similarity. In Unsupervised Learning, clustering algorithms classify data into
+one or more classes depending on a similarity or distance measure \cite{SCHAEFFER200727}. In
+graph structures, clustering process is aimed to group vertices, therefore if we apply a
+clustering algorithm to the data set of concepts in the KG, we would have the groups of
+concepts we need to build a semantic map. However, the clustering algorithms depends on a
+\textit{appropiate} similarity or distance measure. The semantic similarity is a metric used
+in Natural Processing Language (NPL) and Information Retrieval (IR) areas \cite{HOVY20132} that
+represents how related are two concepts based on their hierarchical 
+relations \cite{resnik1995using}, \cite{turney2010frequency}. Recently, Zhu and Iglesias
+\cite{ZhuIglesias2017} proposed a the wpath similarity metric for KGs that combines 
+the structure of the semantic network and the information content (IC) of concepts to 
+compute the semantic similarity between concepts in KGs.
+
+The main contributions of this work include:
+\begin{enumerate}
+    \item The method to generate a similarity matrix from a KG.
+    \item The strategy to generate a simplified visual representation 
+    of a KGs through semantic maps.
+    \item The experiments that validates the proposed method and shows the
+    obtained semantic maps.
+\end{enumerate}
+
+The rest of this paper is structured as follows. In the Section \ref{sec:related},
+we review the related work associated with knowledge graph visualization, graph 
+clustering, semantic similarly, and semantic mapping. In Section \ref{sec:Method}, we 
+describe the method we used to build semantic maps using clustering algorithms. Next in 
+Section \ref{sec:results}, a set of experiments showing the generated semantic maps for 
+selected data sets from DBPedia.
+
+
+\section{Related work}
+\label{sec:related}
+This section is focused on describing the most relevant works associated with
+the problem of graph summarization and its relevance to the visual data
+exploration area.
+
+
+\subsection{Graph visualization}
+
+Recent applications have
+proven useful for large graph visualizations to understand
+different phenomena, such as Bitcoin transactions 
+\cite{mcginn2016visualizing} and online discussions
+\cite{molina2017improving}. For big knowledge graphs, it is necessary a
+distributed implementation of the layout algorithms to improve the time 
+needed to generate the visual representation \cite{gomez2018visualizing}. 
+
+Recent works \cite{6787141,1703364,8801911} have shown that visualizing a 
+simplified version of a large graph is an adequate alternative. For instance, \cite{Tasnim2020} 
+visualizing a summarized graph can be useful when it is not possible to 
+implement a distributed solution to render a large graph. Functional
+summaries were proposed by the bioinformatics community to obtain a 
+concise and interpretable representation of a Protein-Protein Interaction (PPI)
+network \cite{Seah12}. These functional summaries are high level abstraction
+maps built from a knowledge base.
+
+
+In the context of data mining, summarization is the process of facilitating 
+the identification of meaningful data. In this work, our focus is on the
+study of the summarization for networked data, also known as networks or
+graphs. The applications of graph summarization include reduction of data
+volume and storage, speedup of graph algorithms and queries, interactive
+analysis support, and noise elimination \cite{liu2018graph}. 
+
+
+Recent works have been proposed to summarize large graphs in order to enable an efficient 
+visualization of their content. In \cite{OntoVis}, Shen et al. propose a visual 
+analytics tool called OntoVis, which performs both structural and semantic abstractions to offer
+a summarized version of a large graph to visualize a simplified version of the graph. Another
+related work is presented in \cite{koutra2014vog}, which describes the VoG (Vocabulary-based
+summarization of Graphs) algorithm to summarize and understand large graphs by constructing
+and visualizing subgraph-types, such as starts, cliques, and chains. The visual abstraction
+presented in \cite{8801911}, transforms geo-tagged social media data into high-dimensional
+vectors by utilizing a doc2vec model. In \cite{Koutra2019}, the authors focus on 
+summarizing KGs by taking advantage of individual interests to generate personalized
+knowledge graph summaries.
+
+Regardless of the application, one of the main challenges of graph summarization is defining
+which data is of interest. Every summarization strategy depends on selecting an interest
+criteria to extract meaningful information \cite{liu2018graph}. However, to achieve a concise
+definition of \textit{interesting} is not an easy task. For example, the FUSE algorithm \cite {Seah12} 
+proposes a profit maximization model that seeks to find a summary by maximizing information
+profit under a budget constraint. On the other hand, VoG \cite{koutra2014vog} exploits
+the Minimum Description Length (MDL) principle aimed at identifying the best subgraphs
+by choosing those which save most bits. In the case of semantic abstraction proposed in
+\cite{8801911}, a dual-objective blue noise sampling model is utilized to select a subset
+of social media data items supporting the spatial distribution and semantic correlation for
+the resulting simplified geographical visualization. In the personalized summaries from
+KGs described in \cite{Koutra2019}, the criteria to decide which information is \textit{interesting}
+for each user is determined by reviewing the users' query history.
+
+In the taxonomy of graph summarization algorithms
+proposed by Koutra et al. \cite{liu2018graph}, the authors include
+two families of graph summarization techniques that are based on the 
+network type: static and dynamic. In this work, we consider the summarization
+of static graphs.
+
+
+\subsection{Visual Data Exploration of knowledge graphs}
+The idea behind the visual data exploration process is to present the data
+in some visual form, allowing users to draw conclusions of the analyzed
+phenomena \cite{keim2001visual}. This process, also known as the "information
+seeking mantra", follows three steps: overview, zoom and filter, and 
+details-on-demand \cite{Shneiderman96}. In this context, ontologies are considered
+one of the most relevant data visualization techniques. In the field of 
+computer science, an ontology is a model for describing the world that consists
+of a set of types, properties, and relationship types \cite{Garshol2004MetadataTT}
+and by providing an initial attempt to visualize linked data.
+
+In regard to visual exploration of KGs, challenges include context adaptation,
+users \cite{Koutra2019}, data heterogeneity \cite{OntoVis,6787141,1703364}, 
+supporting diverse analysis tasks (query, combination, filtering, etc.), 
+and performance \cite{gomez2018visualizing}. In this study, the summarization
+technique implemented is aimed at enabling an effective visual representation
+of a large knowledge graph.
+
+Some works associated with visual representation of networks or KGs
+take into account the data exploration objectives \cite{ARCHAMBAULT20131044, 8801911}.
+In contrast, other approaches are focused on evaluating the \textit{usability} of software
+tools instead of evaluating the visual representation to fulfil visual data exploration
+tasks \cite{UsabilityMeasurement2006, ISO9241112018, Camarillo20}. 
+
+\section{Methodology}
+\label{sec:Method}
+
+In this section, the summarization problem is formally define as well as
+some concepts needed to understand the FUSE algorithm. Then, a list the 
+changes for adapting the FUSE algorithm to different biology domains is 
+presented.
+
+\subsection{Preliminaries}
+
+A \textbf{graph} $G$, also known as network, is an abstract data type consisting
+of a finite set of vertices (nodes) $V$, a finite set of links (edges) $E$ (disjoint
+from $V$), and an \textit{incidence function} $\psi_{G}$ that associates with each
+edge of $G$, an unordered pair of vertices of $G$. If $e \in E$ and $u, v \in V$ such that 
+$\psi_{G}(e) =  uv$, then $e$ is said to join $u$ and $v$; the vertices $u$ and $v$ are
+called the \textit{ends} of $e$ \cite{bondy1976graph}.
+
+When a graph has attributes associated to nodes or edges, it can be
+considered a knowledge graph. A \textbf{knowledge graph}
+$KG=(E,R,T)$ consists of a set of entities $E$, a set of relations 
+$R$, and a set of triples $T \subseteq E \times R \times E^{1}$. A
+triple connecting entities $e_{i},e_{j} \in E$ with relation $r_{k} 
+\in R$ is denoted $x_{ijk} = (e_{i},r_{k},e_{j})$ \cite{Koutra2019}. 
+In other words, KGs consist in a collection of facts formed 
+by $<subject,predicate,object>$. These collections are typically
+represented in languages, such as RDF (Resource Description
+Framework) \cite{RDF} and OWL (Ontology Web Language) \cite{OWL}.
+
+% TODO: Agregar teoria de moleculas rdf 
+\subsection{Functional summarization for Knowledge graphs}
+
+The core of this paper lies in summarizing knowledge graphs by obtaining
+functional summaries. The formal definition of a functional cluster
+is:
+
+\begin{Definition}
+\textbf{Functional Cluster} \\
+Let $ V (a_{i}) \subseteq V$ denote the set of
+vertices in $G$ such that $v \in V (a_{i})$ if and only 
+$ \Delta_{v} [a_{i}(v)] = 1$. The functional cluster of  $a_{i} \in \Delta$, 
+denoted by $C(a_{i}) \subseteq G$, is the subgraph of $G$ that is induced 
+by $V (a_{i})$.
+
+\end{Definition}
+
+Table \ref{tab:Symbols} enumerates the symbols utilized in the rest of this section.
+
+\begin{table}[!ht]
+\caption{Symbols associated with the summarization process}
+\label{tab:Symbols}
+\centering
+\begin{tabular}{r|l}
+\hline
+\bfseries Symbol & \bfseries Meaning \\ \hline \\
+$C(u)$ & Functional cluster \\
+$KG$ & Input knowledge graph \\
+$\Theta_{KG}$ & Functional summary of $KG$\\
+$D$ & Directed acyclic graph (DAG) from an Ontology \\
+$\Delta$ & Topological sort of $D$ \\
+$k$ & Input parameter to specify the summary level \\
+$b$ & Information budget assigned to every node $i \in V$ \\
+$d$ & Penalization parameter introduced to penalize redundancy. \\
+& Typically  $0 \leq d \leq 10$ \\
+$\beta$ & Significance cut-off parameter used to \\ 
+& associate a pair of functional clusters \\
+$\Psi^{C(u)}$ & Structural knowledge value \\
+$S_{\Delta}$ & Set of functional clusters induced from $\Delta$.\\
+$S$ & Set of higher-order functional clusters \\
+$\Delta_{v}[a_{i}(v)]$ & Term association vector of $v \in V$ \\
+$F$ & Set of edges that links the functional clusters \\
+$P_{i}$ & Probability density function of observing $o_{uv}$ or more \\
+& number of interactions between C(u) and C(v). \\
+$\alpha$ & The bijection $\alpha : 1, 2, \dots ,m \leftrightarrow S$ is an ordering of S. \\
+\hline
+\end{tabular}
+\end{table}
+
+The functional summarization problem consists of finding $\Theta_{KG}$
+that represent the underlying PPI subject to a summary complexity constraint.
+This work is aimed at adapting the FUSE algorithm to use a knowledge graph instead of
+a PPI. To find a functional summary, a profit maximization model is proposed to
+obtain $\Theta_{KG} = (S, F, P_{i}, \alpha)$ by maximizing information under a
+budget constraint. In the original problem, every protein $i \in V$ is assigned
+a non-negative \textit{information budget} $b$, which stands for the information
+constraint. In our proposal, this information budget is associated to every node in
+the knowledge graph that needs to be summarized. Every functional cluster $C(u) \in S_{\Delta}$
+is assigned a non-negative \textit{structural information value} $\Psi^{C(u)}$, which
+represents the amount of structural information contained within the functional
+subgraph. The formula to compute the structural information value is:
+
+\begin{equation}
+\label{eqn_coverage}
+\Psi^{C(u)} = \frac{\sum_{i,j \in C(u)} E_{ij}}{C(u)}
+\end{equation}
+
+In this work, this structural information value is the amount of structural
+\textit{knowledge} contained in the functional subgraph of $KG$. When a functional
+cluster $C(u)$ is added to the summary, for every node $i \in V(u)$, a portion of $b$ 
+is taken out and added to summary functional information gain.
+
+\begin{Definition}
+\textbf{Functional summary of a Knowledge Graph} \\
+Let $K_{i}$ be a set of functional clusters such that $C(u) \in K_{i}$ if and only if
+$i \in C(i)$. For every $C(u) \in S_{\Delta}$, let $\Psi^{C(u)}$ be the structural knowledge
+information value of $C(u)$. Given a knowledge graph $KG = (E,V,T)$ and input parameters
+$b, d$, and $k$, the \textit{functional summarization problem adapted to KGs} generates a
+\textit{k-cluster} FSKG $\Theta_{KG} = (S, F, P_{i}, \alpha)$ subject to $\vert S \vert = k$.
+
+\end{Definition}
+
+\section{Experimental results}
+\label{sec:results}
+The adaptation of the FUSE algorithm proposed in this work is implemented in Python and Java
+programming languages. Results presented in this section correspond to experiments that were run on 
+a machine with 2 GHz Quad-Core Intel Core i7 processor, 8 GB 1600 MHz DDR3, a graphics
+card Intel Iris Pro with 1536 MB, and 250 GB of flash storage. The software tool utilized to
+perform the efficiency evaluation is WebVOWL \footnote{http://www.visualdataweb.de}.
+
+\subsection{Evaluation metrics}
+
+The use of heatmaps works as a high-level view of the similarity matrix to
+visualize which groups of concepts are more likely to be clustered together \cite{NGUYEN201495}. 
+
+To evaluate the quality of the obtained summaries, the data
+mining literature offers two metrics: coverage and redundancy. The
+coverage metric is the ratio of the total number of annotated nodes in the
+summary over the total number of annotated nodes in the input knowledge 
+graph (Eq 1). The redundancy metric is the average number of functional clusters 
+that each node belongs to. This is an indicator of the amount of cluster overlap in 
+the summary (Eq. 2)
+
+\begin{equation}
+\label{eqn_coverage}
+coverage(\Theta) = \frac{\lvert \cup_{C(u) \in S_{\Theta}}  V(u)
+\rvert}{\lvert \cup_{C(u) \in S_{\Delta}} V(u)\rvert}
+\end{equation}
+
+\begin{equation}
+\label{eqn_redundancy}
+redundancy(\Theta) = \frac{\sum_{C(u) \in S_{\Theta}} V(u) }
+{\lvert \cup_{C(u) \in S_{\Theta}}  V(u)
+\rvert} 
+\end{equation}
+
+Other well-known statistical measures to indicate accuracy and completeness are
+precision and recall. These measures are defined as follows:
+
+\begin{equation}
+\label{eqn_precision}
+precision = \frac{TP}{TP + FP}
+\end{equation}
+
+\begin{equation}
+\label{eqn_recall}
+recall = \frac{TP}{TP + FN}
+\end{equation}
+
+Neighborhood similarity. Neighborhood of an entity $e \in V$ is 
+defined as the set of relation-entity pairs $N(e)$ whose entities
+are at one-hop distance of $e$, i.e.,
+
+\begin{equation}
+    N(e) = \{(r, e_{i})|(e,r,e_{i}) \in E \}
+\end{equation}
+
+In the context of knowledge graph functional summarization, if a
+cluster $C(i)$ is assigned with the function $i$, then any term $t \in C(i)$
+that is not annotated with $i$ or its descendants is considered a false positive (FP).
+If $t \in C(i)$ is annotated with $i$ or descendants, it is a true positive (TP). On the other
+hand, a term $t \in V$ that is annotated with $i$ but not in $C(i)$ is considered a false negative (FN).
+Nodes from knowledge graph with no cluster associated are not taken into consideration to compute these metrics.
+
+\subsection{Summarizing financial networks: a case study}
+In order to validate our initial hypothesis that proposes using the FUSE algorithm to obtain a simplified
+version of networks for a different domain than biology, we used the four KG from the financial sector
+obtained from the open network repository \cite{nr} (See Table \ref{tab:networks}).
+
+\begin{table}[!ht]
+\caption{Datasets of financial and economic sector}
+\label{tab:networks}
+\centering
+\begin{tabular}{|l|l|l|l}
+\hline
+\bfseries Dataset & \bfseries \# nodes & \# \bfseries edges \\
+beacxc & 497 & 50K \\ 
+beaflw & 507 & 53K \\
+beause & 507 & 44.2K \\
+mahindas & 1.3K & 7.6K \\
+\hline
+\end{tabular}
+\end{table}
+
+The ontology utilized to validate the adaptation of the FUSE algorithm 
+the Financial Industry Business Ontology  (FIBO) which describes the
+sets of entities that are of interest in  financial business applications
+\cite{FIBO}. FIBO is developed as an ontology in  the Web Ontology 
+Language (OWL) (Table \ref{tab:fibo}).
+
+\begin{table}[!ht]
+\caption{Structural information of FIBO}
+\label{tab:fibo}
+\centering
+\begin{tabular}{|l|l|l|l}
+\hline
+\bfseries Metric & \bfseries Value \\
+Axioms & 6498 \\
+Logical axiom count & 1530 \\
+Declaration axioms count & 889 \\
+Class count & 403 \\
+Object property count & 266 \\
+Data property count & 85 \\
+Annotation Property count & 96 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+We begin with the quality analysis of the functional clusters that were obtained
+using the adapted FUSE algorithm. Quality results obtained from the modified FUSE algorithm
+are compared with the graph based $k-means$ algorithm \cite{GraphMinning:2013}. Figure 
+\ref{fig:ClustersQuality} plots the values of precision and recall for every summarized network with
+different summary levels. The user-defined parameters were used with the following
+values $\beta = 0.0.1$, $b = 3$, and $d = 0$. The precision values
+for all summarized graphs were above 60\%. In contrast, recall values
+decreased when the summary level increased.
+
+Figure \ref{fig:ClustersQualityClassical} shows the values for precision and recall
+metrics using the k-means algorithm. The kernel matrix associated with every network analyzed
+is generated by using the Laplacian Kernel and the number of centroids is 5.
+
+
+
+
+\subsection{Efficiency evaluation of functional summaries}
+To compute the visual representation efficiency of clusters
+generated by the modified FUSE algorithm, we appled the methodology
+proposed in \cite{Camarillo20}. This task-based evaluation methodology 
+consists of two phases: establishing the context of use and analyzing
+the exploratory data analysis tasks under study.
+
+
+
+\subsubsection{Establishing the context of use for network visualization user interface}
+\textbf{Generate the network to be visualized.} Network \textit{mahindas} is selected to perform the
+efficiency assessment. The summary level is set at $k = 5$. The visualization of
+the generated summary is shown in Figure \ref{Fig:Vis_1}.
+
+\begin{figure}[h!]
+    \centering
+     \input{Vis_1.tikz}
+     \caption{Visual representation of the functional cluster of network mahindas with $k=5$}
+     \label{Fig:Vis_1}
+\end{figure}
+
+\begin{figure*}[!h]
+\centering
+\resizebox{2\columnwidth}{!}{
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={precision},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.8,0.1)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.88)(5,0.82)(10,0.8)(15,0.85)(20,0.86)(25,0.91)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.98)(5,0.77)(10,0.82)(15,0.77)(20,0.74)(25,0.67)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.76)(5,0.75)(10,0.82)(15,0.79)(20,0.78)(25,0.83)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.56)(5,0.58)(10,0.63)(15,0.62)(20,0.57)(25,0.55)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Precision of functional clusters generated by adapted FUSE algorithm}
+    \label{fig:Precision}
+\end{subfigure}
+
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={recall},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.8,0.08)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.73)(5,0.81)(10,0.8)(15,0.83)(20,0.84)(25,0.74)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.54)(5,0.63)(10,0.55)(15,0.51)(20,0.45)(25,0.53)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.87)(5,0.65)(10,0.73)(15,0.69)(20,0.68)(25,0.72)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.93)(5,0.72)(10,0.51)(15,0.52)(20,0.63)(25,0.72)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Recall of generated functional clusters from adapted FUSE algorithm}
+    \label{fig:Recall}
+\end{subfigure}
+}
+
+
+\caption{Cluster quality obtained using the adapted FUSE algorithm to summarize KGs from the financial sector. (a) Precision values. (b) Recall values}
+\label{fig:ClustersQuality}
+\end{figure*}
+
+
+\begin{figure*}[!h]
+\centering
+\resizebox{2\columnwidth}{!}{
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={precision},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.3,0.1)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.97)(5,0.57)(10,0.55)(15,0.51)(20,0.43)(25,0.41)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.98)(5,0.77)(10,0.83)(15,0.48)(20,0.55)(25,0.35)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.95)(5,0.53)(10,0.55)(15,0.39)(20,0.28)(25,0.33)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.93)(5,0.88)(10,0.77)(15,0.82)(20,0.67)(25,0.65)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Precision of clusters generated the graph-based $k-means$ algorithm}
+    \label{fig:Precision}
+\end{subfigure}
+
+\begin{subfigure}[pt]{0.45\linewidth}
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={Summary level $k$},
+            ylabel={recall},
+            xmin=0, xmax=25,
+            ymin=0, ymax=1.0,
+            xtick={0,5,10,15,20,25},
+            ymajorgrids=true,
+            grid style=dashed,
+            legend style={at={(0.8,0.08)},anchor=south},
+            width=8cm,height=7cm]
+
+            \addplot coordinates {
+                (1,0.85)(5,0.71)(10,0.75)(15,0.68)(20,0.65)(25,0.57)
+            };
+            \addlegendentry{beacxc}
+            
+            \addplot coordinates {
+                (1,0.77)(5,0.66)(10,0.68)(15,0.71)(20,0.65)(25,0.58)
+            };
+            \addlegendentry{beaflw}
+        
+            \addplot coordinates {
+                (1,0.83)(5,0.85)(10,0.71)(15,0.69)(20,0.73)(25,0.68)
+            };
+            \addlegendentry{beause}
+        
+            \addplot coordinates {
+                (1,0.81)(5,0.82)(10,0.78)(15,0.75)(20,0.63)(25,0.65)
+            };
+            \addlegendentry{mahindas}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{}
+    %\caption{Recall of generated clusters generated by the graph-based $k-means$ algorithm}
+    \label{fig:Recall}
+\end{subfigure}
+}
+
+
+\caption{Cluster quality obtained using the graph-based $k-means$ algorithm to summarize KGs from the financial sector. (a) Precision values. (b) Recall values}
+\label{fig:ClustersQualityClassical}
+\end{figure*}
+
+\textbf{Define a subset of visual data exploration tasks}
+The following three tasks associated with the decision-making 
+process in the financial sector are selected to conduct
+the usability assessment:
+
+\begin{enumerate}
+    \item \textbf{FIBO01}: Observe the neighbors of the \textit{mean} term.
+    \item \textbf{FIBO02}: Observe the relationships associated with the \textit{geopolitical entity} node. 
+    \item \textbf{FIBO03}: Identify two types of relationships.
+\end{enumerate}
+
+\textbf{Select a group of analysts}. The tasks mentioned above were performed by
+two analysts familiarized with graphs concepts and exploratory data analysis.
+
+\textbf{Fix the layout algorithm}. The algorithm selected to generate the layout of the 
+analyzed summary is the Fruchterman-Reingold algorithm.
+
+\subsubsection{Analyze visual data exploration tasks}
+\textbf{Measure time to complete every task}
+As it is suggested in \cite{Camarillo20}, the efficiency of the obtained visual representation 
+is measured by recording the analysis session where every user completes the visual exploration
+tasks. After completing each task, the recording is stopped and the duration of this video represents
+the value of the time needed to compute the efficiency metric. The efficiency of the visual 
+representation is computed using the following formula:
+
+\begin{equation}
+  Efficiency = \frac{\sum_{j=1}^{R} \sum_{i=1}^{N} \frac{n_{ij}}{t_{ij}}}{NR}
+  \label{eq:Efficiency}
+\end{equation}
+
+Where N is the number of tasks, R is the number of users, if the user
+successfully completes the $i-th$ task $n_{ij} = 1$ otherwise  $n_{ij} = 0$
+and $t_{ij}$ represents the time spent by $j-th$ user to complete the $i-th$
+task. In Figure \ref{fig:Efficiency}, the visualized clustering result is 
+16\% less efficiency for tasks \textbf{FIBO02} and \textbf{FIBO03}
+compared with task \textbf{FIBO01}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+    ybar,
+    enlargelimits=0.15,
+    ylabel={Average Time Spent (in seconds)},
+    xlabel={Tasks identifier},
+    legend style={at={(0.5,-0.2)},
+    anchor=north,legend columns=-1},
+    %width=0.8*\textwidth,
+    %height=9cm,
+    %bar width=40pt,
+    symbolic x coords={FIBO01,FIBO02,FIBO03},
+    xtick=data,
+    nodes near coords,
+    nodes near coords align={vertical}
+    ]
+            \addplot
+            coordinates {(FIBO01,42.7) (FIBO02,50.1) (FIBO03,48.5)};
+            
+            \addplot
+            coordinates {(FIBO01,45.0) (FIBO02,43.6) (FIBO03,30.5)};
+            
+            \legend{Summarized network, Original network}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Efficiency of visual data exploration tasks performed on functional summaries}
+    \label{fig:Efficiency}
+\end{figure}
+
+\subsection{Discussion}
+
+The modified FUSE algorithm suggests that the summary level 
+do not affect precision values. For \textit{beacxc} and \textit{beause}
+datasets, precision reaches 0.82 when summary level is $k = 25$. The
+only network in which precision decreases when the summary level is increased
+is \textit{beaflw}, falling out to 0.76 when $k = 25$. The lowest precision was
+observed for the clusters computed for the \textit{mahindas} network, which barley 
+exceeds 0.6 for $k = 10$ and $k = 15$. Precision values of the modified FUSE algorithm
+are better than the precision values obtained
+with the $k-means$ algorithm. With $k = 25$, the maximum precision value for $k-means$
+clustering is 0.65, which is the barley greater than the minimum precision value obtained
+by the adapted FUSE algorithm.
+
+On the other hand, recall values show a poor quality for clusters computed when the
+level of summary is increased compared with the $k-means$ clustering strategy. For \textit{beaflw} 
+network, the recall value is 0.54 when the summary level is $k = 1$, when the summary level $k$
+increases to $25$, this metric falls out to 0.53. In general, this pattern of
+decreasing the recall value while the summary level increases occurs for 
+the four summarized networks. In contrast, the recall values observed in
+experiments with the $k-means$ clustering show a stability trend when the summary level increases. When
+the summary level is 25, the minimum recall value is 0.57 ($beacxc$ network).
+
+Regarding visual representation efficiency of the \textit{mahindas} network, the
+user interface needs to be improved. The analysts that fulfill the visual 
+exploration tasks using the summarized network invested more time than the 
+time spent to perform the analysis tasks by visualizing the entire graph. For
+a common task, such as \textbf{FIBO02}, users spent 50.1 seconds in average.
+Future work is on improving the usability evaluation of the 
+visualization systems that manage summarized networks due to the poor performance of the user interface.
+
+\section{Conclusion}
+
+In this paper an adaptation of the FUSE algorithm is utilized to summarize knowledge graphs. In order to generate the functional clusters, the structural knowledge information value is introduced as a parameter to determine whether a node from the original graph belongs or not to the initial clusters. Public data from the financial sector is used to validate the initial hypothesis of the applicability of the FUSE algorithm to generate functional clusters for different biology domains.  Then,  summarized networks are visualized and the efficiency of this visual representation is measured to evaluate the usability of functional clusters for exploratory data analysis tasks.
+
+
+\bibliography{vis} 
+\bibliographystyle{IEEEtran}
+\EOD
+
+\end{document}

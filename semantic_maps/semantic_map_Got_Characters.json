@@ -1,0 +1,1 @@
+{"kmedoids": {"k": 3, "inertia": 0.5959961563546332, "quality": {"silhouette": 0.8114687736600267, "dwvies": 0.24936466811797708, "calinski": 154.97941888297117}, "semantic_map": {"5": [0, 1, 2, 3, 4], "7": [6, 9], "8": []}, "alpha": "http://dbpedia.org/ontology/FictionalCharacter"}}

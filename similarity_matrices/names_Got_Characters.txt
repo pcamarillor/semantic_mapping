@@ -1,10 +1,10 @@
-http://dbpedia.org/resource/Jon_Snow_(character)
 http://dbpedia.org/resource/Sansa_Stark
-http://dbpedia.org/resource/Arya_Stark
-http://dbpedia.org/resource/Daenerys_Targaryen
 http://dbpedia.org/resource/Tyrion_Lannister
 http://dbpedia.org/resource/Margaery_Tyrell
-http://dbpedia.org/resource/Cersei_Lannister
-http://dbpedia.org/resource/Jaime_Lannister
+http://dbpedia.org/resource/Daenerys_Targaryen
+http://dbpedia.org/resource/Arya_Stark
+http://dbpedia.org/resource/Jon_Snow_(character)
 http://dbpedia.org/resource/Tywin_Lannister
 http://dbpedia.org/resource/Joffrey_Baratheon
+http://dbpedia.org/resource/Cersei_Lannister
+http://dbpedia.org/resource/Jaime_Lannister
