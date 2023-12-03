@@ -19,8 +19,8 @@ class SemanticSimilarityTest(unittest.TestCase):
 
     def test_build_similarity_got(self):
         os.chdir("../")
-        test_instance = semantic_similarity.SemanticMap()
-        test_instance.build_semantic_distance_matrix("Got_Characters", True)
+        test_instance = semantic_similarity.SemanticMap("Got_Characters")
+        test_instance.build_semantic_distance_matrix()
         test_instance.compute_centroids()
         test_instance.infer_central_term()
         test_instance.assemble_semantic_map()

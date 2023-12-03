@@ -1,0 +1,72 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{tikz}
+%\usepackage[paper=portrait,pagesize]{typearea}
+\usetikzlibrary{matrix}
+\usepackage{subcaption}
+\usepackage[left=0.1cm, right=0.2cm, top=0.1cm]{geometry}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\begin{document}
+\begin{figure}
+    %\centering
+    \begin{tikzpicture}
+    \matrix (gallery) [matrix of nodes, column sep=1em, row sep=1em] {
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/01 - movies_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/01 - movies_pam.png}}; \\
+        \node {a)}; & \node {b)}; \\
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/02 - books_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/02 - books_pam.png}}; \\
+        \node {c)}; & \node {d)}; \\
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/03 - cities_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/03 - cities_pam.png}}; \\
+        \node {e)}; & \node {f)}; \\
+    };
+    \end{tikzpicture}
+    \label{fig:gallery}
+\end{figure}
+
+
+\begin{figure}
+    %\centering
+    \begin{tikzpicture}
+    \matrix (gallery) [matrix of nodes, column sep=1em, row sep=1em] {
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/04 - diseases_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/04 - diseases_pam.png}}; \\
+        \node {g)}; & \node {h)}; \\
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/05 - drugs_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/05 - drugs_pam.png}}; \\
+        \node {i)}; & \node {j)}; \\
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/06 - actors_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/06 - actors_pam.png}}; \\
+        \node {k)}; & \node {l)}; \\
+    };
+    \end{tikzpicture}
+    \label{fig:gallery}
+\end{figure}
+
+
+\begin{figure}
+    %\centering
+    \begin{tikzpicture}
+    \matrix (gallery) [matrix of nodes, column sep=1em, row sep=1em] {
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/07 - actors-movies_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/07 - actors-movies_pam.png}}; \\
+        \node {m)}; & \node {n)}; \\
+        \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/08 - diseases-drugs_ap.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/semantic_maps/08 - diseases-drugs_pam.png}}; \\
+        \node {o)}; & \node {p)}; \\
+    };
+    \end{tikzpicture}
+    \label{fig:gallery}
+\end{figure}
+
+\begin{figure}
+    %\centering
+    \begin{tikzpicture}
+    \matrix (gallery) [matrix of nodes, column sep=1em, row sep=1em] {
+        \node {\includegraphics[width=0.3\linewidth]{img/survey_datasets/01-diseases-and-drugs-classic.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/survey_datasets/01-diseases-and-drugs-semantic-map.png}}; \\
+        \node {a)}; & \node {b)}; \\
+        \node {\includegraphics[width=0.3\linewidth]{img/survey_datasets/02-actors-and-movies-classic.png}}; & \node {\includegraphics[width=0.3\linewidth]{img/survey_datasets/02-actors-and-movies-semantic-map.png}}; \\
+        \node {c)}; & \node {d)}; \\
+    };
+    \end{tikzpicture}
+    \label{fig:gallery}
+\end{figure}
+
+\end{document}

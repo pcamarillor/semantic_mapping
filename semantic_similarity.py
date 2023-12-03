@@ -218,7 +218,7 @@ class SemanticMap:
             logging.error("Similarity matrix does not exist")
             self.build_semantic_distance_matrix()
 
-        self.compute_affinity_propagation()
+        # self.compute_affinity_propagation()
         self.compute_kmedoids()
         self.save_semantic_maps()
         logging.info("Centroids from multiple clustering algorithms already analyzed")
@@ -309,11 +309,15 @@ class SemanticMap:
                 nc]
             score = [kmedoids_lst_lst[i].fit(distance_matrix).inertia_ for i in range(0, len(kmedoids_lst_lst))]
             kl = KneeLocator(nc, score, curve="convex", direction="decreasing")
-            logging.info("Number optimal of clusters found:{}".format(kl.knee))
-
             self._clustering_map["kmedoids"] = {}
-            self._clustering_map["kmedoids"]["k"] = int(kl.knee)
-            kmedoid = kmedoids_lst_lst[kl.knee - 2]
+            if kl.knee:
+                logging.info("Number optimal of clusters found:{}".format(kl.knee))
+                self._clustering_map["kmedoids"]["k"] = int(kl.knee)
+                kmedoid = kmedoids_lst_lst[kl.knee - 2]
+            else:
+                self._clustering_map["kmedoids"]["k"] = 3
+                kmedoid = kmedoids_lst_lst[1]
+
             self._clustering_map["kmedoids"]["inertia"] = float(kmedoid.inertia_)
         elif 'k' in self._clustering_map["kmedoids"].keys():
             k = int(self._clustering_map["kmedoids"]["k"])
